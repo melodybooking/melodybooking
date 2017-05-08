@@ -227,8 +227,8 @@
                         <input class="form-control" type="password" name="password" id="password">
                     </div>
 
-                    <div class ="form-group">
-                        <input class="form-control" type="checkbox" name="remember"> Remember Me
+                    <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <input type="checkbox" name="remember"> Remember Me
                     </div>
 
                     <div class="modal-footer">

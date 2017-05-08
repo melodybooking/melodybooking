@@ -8,4 +8,10 @@ $(document).ready(function() {
             
         });
 
+
+
 });
+
+// JS to render image thumbnail
+
+
