@@ -1,3 +1,4 @@
+
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
     <div class="container">
@@ -55,10 +56,11 @@
         				<li><a>Log Out</a></li>
 
         			@else 
+
                         <li><a>Sign Up</a></li>
-
-                        <li><a>Log In</a></li>
-
+						<!-- Button trigger modal -->
+                        <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+						
         			@endif
 
                 <li><a>Featured Artist</a></li>
@@ -90,6 +92,29 @@
     </div>
 
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+           </div>
+           <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               <button type="button" class="btn btn-primary">Save changes</button>
+           </div>
+       </div>
+    </div>
+</div>
+
+
 
 
 

@@ -27,8 +27,8 @@
 
 <script>
 
-    $(document).ready(function() 
-    {
+    $(document).ready(function() {
+        
         var height = $('footer').height();
 
         $('body').css({
@@ -37,4 +37,7 @@
     });
 
 </script>
+
+
+
 
