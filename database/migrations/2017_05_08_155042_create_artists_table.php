@@ -16,7 +16,13 @@ class CreateArtistsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('password', 400);
+            $table->string('password', 60);
+			$table->string('bio', 400);
+			$table->string('facebook_url', 100)->nullable();
+			$table->string('instagram_url', 100)->nullable();
+			$table->string('twitter_url', 100)->nullable();
+			$table->string('soundcloud_url', 100)->nullable();
+			$table->string('bandcamp_url', 100)->nullable();
 			$table->integer('created_by')->unsigned(); //column definition
 			$table->foreign('created_by')->references('id')->on('users'); //foreign key
 			$table->string('image')->nullable();
