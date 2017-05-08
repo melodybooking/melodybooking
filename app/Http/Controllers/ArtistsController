@@ -1,0 +1,132 @@
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\Models\Artist;
+use Log;
+use Session;
+
+class ArtistsController extends Controller
+{
+	public function __construct(){
+
+		$this->middleware('auth', ['except' => ['index', 'show']]);
+	}
+    // getting access to the request, is as a easy as adding it as a parameter to any controller
+    // action
+    public function index(Request $request)
+    {
+     	if(isset($request->search)) {
+			$artists = Artist::select('artists.*')
+			->join('users', 'created_by', '=', 'users.id')
+			->where('genre', 'like', "%$request->search%")
+			->orwhere('name', 'like', "%$request->search%")
+			->orderBy('artists.created_at', 'DESC')
+			->paginate(6)->appends(['search' =>$request->search]);
+		} else {
+			$artists = Artist::with('user')->orderBy('posts.created_at', 'DESC')->paginate(6);
+		}
+
+        $data = [];
+        $data['artists'] = $artists;
+        return view('artists.index')->with($data);
+    }
+
+    public function create(Request $request)
+    {
+        return view('artists.create');
+    }
+
+	public function imageUploadArtist(Request $request)
+	   {
+		   $this->validate($request, [
+			   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		   ]);
+		   $imageName = mt_rand(999,999999)."_".time()."_".$request->image->getClientOriginalExtension();
+		   //$type = $request->image->guessClientExtension();
+		   $request->image->move(public_path('uploads/images'), $imageName);
+		   $imagePath = asset('/public/uploads/images/')."/".$imageName;
+		   return $imageName;
+	   }
+
+    public function store(Request $request)
+    {
+		$rules = Artist::$rules;
+        $this->validate($request, $rules);
+        $artist = new Artist();
+        $artist->title = $request->title;
+        $artist->url = $request->url;
+        $artist->content = $request->content;
+        $artist->created_by = $request->id;
+
+
+		if($request->hasFile('image')) {
+	    $artist->image = $this->imageUploadArtist($request);
+		}
+		$artist->save();
+		Log::info("New artist saved", $request->all());
+
+        $request->session()->flash('successMessage', 'Artist saved successfully');
+        return redirect()->action('ArtistsController@show', [$artist->id]);
+    }
+    public function show(Request $request, $id)
+    {
+        $artist = Artist::find($id);
+
+        if (!$artist) {
+            Log::error("Artist with id of $id not found.");
+			abort(404);
+        }
+        $data = [];
+        $data['artist'] = $artist;
+        return view('artists.show')->with($data);
+    }
+
+    public function edit(Request $request, $id)
+    {
+        $artist = Artist::find($id);
+
+        if (!$artist) {
+            Log::error("Artist with id of $id not found.");
+            abort(404);
+        }
+
+		if($artist->user->id != \Auth::id()) {
+			Session::flash('errorMessage', "Only the artist can edit this post.");
+			return redirect()->action('ArtistsController@index');
+		}
+        $data = [];
+        $data['artist'] = $artist;
+
+        return view('artists.edit')->with($data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $rules = Artist::$rules;
+        $this->validate($request, $rules);
+        $artist = Artist::find($id);
+        if (!$artist) {
+            $request->session()->flash('errorMessage', 'Artist cannot be found');
+            return redirect()->action('ArtistsController@index');
+        }
+        $artist->title = $request->title;
+        $artist->url = $request->url;
+        $artist->content = $request->content;
+        $artist->created_by = $request->id;
+        $artist->save();
+        $request->session()->flash('successMessage', 'Artist saved successfully');
+        return redirect()->action('ArtistsController@show', [$artist->id]);
+    }
+    public function destroy(Request $request, $id)
+    {
+        $artist = Artist::find($id);
+        if (!$artist) {
+            $request->session()->flash('errorMessage', 'Artist cannot be found');
+            return redirect()->action('ArtistsController@index');
+        }
+        $artist->delete();
+        return view('artist.index');
+    }
+}
