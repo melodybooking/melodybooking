@@ -18,6 +18,7 @@ class CreateArtistsTable extends Migration
             $table->string('email')->unique();
             $table->string('password', 60);
 			$table->string('bio', 400);
+			$table->string('genre', 60);
 			$table->string('facebook_url', 100)->nullable();
 			$table->string('instagram_url', 100)->nullable();
 			$table->string('twitter_url', 100)->nullable();
