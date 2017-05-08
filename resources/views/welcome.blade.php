@@ -1,45 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@include('layouts.master')
+           
+<div class="img-responsive container">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <img class="img-responsive mySlides" src="\img\gradient.jpg">
+    <img class="img-responsive mySlides" src="\img\gradient2.jpg">
+ 
+    <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+        Beginning.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam dolore odio voluptas aspernatur nemo itaque, reprehenderit illum, doloremque, corporis eum excepturi, repudiandae quo in! Molestias hic minus eius porro perferendis.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quisquam aspernatur sapiente, aliquid inventore eum dolorum animi earum obcaecati mollitia quas temporibus commodi est autem perferendis cupiditate numquam quaerat veniam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem similique, et eligendi fugiat eaque expedita, quia optio temporibus perferendis nobis saepe fuga cupiditate sapiente? Laboriosam ut exercitationem similique. Soluta, voluptatibus?
+        Ending.
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+    </p>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+</div>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
+<script>
 
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+    $(document).ready(function() 
+    {
+        var height = $('footer').height();
+
+        $('body').css({
+            "margin-bottom": height
+        });
+    });
+
+</script>
+

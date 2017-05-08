@@ -1,0 +1,45 @@
+
+#header {
+
+	color: white;
+	margin-bottom:150px;
+	background-image: url("/img/gradient2.jpg");
+
+}
+
+#footer {
+	
+	background-image: url("/img/gradient.jpg");
+
+}
+
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+
+	margin-top:100px;
+	padding:20px;
+}
+
+footer {
+	
+	padding-top: 10px;
+	position: absolute;
+	bottom: 0;
+	height: 150px;
+
+}
+
+
+
+
+
+
+
+
+
