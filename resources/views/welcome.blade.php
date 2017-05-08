@@ -1,4 +1,4 @@
-@include('layouts.master')
+@extends('layouts.master')
            
 <div class="img-responsive container">
     
@@ -25,18 +25,7 @@
 
 </div>
 
-<script>
 
-    $(document).ready(function() {
-        
-        var height = $('footer').height();
-
-        $('body').css({
-            "margin-bottom": height
-        });
-    });
-
-</script>
 
 
 
