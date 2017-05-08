@@ -57,9 +57,10 @@
 
         			@else 
 
-                        <li><a>Sign Up</a></li>
 						<!-- Button trigger modal -->
                         <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+
+                        <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 						
         			@endif
 
@@ -93,25 +94,159 @@
 
 </nav>
 
-<!-- Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+<!-- sign up Modal -->
+
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
+
     <div class="modal-dialog" role="document">
+
         <div class="modal-content">
+
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-           </div>
-           <div class="modal-body">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                    <span aria-hidden="true">&times;</span>
+
+                </button>
+
+                <h4 class="modal-title" id="myModalLabel">New User Sign Up</h4>
 
             </div>
-            <div class="modal-footer">
-               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-               <button type="button" class="btn btn-primary">Save changes</button>
+
+            <div class="modal-body">
+
+                <form method="POST" >
+
+                    {!! csrf_field() !!}
+
+                    <div class="form-group">Name
+
+                        <input class="form-control" type="name" name="name" value="{{ old('name') }}">
+
+                        @if( $errors->has('name') )
+
+                            {{ $errors->first('name') }}
+
+                        @endif
+                    </div>
+
+                    <div class="form-group">Email
+
+                        <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+
+                         @if( $errors->has('email') )
+
+                            {{ $errors->first('email') }}
+
+                        @endif
+
+                    </div>
+
+                    <div class="form-group">Password
+
+                        <input class="form-control" type="password" name="password">
+
+                         @if( $errors->has('password') )
+
+                            {{ $errors->first('password') }}
+
+                        @endif
+
+                    </div>
+
+                    <div class="form-group">Confirm Password
+
+                        <input class="form-control" type="password" name="password_confirmation">
+
+                         @if( $errors->has('password') )
+
+                            {{ $errors->first('password') }}
+
+                        @endif
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input  id="artist" type="checkbox" name="artist"> Check If Artist
+
+                    </div>
+
+                    <br>
+
+                    <div class="modal-footer">
+
+               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+               <button type="button" class="btn btn-primary" type="submit">Register</button>
+
            </div>
+
+                </form>
+
+            </div>
+
        </div>
+
     </div>
+
+</div>
+
+<!-- login modal -->
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                <span aria-hidden="true">&times;</span>
+
+            </button>
+
+            <h4 class="modal-title" id="loginModalLabel">User Login</h4>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form method="POST" >
+
+                    {!! csrf_field() !!}
+
+                    <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
+                        <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+                    </div>
+
+                    <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
+                        <input class="form-control" type="password" name="password" id="password">
+                    </div>
+
+                    <div class ="form-group">
+                        <input class="form-control" type="checkbox" name="remember"> Remember Me
+                    </div>
+
+                    <div class="modal-footer">
+
+                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                       <button type="button" class="btn btn-primary" type="submit">Submit</button>
+
+                   </div>
+
+                </form>
+
+            </div>
+
+       </div>
+
+    </div>
+
 </div>
 
 
