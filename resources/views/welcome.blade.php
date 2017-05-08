@@ -1,9 +1,17 @@
 @include('layouts.master')
            
 <div class="img-responsive container">
+    
 
-    <img class="img-responsive mySlides" src="\img\gradient.jpg">
-    <img class="img-responsive mySlides" src="\img\gradient2.jpg">
+    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+
+    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+
+    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+
+    <img class="col-md-offset-2 col-md-4  img-thumbnail mySlides" src="\img\gradient.jpg">
+
+    <img class="col-md-4  img-thumbnail mySlides" src="\img\gradient.jpg">
  
     <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
