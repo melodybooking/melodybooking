@@ -1,19 +1,10 @@
-
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
     <div class="container">
 
       	<div id="navbarBrand" class="text-center navbar-header">
 
-      		<h3><a href="#"> Melody Booking </a>
-
-      			@if (Auth::check())
-
-					<strong>|| Hello: {{ Auth::user()->name }}</strong>
-
-				@endif
-
-			</h3>
+      		<h3><a href="#"> Melody Booking </a></h3>
       	
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
@@ -238,7 +229,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Submit</button>
+                       <button class="btn btn-primary" type="submit">Submit</button>
 
                    </div>
 

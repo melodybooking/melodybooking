@@ -201,7 +201,7 @@
 
 					<input class="btn-primary btn" type="file" multiple id="gallery-photo-add"></input>
 
-					<div id="previewGallery" class="img-thumbnail img-responsive center-align gallery">
+					<div id="previewGallery" class="img-responsive center-align gallery">
 
 					</div>
 
@@ -223,38 +223,7 @@
     <br>
 
     <script>
-    // Multiple images preview in browser
-    $(function() {
-	    
-	    var imagesPreview = function(input, placeToInsertImagePreview) {
-
-	        if (input.files) {
-
-	            var filesAmount = input.files.length;
-
-	            for (i = 0; i < filesAmount; i++) {
-
-	                var reader = new FileReader();
-
-	                reader.onload = function(event) {
-
-	                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-	                
-	                }
-
-	                reader.readAsDataURL(input.files[i]);
-	            }
-	        }
-
-	    };
-
-	    $('#gallery-photo-add').on('change', function() {
-
-	        imagesPreview(this, 'div.gallery');
-
-	    });
-
-	});
+   
 
 	</script>
 

@@ -1,34 +1,41 @@
 @extends('layouts.master')
-           
-<div class="img-responsive container">
-    
-    <div id="slideshow">
 
-            <img style ="position:absolute;" class="active rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+@section('content')
 
-            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+<div>
 
-            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+    <p>CONTENT 
 
-            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
-
-            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
-
-    </div> 
-         
-    <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-        Beginning.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam dolore odio voluptas aspernatur nemo itaque, reprehenderit illum, doloremque, corporis eum excepturi, repudiandae quo in! Molestias hic minus eius porro perferendis.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quisquam aspernatur sapiente, aliquid inventore eum dolorum animi earum obcaecati mollitia quas temporibus commodi est autem perferendis cupiditate numquam quaerat veniam.
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem similique, et eligendi fugiat eaque expedita, quia optio temporibus perferendis nobis saepe fuga cupiditate sapiente? Laboriosam ut exercitationem similique. Soluta, voluptatibus?
-        Ending.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ducimus labore consequuntur quia quibusdam asperiores suscipit, ut obcaecati. Porro nobis magnam laudantium eius sapiente repudiandae adipisci accusantium quas consectetur molestias.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis hic, ab, labore aspernatur explicabo velit voluptatem nemo laborum numquam. Cumque maxime culpa placeat reprehenderit, soluta iste et! Reprehenderit, veniam tempore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, tempora, temporibus. Cupiditate accusantium, quia tempore dicta perspiciatis atque dignissimos sunt repudiandae aperiam incidunt cum. Expedita ex amet iste laborum ratione.
 
     </p>
 
-
-
 </div>
+
+<div id="slideShowContainer" class="container img-responsive center-align">
+    
+    <div id="slideshow" class="row center align img-responsive">
+
+        <ul class="welcomeSlides">
+
+            <li><img alt="" src="\img\gradient.jpg"></li>
+
+            <li><img alt="" src="\img\gradient2.jpg"></li>
+
+            <li><img alt="" src="\img\gradient.jpg"></li>
+
+            <li><img alt="" src="\img\gradient2.jpg"></li>
+
+            <li><img alt="" src="\img\gradient.jpg"></li>
+
+        </ul>
+
+    </div> 
+    
+    
+</div>
+
+@stop
 
 
 

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-
+	
 	font-family: 'Crimson Text', serif;
 	margin-top:100px;
 	padding:20px;
@@ -29,39 +29,55 @@ footer {
 
 /*welcome blade images*/
 
-body > div > img.col-md-4
+.welcomeSlides {
 
-{
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 
-	box-shadow: 0px 10px 5px #888888;
+}
 
-	background-color: #9BC4BC;
+.welcomeSlides li {
+
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+}
+
+.welcomeSlides li:first-child {
+
+  position: relative;
+  display: block;
+  float: left;
+
+}
+
+.welcomeSlides img {
+
+  display: block;
+  height: 400px;
+  float: left;
+  width: 800px;
+  border: 0;
+
+}
+
+#slideShowContainer {
 	
-	padding: 1px;
+	margin-top: 30px;
+	height: 400px;
+	width:800px;
 
 }
 
-#slideshow {
-    position:relative;
-    height:350px;
-}
-
-#slideshow IMG {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:8;
-}
-
-#slideshow IMG.active {
-    z-index:10;
-}
-
-#slideshow IMG.last-active {
-    z-index:9;
-}
-
-/* nav bar header*/
+/* nav bar Header*/
 
 #navbarBrand{ 
 
@@ -106,7 +122,6 @@ body > div > img.col-md-4
 	color: #284B63;
 
 }
-
 
 /*links*/
 
@@ -227,6 +242,7 @@ div#signUpModal {
 }
 
 .modal.fade .modal-dialog {
+
     -webkit-transform: scale(0.1);
     -moz-transform: scale(0.1);
     -ms-transform: scale(0.1);
@@ -236,9 +252,12 @@ div#signUpModal {
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
+
 }
 
+
 .modal.fade.in .modal-dialog {
+
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -246,6 +265,7 @@ div#signUpModal {
     -webkit-transform: translate3d(0, 300px, 0);
     transform: translate3d(0, 300px, 0);
     opacity: 1;
+
 }
 
 /*img upload*/
@@ -256,7 +276,6 @@ div#signUpModal {
 	margin-top: 5px;
 	padding: 1px;
 	border-radius: 1px;
-	background-color: black;
 	height: 100px;
 	width: 200px;
 	
@@ -283,18 +302,3 @@ div#signUpModal {
 	margin-bottom: 10px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
