@@ -1,5 +1,5 @@
 <footer id="footer" class="row navbar-fixed-bottom footer container-fluid">
-    
+
     <div class="container text-right">
 
         <div class="row img-responsive text-center text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">

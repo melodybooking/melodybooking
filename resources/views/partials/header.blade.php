@@ -1,7 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
-
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
     <div class="container">
@@ -9,7 +5,6 @@
       	<div id="navbarBrand" class="text-center navbar-header">
 
       		<h3><a href="#"> Melody Booking </a>
-
 
       			@if (Auth::check())
 
@@ -19,7 +14,7 @@
 
 			</h3>
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
 	          	<span class="sr-only">Toggle navigation</span>
 
@@ -47,59 +42,33 @@
 
 		            	<li class="divider"></li>
 
-<<<<<<< HEAD
-				    <li><a>Home</a></li>
-
-        			@if (Auth::check())
-=======
 						<li><a href="#">Home</a></li>
 
 		        		@if (Auth::check())
 
 			                <li><a href="#">Edit Availabilty</a></li>
->>>>>>> c9f8c52b45e6b40d7315d37a8bd0e4e01c601bfa
 
 			                <li><a href="#">Edit Account</a></li>
 
 		    				<li><a href="#">Edit Password</a></li>
 
-<<<<<<< HEAD
-        				<li><a>Edit Password</a></li>
-=======
 		    				<li><a href="#">Log Out</a></li>
->>>>>>> c9f8c52b45e6b40d7315d37a8bd0e4e01c601bfa
 
 		        		@else
 
-<<<<<<< HEAD
-        			@else
-=======
 							<!-- Button trigger modal -->
->>>>>>> c9f8c52b45e6b40d7315d37a8bd0e4e01c601bfa
 
 		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-<<<<<<< HEAD
-                        <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
-
-        			@endif
-=======
 		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
 		        		@endif
->>>>>>> c9f8c52b45e6b40d7315d37a8bd0e4e01c601bfa
 
 		                <li><a href="#">Featured Artist</a></li>
 
-<<<<<<< HEAD
-                <li><a>Contact Us</a></li>
-
-            </ul>
-=======
 		                <li><a href="#">Contact Us</a></li>
 
 		            </ul>
->>>>>>> c9f8c52b45e6b40d7315d37a8bd0e4e01c601bfa
 
 	          	</li>
 
@@ -147,7 +116,7 @@
 
             <div class="modal-body rounded">
 
-                <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
+                <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
 
@@ -210,7 +179,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Register</button>
+                       <button class="btn btn-primary" type="submit">Register</button>
 
                     </div>
 
@@ -281,5 +250,3 @@
     </div>
 
 </div>
-
-@stop

@@ -1,7 +1,9 @@
 @extends('layouts.master')
-           
+
+@section('content')
+
 <div class="img-responsive container">
-    
+
     <div id="slideshow">
 
             <img style ="position:absolute;" class="active rounded img-thumbnail mySlides" src="\img\gradient.jpg">
@@ -14,8 +16,8 @@
 
             <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
 
-    </div> 
-         
+    </div>
+
     <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
         Beginning.
@@ -30,8 +32,4 @@
 
 </div>
 
-
-
-
-
-
+@stop
