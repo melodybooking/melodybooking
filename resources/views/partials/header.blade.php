@@ -52,7 +52,7 @@
 
 		    				<li><a href="#">Edit Password</a></li>
 
-		    				<li><a href="#">Log Out</a></li>
+		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 		        		@else
 
