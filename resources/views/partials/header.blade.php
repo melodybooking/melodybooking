@@ -1,3 +1,6 @@
+@extends('layouts.master')
+
+@section('content')
 
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
@@ -5,7 +8,7 @@
 
       <div class="text-center navbar-header">
 
-      		<h3> Melody Booking 
+      		<h3> Melody Booking
 
       			@if (Auth::check())
 
@@ -14,7 +17,7 @@
 				@endif
 
 			</h3>
-      	
+
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
           <span class="sr-only">Toggle navigation</span>
@@ -44,30 +47,30 @@
             	<li class="divider"></li>
 
 				    <li><a>Home</a></li>
-		
-        			@if (Auth::check()) 
+
+        			@if (Auth::check())
 
                         <li><a>Edit Availabilty</a></li>
 
                         <li><a>Edit Account</a></li>
 
-        				<li><a>Edit Password</a></li> 
+        				<li><a>Edit Password</a></li>
 
         				<li><a>Log Out</a></li>
 
-        			@else 
+        			@else
 
 						<!-- Button trigger modal -->
                         <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
                         <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
-						
+
         			@endif
 
                 <li><a>Featured Artist</a></li>
 
                 <li><a>Contact Us</a></li>
-              
+
             </ul>
 
           </li>
@@ -116,7 +119,7 @@
 
             <div class="modal-body rounded">
 
-                <form method="POST">
+                <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}">
 
                     {!! csrf_field() !!}
 
@@ -217,7 +220,7 @@
 
             <div class="modal-body">
 
-                <form method="POST">
+                <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
 
                     {!! csrf_field() !!}
 
@@ -251,10 +254,4 @@
 
 </div>
 
-
-
-
-
-
-		
-	
+@stop
