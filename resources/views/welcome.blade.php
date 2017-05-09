@@ -2,17 +2,20 @@
            
 <div class="img-responsive container">
     
+    <div id="slideshow">
 
-    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+            <img style ="position:absolute;" class="active rounded img-thumbnail mySlides" src="\img\gradient.jpg">
 
-    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
 
-    <img class="col-md-4 rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
 
-    <img class="col-md-offset-2 col-md-4  img-thumbnail mySlides" src="\img\gradient.jpg">
+            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
 
-    <img class="col-md-4  img-thumbnail mySlides" src="\img\gradient.jpg">
- 
+            <img style ="position:absolute;" class=" rounded img-thumbnail mySlides" src="\img\gradient.jpg">
+
+    </div> 
+         
     <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
         Beginning.
@@ -22,6 +25,8 @@
         Ending.
 
     </p>
+
+
 
 </div>
 

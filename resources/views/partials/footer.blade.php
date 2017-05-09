@@ -2,7 +2,7 @@
     
     <div class="container text-right">
 
-        <div class=" row img-responsive text-center text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row img-responsive text-center text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                 <a href="http://google.com">About Us</a>
 
@@ -61,7 +61,7 @@
 
 	<div class=" row text-center img-responsive col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                <a href="http://google.com">© 2017 JJJ.</a>
+                <a href="/">© 2017 JJJ.</a>
 
         </div>
 
