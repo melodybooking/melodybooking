@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form id="createArtist" class="border" method="post" enctype="multipart/form-data">
+    <form id="createArtist" class="container" method="post" enctype="multipart/form-data">
 
         {!! csrf_field() !!}
 
@@ -193,20 +193,24 @@
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
-							<input type="file" name="image" id="image" required/>
-
 						</span>
 
 			   		</div>
 
-					<img class="img-thumbnail thumbnail" id="preview" style="width: 200px; height: 150px;">
 
-					<div>
+					<input class="btn btn-success" type="file" multiple id="gallery-photo-add">
 
-						<button class="btn btn-primary" type="submit" style="margin-bottom: 5%;">
+					
 
- 							<i class="icon-user icon-white"></i>Save</button>
+					<div id="previewGallery" class="col-md-4 gallery">
 
+					</div>
+
+					
+
+					<div class="col-md-12">
+
+						<button class="btn btn-primary" type="submit" style="margin-bottom: 5%;">Save</button>
 					</div>
 
 			</div>
@@ -216,23 +220,44 @@
 		<input type="hidden" name="id" value="{{Auth::id()}}">
 
     </form>
-	
-	<script type="text/javascript"> 
 
-	document.getElementById("image").onchange = function () {
-		 var reader = new FileReader();
+    <script>
 
-		 reader.onload = function (e) {
-			 // get loaded data and render thumbnail.
-			 document.getElementById("preview").src = e.target.result;
-		 };
+    $(function() {
+	    // Multiple images preview in browser
+	    var imagesPreview = function(input, placeToInsertImagePreview) {
 
-		 // read the image file as a data URL.
-		 reader.readAsDataURL(this.files[0]);
+	        if (input.files) {
 
-	 };
+	            var filesAmount = input.files.length;
 
-	 </script>
+	            for (i = 0; i < filesAmount; i++) {
+
+	                var reader = new FileReader();
+
+	                reader.onload = function(event) {
+
+	                    $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+	                
+	                }
+
+	                reader.readAsDataURL(input.files[i]);
+	            }
+	        }
+
+	    };
+
+	    $('#gallery-photo-add').on('change', function() {
+
+	        imagesPreview(this, 'div.gallery');
+
+	    });
+
+	});
+
+	</script>
+
+
 
 @stop
 

@@ -2,14 +2,13 @@
     
     <div class="container text-right">
 
-        <div class="text-left col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class=" row img-responsive text-center text-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                 <a href="http://google.com">About Us</a>
 
-
         </div>
 
-        <div class="text-right col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="img-responsive col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
         	<a href="https://joshuamw322.com">Josh Williams</a>
 
@@ -25,13 +24,8 @@
 
 		</div>
 
-		<div class="text-left col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-                <a href="http://google.com">© 2017 JJJ.</a>
-
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class="img-responsive  col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
         	<a href="https://joshuamw322.com">John Watts</a>
 
@@ -47,7 +41,7 @@
 
 		</div>
 
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="img-responsive col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
         	<a href="https://joshuamw322.com">Jeran Smith</a>
 
@@ -64,6 +58,12 @@
 		</div>
 
 	</div>
+
+	<div class=" row text-center img-responsive col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <a href="http://google.com">© 2017 JJJ.</a>
+
+        </div>
 
 
 </footer>

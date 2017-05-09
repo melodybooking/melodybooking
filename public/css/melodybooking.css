@@ -57,12 +57,31 @@ a.btn-sm {
 }
 
 div#loginModal {
+
 	opacity: .95;
+
 }
 
 div#signUpModal {
+
 	opacity: .95;
+
 }
+
+#previewGallery, img {
+
+	height: 200px;
+	width: 200px;
+	display: block;
+    width: auto;
+    max-height: 100%;
+
+}
+
+
+
+
+
 
 
 
