@@ -237,7 +237,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Submit</button>
+                       <button class="btn btn-primary" type="submit">Submit</button>
 
                    </div>
 
