@@ -96,13 +96,13 @@
 
 <!-- sign up Modal -->
 
-<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
+<div class="modal rounded fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
 
-    <div class="modal-dialog" role="document">
+    <div class="rounded-top modal-dialog" role="document">
 
-        <div class="modal-content">
+        <div class="modal-content rounded">
 
-            <div class="modal-header">
+            <div class="modal-header rounded">
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -114,9 +114,9 @@
 
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body rounded">
 
-                <form method="POST" >
+                <form method="POST">
 
                     {!! csrf_field() !!}
 
@@ -175,13 +175,15 @@
 
                     <br>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer rounded">
 
-               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-               <button type="button" class="btn btn-primary" type="submit">Register</button>
+                       <button type="button" class="btn btn-primary" type="submit">Register</button>
 
-           </div>
+                    </div>
+
+                    <br>
 
                 </form>
 
@@ -195,27 +197,27 @@
 
 <!-- login modal -->
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+<div class="modal rounded fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
 
     <div class="modal-dialog" role="document">
 
-        <div class="modal-content">
+        <div class="rounded modal-content">
 
-            <div class="modal-header">
+            <div class="rounded modal-header">
 
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
 
-            </button>
+                </button>
 
-            <h4 class="modal-title" id="loginModalLabel">User Login</h4>
+                <h4 class="modal-title" id="loginModalLabel">User Login</h4>
 
             </div>
 
             <div class="modal-body">
 
-                <form method="POST" >
+                <form method="POST">
 
                     {!! csrf_field() !!}
 

@@ -25,8 +25,6 @@
 
 		<main class="container container-fluid img-responsive">
 
-			
-
 			@if (Session::has('successMessage'))
 				<div class="alert alert-success">{{ session('successMessage') }}</div>
 			@endif
