@@ -3,9 +3,9 @@
 
     <div class="container">
 
-      <div class="text-center navbar-header">
+      	<div id="navbarBrand" class="text-center navbar-header">
 
-      		<h3> Melody Booking 
+      		<h3><a href="#"> Melody Booking </a>
 
       			@if (Auth::check())
 
@@ -15,80 +15,81 @@
 
 			</h3>
       	
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
-          <span class="sr-only">Toggle navigation</span>
+	          	<span class="sr-only">Toggle navigation</span>
 
-          <span class="icon-bar"></span>
+	          	<span class="icon-bar"></span>
 
-          <span class="icon-bar"></span>
+	          	<span class="icon-bar"></span>
 
-          <span class="icon-bar"></span>
+	          	<span class="icon-bar"></span>
 
-        </button>
+	        </button>
 
-      </div>
+    	</div>
 
-      <div id="navbar" class="navbar-collapse collapse">
+      	<div id="navbar" class="navbar-collapse collapse">
 
-        <ul class="nav navbar-nav navbar-right">
+	        <ul class="nav navbar-nav navbar-right">
 
-          <li class="dropdown">
+	          	<li class="dropdown">
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
 
-            <ul class="dropdown-menu" role="menu">
+		            <ul class="dropdown-menu" role="menu">
 
-            	<li class="dropdown-header">User Menu</li>
+		            	<li class="dropdown-header">User Menu</li>
 
-            	<li class="divider"></li>
+		            	<li class="divider"></li>
 
-				    <li><a>Home</a></li>
-		
-        			@if (Auth::check()) 
+						<li><a href="#">Home</a></li>
+				
+		        		@if (Auth::check()) 
 
-                        <li><a>Edit Availabilty</a></li>
+			                <li><a href="#">Edit Availabilty</a></li>
 
-                        <li><a>Edit Account</a></li>
+			                <li><a href="#">Edit Account</a></li>
 
-        				<li><a>Edit Password</a></li> 
+		    				<li><a href="#">Edit Password</a></li> 
 
-        				<li><a>Log Out</a></li>
+		    				<li><a href="#">Log Out</a></li>
 
-        			@else 
+		        		@else 
 
-						<!-- Button trigger modal -->
-                        <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+							<!-- Button trigger modal -->
 
-                        <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
-						
-        			@endif
+		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-                <li><a>Featured Artist</a></li>
+		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+								
+		        		@endif
 
-                <li><a>Contact Us</a></li>
-              
-            </ul>
+		                <li><a href="#">Featured Artist</a></li>
 
-          </li>
+		                <li><a href="#">Contact Us</a></li>
+		              
+		            </ul>
 
-        </ul>
+	          	</li>
 
-        <form method="GET" class="navbar-form navbar-right">
+	        </ul>
 
-			{!! csrf_field() !!}
+	        <form method="GET" class="navbar-form navbar-right">
 
-			<div class="img-responsive form-group">
+				{!! csrf_field() !!}
 
-				Search: <input class="form-control text-left" type="text" name="search" id="search">
+				<div class="img-responsive form-group">
 
-			</div>
+					Search: <input class="form-control text-left" type="text" name="search" id="search">
 
-			<input class=" btn btn-primary" type="submit" value="submit">
+				</div>
 
-		</form>
+				<input class=" btn btn-primary" type="submit" value="submit">
 
-      </div>
+			</form>
+
+      	</div>
 
     </div>
 
@@ -122,7 +123,7 @@
 
                     <div class="form-group">Name
 
-                        <input class="form-control" type="name" name="name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" value="{{ old('name') }}">
 
                         @if( $errors->has('name') )
 
@@ -133,7 +134,7 @@
 
                     <div class="form-group">Email
 
-                        <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
 
                          @if( $errors->has('email') )
 
@@ -145,7 +146,7 @@
 
                     <div class="form-group">Password
 
-                        <input class="form-control" type="password" name="password">
+                        <input id="newUserPassword" class="form-control" type="password" name="password">
 
                          @if( $errors->has('password') )
 
@@ -157,7 +158,7 @@
 
                     <div class="form-group">Confirm Password
 
-                        <input class="form-control" type="password" name="password_confirmation">
+                        <input id="newUserConfirmPassword" class="form-control" type="password" name="password_confirmation">
 
                          @if( $errors->has('password') )
 
@@ -222,11 +223,11 @@
                     {!! csrf_field() !!}
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
-                        <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+                        <input id="userLoginEmail" class="form-control" type="email" name="email" value="{{ old('email') }}">
                     </div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
-                        <input class="form-control" type="password" name="password" id="password">
+                        <input id="userLoginPassword" class="form-control" type="password" name="password" id="password">
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
