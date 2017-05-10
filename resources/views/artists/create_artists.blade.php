@@ -2,20 +2,20 @@
 
 @section('content')
 
-    <form id="createArtist" class="img-responsive container-fluid" method="POST" enctype="multipart/form-data">
+    <form id="createArtist" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data" >
 
         {!! csrf_field() !!}
 
         <div class="form-group">
 
-            <label for="title">Artist's Name</label>
+            <label for="artist_name">Artist's Name</label>
 
-            <input type="text" id="artistName" name="artistName" value="{{ old('artistName') }}" class="form-control">
+            <input type="text" id="artist_name" name="artist_name" value="{{ old('artist_name') }}" class="form-control">
 
-            @if ($errors->has('title'))
+            @if ($errors->has('artist_name'))
 
-                {!! $errors->first('artistName', '<span class="help-block">:message</span>') !!}
-            
+                {!! $errors->first('artist_name', '<span class="help-block">:message</span>') !!}
+
             @endif
 
         </div>
@@ -25,32 +25,49 @@
             <label for="email">Email</label>
 
             <input type="text" id="email" name="email" value="{{ old('email') }}" class="form-control">
-            
+
             @if ($errors->has('email'))
-                
+
                 <div class="alert alert-warning" role="alert">
-                    
+
                     {{ $errors->first('email') }}
                </div>
-            
+
             @endif
 
         </div>
 
         <div class="form-group">
-            
-            <label for="content">Artist's Biography</label>
-            
-            <textarea name="bio" id="bio" cols="30" rows="10" class="form-control">{{ old('bio') }}</textarea>
-            
-            @if ($errors->has('bio'))
-                
+
+            <label for="genre">Genre</label>
+
+            <input type="text" id="genre" name="genre" value="{{ old('genre') }}" class="form-control">
+
+            @if ($errors->has('genre'))
+
                 <div class="alert alert-warning" role="alert">
-                  
+
+                    {{ $errors->first('genre') }}
+               </div>
+
+            @endif
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="content">Artist's Biography</label>
+
+            <textarea name="bio" id="bio" cols="30" rows="10" class="form-control">{{ old('bio') }}</textarea>
+
+            @if ($errors->has('bio'))
+
+                <div class="alert alert-warning" role="alert">
+
                 	{{ $errors->first('bio') }}
-               
+
                 </div>
-            
+
             @endif
 
         </div>
@@ -58,35 +75,35 @@
         <div class="form-group">
 
             <label for="facebookUrl">Facebook Url</label>
-            
+
             <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('facebookUrl') }}</input>
-            
+
             @if ($errors->has('facebookUrl'))
-            
+
                 <div class="alert alert-warning" role="alert">
-            
+
                     {{ $errors->first('facebookUrl') }}
-            
+
                 </div>
-            
+
             @endif
 
-        </div> 
+        </div>
 
         <div class="form-group">
 
             <label for="instagramUrl">Instagram Url</label>
-            
+
             <input name="instagramUrl" id="instagramUrl" class="form-control">{{ old('instagramUrl') }}</input>
-            
+
             @if ($errors->has('instagramUrl'))
-            
+
                 <div class="alert alert-warning" role="alert">
-            
+
                     {{ $errors->first('instagramUrl') }}
-            
+
                 </div>
-            
+
             @endif
 
         </div>
@@ -94,17 +111,17 @@
         <div class="form-group">
 
             <label for="twitterUrl">Twitter Url</label>
-        
+
             <input name="twitterUrl" id="twitterUrl"  class="form-control">{{ old('twitterUrl') }}</input>
-        
+
             @if ($errors->has('twitterUrl'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('twitterUrl') }}
-        
+
                 </div>
-        
+
             @endif
 
         </div>
@@ -112,17 +129,17 @@
         <div class="form-group">
 
             <label for="soundCloudUrl">Sound Cloud Url</label>
-        
+
             <input name="soundCloudUrl" id="soundCloudUrl" class="form-control">{{ old('soundCloudUrl') }}</input>
-        
+
             @if ($errors->has('soundCloudUrl'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('soundCloudUrl') }}
-        
+
                 </div>
-        
+
             @endif
 
         </div>
@@ -130,25 +147,25 @@
         <div class="form-group">
 
             <label for="facebookUrl">BandCamp Url</label>
-        
+
             <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('facebookUrl') }}</input>
-        
+
             @if ($errors->has('facebookUrl'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('facebookUrl') }}
-        
+
                 </div>
-        
+
             @endif
 
-        </div> 
-		
+        </div>
+
 		<!-- Image upload -->
 
 		<div>
-	    
+
 	        @if (count($errors) > 0)
 
 				<div class="alert alert-danger">
@@ -183,7 +200,7 @@
 
             <!-- image preview -->
 
-			<div id="imageContainer row" class="control-group">
+			<div id="imageContainer" class="control-group">
 
 				 <label for="image">Image/s Upload</label>
 
@@ -199,7 +216,7 @@
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 
@@ -222,10 +239,4 @@
 
     <br>
 
-    <script>
-   
-
-	</script>
-
 @stop
-
