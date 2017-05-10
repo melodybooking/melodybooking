@@ -18,14 +18,14 @@ class PostsController extends Controller
     public function index(Request $request)
     {
      	if(isset($request->search)) {
-			$artist = Artist::select('artists.*')
+			$artist = Post::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
 			->orwhere('artist_name', 'like', "%$request->search%")
 			->orderBy('artists.created_at', 'DESC')
 			->paginate(6)->appends(['search' =>$request->search]);
 		} else {
-			$artists = Artist::with('user')->orderBy('artists.created_at', 'DESC')->paginate(6);
+			$artists = Post::with('user')->orderBy('artists.created_at', 'DESC')->paginate(6);
 		}
 
         $data = [];
@@ -52,9 +52,9 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-		$rules = Artist::$rules;
+		$rules = Post::$rules;
         $this->validate($request, $rules);
-        $artist = new Artist();
+        $artist = new Post();
 		$artist->artist_name = $request->artist_name;
         $artist->email = $request->email;
         $artist->bio = $request->bio;
@@ -72,7 +72,7 @@ class PostsController extends Controller
     }
     public function show(Request $request, $id)
     {
-        $artist = Artist::find($id);
+        $artist = Post::find($id);
 
         if (!$artist) {
             Log::error("Artist with id of $id not found.");
@@ -90,7 +90,7 @@ class PostsController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $artist = Artist::find($id);
+        $artist = Post::find($id);
 
         if (!$artist) {
             Log::error("Artist with id of $id not found.");
@@ -115,9 +115,9 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rules = Artist::$rules;
+        $rules = Post::$rules;
         $this->validate($request, $rules);
-        $artist = Artist::find($id);
+        $artist = Post::find($id);
         if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
             return redirect()->action('PostsController@index');
@@ -132,7 +132,7 @@ class PostsController extends Controller
     }
     public function destroy(Request $request, $id)
     {
-        $artist = Artist::find($id);
+        $artist = Post::find($id);
         if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
             return redirect()->action('PostsController@index');
