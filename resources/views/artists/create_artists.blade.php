@@ -15,7 +15,7 @@
 
             @if ($errors->has('artist_name'))
 
-                {!! $errors->first('artist_name', '<span class="help-block">:message</span>') !!}            
+                {!! $errors->first('artist_name', '<span class="help-block">:message</span>') !!}
 
             @endif
 
@@ -40,23 +40,6 @@
 
         <div class="form-group">
 
-            <label for="genre">Genre</label>
-
-            <input type="text" id="genre" name="genre" value="{{ old('genre') }}" class="form-control">
-
-            @if ($errors->has('genre'))
-
-                <div class="alert alert-warning" role="alert">
-
-                    {{ $errors->first('genre') }}
-               </div>
-
-            @endif
-
-        </div>
-
-        <div class="form-group">
-
             <label for="content">Artist's Biography</label>
 
             <textarea name="bio" id="bio" cols="30" rows="10" class="form-control">{{ old('bio') }}</textarea>
@@ -73,11 +56,11 @@
 
         </div>
             <div class="form-group">
-            
+
             <label for="genre">Genre</label>
-            
+
             <input name="genre" id="genre" class="form-control">
-            
+
 
             @if ($errors->has('genre'))
 
@@ -94,15 +77,15 @@
         <div class="form-group">
 
             <label for="facebook_url">Facebook Url</label>
-            
+
             <input name="facebook_url" id="facebook_url"  class="form-control">{{ old('facebook_url') }}</input>
-            
+
             @if ($errors->has('facebook_url'))
-            
+
                 <div class="alert alert-warning" role="alert">
-            
+
                     {{ $errors->first('facebook_url') }}
-            
+
 
                 </div>
 
@@ -113,15 +96,15 @@
         <div class="form-group">
 
             <label for="instagram_url">Instagram Url</label>
-            
+
             <input name="instagram_url" id="instagram_url" class="form-control">{{ old('instagram_url') }}</input>
-            
+
             @if ($errors->has('instagram_url'))
-            
+
                 <div class="alert alert-warning" role="alert">
-            
+
                     {{ $errors->first('instagram_url') }}
-            
+
                 </div>
 
             @endif
@@ -131,15 +114,15 @@
         <div class="form-group">
 
             <label for="twitter_url">Twitter Url</label>
-        
+
             <input name="twitter_url" id="twitter_url"  class="form-control">{{ old('twitter_url') }}</input>
-        
+
             @if ($errors->has('twitter_url'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('twitter_url') }}
-        
+
                 </div>
 
             @endif
@@ -149,15 +132,15 @@
         <div class="form-group">
 
             <label for="soundcloud_url">Sound Cloud Url</label>
-        
+
             <input name="soundcloud_url" id="soundcloud_url" class="form-control">{{ old('soundcloud_url') }}</input>
-        
+
             @if ($errors->has('soundcloud_url'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('soundcloud_url') }}
-        
+
                 </div>
 
             @endif
@@ -167,15 +150,15 @@
         <div class="form-group">
 
             <label for="bandcamp_url">BandCamp Url</label>
-        
+
             <input name="bandcamp_url" id="bandcamp_url"  class="form-control">{{ old('bandcamp_url') }}</input>
-        
+
             @if ($errors->has('bandcamp_url'))
-        
+
                 <div class="alert alert-warning" role="alert">
-        
+
                     {{ $errors->first('bandcamp_url') }}
-       
+
                 </div>
 
             @endif
