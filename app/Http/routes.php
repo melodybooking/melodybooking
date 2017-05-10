@@ -11,23 +11,18 @@
 |
 */
 
-Route::get('/', function () {
 
-    return view('welcome');
-
-});
-
+// Route::get('/', function () {
+//
+//     return view('welcome');
+//
+// });
+//
 Route::get('/create', function () {
 
 	return view('artists/create_artists');
-	
 });
-
-Route::get('/edit', function () {
-
-	return view('artists/edit_artists');
-
-});
+//
 
 // <?php
 
@@ -44,7 +39,7 @@ Route::get('/edit', function () {
 
 Route::get('/', 'HomeController@showWelcome');
 
-Route::resource('posts', 'PostsController'); // A resource controller
+Route::resource('/posts', 'PostsController'); // A resource controller
 
 
 // Authentication routes...
