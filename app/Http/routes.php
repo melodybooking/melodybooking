@@ -11,6 +11,7 @@
 |
 */
 
+
 // Route::get('/', function () {
 //
 //     return view('welcome');
@@ -22,6 +23,7 @@ Route::get('/create', function () {
 	return view('artists/create_artists');
 });
 //
+
 // <?php
 
 /*
