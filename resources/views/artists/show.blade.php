@@ -8,12 +8,12 @@
 		<p></p>
 
 		@if (Auth::id() == $post->created_by)
-	 	<a class="btn btn-primary" href="{{ action('PostsController@edit', $post->id) }}">Edit</a>
+	 	<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit</a>
 		@endif
 	</article>
 
 	<div class= "col-md-4">
-		<img src = "/uploads/images/{{ $post->image }}" class="img-responsive" id="showItemImage" alt="Image">
+		<img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showItemImage" alt="Image">
 	</div>
 
 

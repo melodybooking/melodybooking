@@ -59,7 +59,7 @@ class PostsController extends Controller
         $artist->email = $request->email;
         $artist->bio = $request->bio;
         $artist->genre = $request->genre;
-
+		$artist->created_by = \Auth::id();
 
 		if($request->hasFile('image')) {
 	    $artist->image = $this->imageUploadPost($request);
