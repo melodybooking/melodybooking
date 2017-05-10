@@ -41,7 +41,6 @@ Route::get('/', 'HomeController@showWelcome');
 
 Route::resource('/posts', 'PostsController'); // A resource controller
 
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
