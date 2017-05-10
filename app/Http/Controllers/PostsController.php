@@ -60,6 +60,12 @@ class PostsController extends Controller
         $artist->bio = $request->bio;
         $artist->genre = $request->genre;
 		$artist->created_by = \Auth::id();
+		$artist->facebook_url = $request->facebook_url;
+		$artist->instagram_url = $request->instagram_url;
+		$artist->twitter_url = $request->twitter_url;
+		$artist->soundcloud_url = $request->soundcloud_url;
+		$artist->bandcamp_url = $request->bandcamp_url;
+		
 
 		if($request->hasFile('image')) {
 	    $artist->image = $this->imageUploadPost($request);
