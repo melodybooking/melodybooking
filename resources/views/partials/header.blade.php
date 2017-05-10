@@ -1,94 +1,96 @@
-
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
     <div class="container">
 
-      <div class="text-center navbar-header">
+      	<div id="navbarBrand" class="text-center navbar-header">
 
-      		<h3> Melody Booking 
+
+      		<h3><a href="#"> Melody Booking </a>
 
       			@if (Auth::check())
 
-					<strong>|| Hello: {{ Auth::user()->name }}</strong>
+					  <strong>|| Hello: {{ Auth::user()->name }}</strong>
 
-				@endif
+				    @endif
 
-			</h3>
-      	
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+			    </h3>
 
-          <span class="sr-only">Toggle navigation</span>
 
-          <span class="icon-bar"></span>
+	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
-          <span class="icon-bar"></span>
+	          	<span class="sr-only">Toggle navigation</span>
 
-          <span class="icon-bar"></span>
+	          	<span class="icon-bar"></span>
 
-        </button>
+	          	<span class="icon-bar"></span>
 
-      </div>
+	          	<span class="icon-bar"></span>
 
-      <div id="navbar" class="navbar-collapse collapse">
+	        </button>
 
-        <ul class="nav navbar-nav navbar-right">
+    	</div>
 
-          <li class="dropdown">
+      	<div id="navbar" class="navbar-collapse collapse">
 
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
+	        <ul class="nav navbar-nav navbar-right">
 
-            <ul class="dropdown-menu" role="menu">
+	          	<li class="dropdown">
 
-            	<li class="dropdown-header">User Menu</li>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
 
-            	<li class="divider"></li>
+		            <ul class="dropdown-menu" role="menu">
 
-				    <li><a>Home</a></li>
-		
-        			@if (Auth::check()) 
+		            	<li class="dropdown-header">User Menu</li>
 
-                        <li><a>Edit Availabilty</a></li>
+		            	<li class="divider"></li>
 
-                        <li><a>Edit Account</a></li>
+						<li><a href="#">Home</a></li>
 
-        				<li><a>Edit Password</a></li> 
+		        		@if (Auth::check())
 
-        				<li><a>Log Out</a></li>
+			                <li><a href="#">Edit Availabilty</a></li>
 
-        			@else 
+			                <li><a href="#">Edit Account</a></li>
 
-						<!-- Button trigger modal -->
-                        <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+		    				<li><a href="#">Edit Password</a></li>
 
-                        <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
-						
-        			@endif
+		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
-                <li><a>Featured Artist</a></li>
+		        		@else
 
-                <li><a>Contact Us</a></li>
-              
-            </ul>
+							<!-- Button trigger modal -->
 
-          </li>
+		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-        </ul>
+		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
-        <form method="GET" class="navbar-form navbar-right">
+		        		@endif
 
-			{!! csrf_field() !!}
+		                <li><a href="#">Featured Artist</a></li>
 
-			<div class="img-responsive form-group">
+		                <li><a href="#">Contact Us</a></li>
 
-				Search: <input class="form-control text-left" type="text" name="search" id="search">
+		            </ul>
 
-			</div>
+	          	</li>
 
-			<input class=" btn btn-primary" type="submit" value="submit">
+	        </ul>
 
-		</form>
+	        <form method="GET" class="navbar-form navbar-right">
 
-      </div>
+				{!! csrf_field() !!}
+
+				<div class="img-responsive form-group">
+
+					Search: <input class="form-control text-left" type="text" name="search" id="search">
+
+				</div>
+
+				<input class=" btn btn-primary" type="submit" value="submit">
+
+			</form>
+
+      	</div>
 
     </div>
 
@@ -96,13 +98,13 @@
 
 <!-- sign up Modal -->
 
-<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
+<div class="modal rounded fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal">
 
-    <div class="modal-dialog" role="document">
+    <div class="rounded-top modal-dialog" role="document">
 
-        <div class="modal-content">
+        <div class="modal-content rounded">
 
-            <div class="modal-header">
+            <div class="modal-header rounded">
 
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -114,15 +116,15 @@
 
             </div>
 
-            <div class="modal-body">
+            <div class="modal-body rounded">
 
-                <form method="POST" >
+                <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
 
                     <div class="form-group">Name
 
-                        <input class="form-control" type="name" name="name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" value="{{ old('name') }}">
 
                         @if( $errors->has('name') )
 
@@ -133,7 +135,7 @@
 
                     <div class="form-group">Email
 
-                        <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
 
                          @if( $errors->has('email') )
 
@@ -145,7 +147,7 @@
 
                     <div class="form-group">Password
 
-                        <input class="form-control" type="password" name="password">
+                        <input id="newUserPassword" class="form-control" type="password" name="password">
 
                          @if( $errors->has('password') )
 
@@ -157,7 +159,7 @@
 
                     <div class="form-group">Confirm Password
 
-                        <input class="form-control" type="password" name="password_confirmation">
+                        <input id="newUserConfirmPassword" class="form-control" type="password" name="password_confirmation">
 
                          @if( $errors->has('password') )
 
@@ -175,13 +177,15 @@
 
                     <br>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer rounded">
 
-               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                       <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-               <button type="button" class="btn btn-primary" type="submit">Register</button>
+                       <button class="btn btn-primary" type="submit">Register</button>
 
-           </div>
+                    </div>
+
+                    <br>
 
                 </form>
 
@@ -195,36 +199,36 @@
 
 <!-- login modal -->
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
+<div class="modal rounded fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal">
 
     <div class="modal-dialog" role="document">
 
-        <div class="modal-content">
+        <div class="rounded modal-content">
 
-            <div class="modal-header">
+            <div class="rounded modal-header">
 
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
 
-            </button>
+                </button>
 
-            <h4 class="modal-title" id="loginModalLabel">User Login</h4>
+                <h4 class="modal-title" id="loginModalLabel">User Login</h4>
 
             </div>
 
             <div class="modal-body">
 
-                <form method="POST" >
+                <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
 
                     {!! csrf_field() !!}
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
-                        <input class="form-control" type="email" name="email" value="{{ old('email') }}">
+                        <input id="userLoginEmail" class="form-control" type="email" name="email" value="{{ old('email') }}">
                     </div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
-                        <input class="form-control" type="password" name="password" id="password">
+                        <input id="userLoginPassword" class="form-control" type="password" name="password" id="password">
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -235,7 +239,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Submit</button>
+                       <button class="btn btn-primary" type="submit">Submit</button>
 
                    </div>
 
@@ -248,11 +252,3 @@
     </div>
 
 </div>
-
-
-
-
-
-
-		
-	

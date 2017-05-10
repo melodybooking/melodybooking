@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form id="createArtist" class="border" method="post" enctype="multipart/form-data">
+    <form id="createArtist" class="img-responsive container-fluid" method="POST" enctype="multipart/form-data">
 
         {!! csrf_field() !!}
 
@@ -61,11 +61,11 @@
             
             <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('facebookUrl') }}</input>
             
-            @if ($errors->has('bio'))
+            @if ($errors->has('facebookUrl'))
             
                 <div class="alert alert-warning" role="alert">
             
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('facebookUrl') }}
             
                 </div>
             
@@ -77,13 +77,13 @@
 
             <label for="instagramUrl">Instagram Url</label>
             
-            <input name="instagramUrl" id="instagramUrl" class="form-control">{{ old('content') }}</input>
+            <input name="instagramUrl" id="instagramUrl" class="form-control">{{ old('instagramUrl') }}</input>
             
-            @if ($errors->has('bio'))
+            @if ($errors->has('instagramUrl'))
             
                 <div class="alert alert-warning" role="alert">
             
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('instagramUrl') }}
             
                 </div>
             
@@ -93,16 +93,15 @@
 
         <div class="form-group">
 
-        
             <label for="twitterUrl">Twitter Url</label>
         
-            <input name="twitterUrl" id="twitterUrl"  class="form-control">{{ old('content') }}</input>
+            <input name="twitterUrl" id="twitterUrl"  class="form-control">{{ old('twitterUrl') }}</input>
         
-            @if ($errors->has('bio'))
+            @if ($errors->has('twitterUrl'))
         
                 <div class="alert alert-warning" role="alert">
         
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('twitterUrl') }}
         
                 </div>
         
@@ -112,15 +111,15 @@
 
         <div class="form-group">
 
-            <label for="soundcloudUrl">Sound Cloud Url</label>
+            <label for="soundCloudUrl">Sound Cloud Url</label>
         
-            <input name="soundcloudUrl" id="soundcloudUrl" class="form-control">{{ old('content') }}</input>
+            <input name="soundCloudUrl" id="soundCloudUrl" class="form-control">{{ old('soundCloudUrl') }}</input>
         
-            @if ($errors->has('bio'))
+            @if ($errors->has('soundCloudUrl'))
         
                 <div class="alert alert-warning" role="alert">
         
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('soundCloudUrl') }}
         
                 </div>
         
@@ -132,13 +131,13 @@
 
             <label for="facebookUrl">BandCamp Url</label>
         
-            <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('content') }}</input>
+            <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('facebookUrl') }}</input>
         
-            @if ($errors->has('bio'))
+            @if ($errors->has('facebookUrl'))
         
                 <div class="alert alert-warning" role="alert">
         
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('facebookUrl') }}
         
                 </div>
         
@@ -147,6 +146,7 @@
         </div> 
 		
 		<!-- Image upload -->
+
 		<div>
 	    
 	        @if (count($errors) > 0)
@@ -181,9 +181,11 @@
 
 			@endif
 
-			<div class="control-group">
+            <!-- image preview -->
 
-				 <label for="image">Image</label>
+			<div id="imageContainer row" class="control-group">
+
+				 <label for="image">Image/s Upload</label>
 
 					<div>
 
@@ -193,19 +195,20 @@
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
-							<input type="file" name="image" id="image" required/>
-
 						</span>
 
 			   		</div>
 
-					<img class="img-thumbnail thumbnail" id="preview" style="width: 200px; height: 150px;">
+					<input class="btn-primary btn" type="file" multiple id="gallery-photo-add"></input>
 
-					<div>
+					<div id="previewGallery" class="img-responsive center-align gallery">
 
-						<button class="btn btn-primary" type="submit" style="margin-bottom: 5%;">
+					</div>
 
- 							<i class="icon-user icon-white"></i>Save</button>
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<button class="btn btn-success" type="submit" style="margin-top: 5%; margin-bottom: 5%;">Save</button>
 
 					</div>
 
@@ -216,23 +219,13 @@
 		<input type="hidden" name="id" value="{{Auth::id()}}">
 
     </form>
-	
-	<script type="text/javascript"> 
 
-	document.getElementById("image").onchange = function () {
-		 var reader = new FileReader();
+    <br>
 
-		 reader.onload = function (e) {
-			 // get loaded data and render thumbnail.
-			 document.getElementById("preview").src = e.target.result;
-		 };
+    <script>
+   
 
-		 // read the image file as a data URL.
-		 reader.readAsDataURL(this.files[0]);
-
-	 };
-
-	 </script>
+	</script>
 
 @stop
 

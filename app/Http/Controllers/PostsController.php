@@ -3,11 +3,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Artist;
+use App\Models\Post;
 use Log;
 use Session;
 
-class ArtistsController extends Controller
+class PostsController extends Controller
 {
 	public function __construct(){
 
@@ -18,14 +18,14 @@ class ArtistsController extends Controller
     public function index(Request $request)
     {
      	if(isset($request->search)) {
-			$artists = Artist::select('artists.*')
+			$artist = Artist::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
-			->orwhere('name', 'like', "%$request->search%")
+			->orwhere('artist_name', 'like', "%$request->search%")
 			->orderBy('artists.created_at', 'DESC')
 			->paginate(6)->appends(['search' =>$request->search]);
 		} else {
-			$artists = Artist::with('user')->orderBy('posts.created_at', 'DESC')->paginate(6);
+			$artists = Artist::with('user')->orderBy('artists.created_at', 'DESC')->paginate(6);
 		}
 
         $data = [];
@@ -35,10 +35,10 @@ class ArtistsController extends Controller
 
     public function create(Request $request)
     {
-        return view('artists.create');
+        return view('artists.create_artists');
     }
 
-	public function imageUploadArtist(Request $request)
+	public function imageUploadPost(Request $request)
 	   {
 		   $this->validate($request, [
 			   'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -55,20 +55,20 @@ class ArtistsController extends Controller
 		$rules = Artist::$rules;
         $this->validate($request, $rules);
         $artist = new Artist();
-        $artist->title = $request->title;
-        $artist->url = $request->url;
-        $artist->content = $request->content;
-        $artist->created_by = $request->id;
+		$artist->artist_name = $request->artist_name;
+        $artist->email = $request->email;
+        $artist->bio = $request->bio;
+        $artist->genre = $request->genre;
 
 
 		if($request->hasFile('image')) {
-	    $artist->image = $this->imageUploadArtist($request);
+	    $artist->image = $this->imageUploadPost($request);
 		}
 		$artist->save();
-		Log::info("New artist saved", $request->all());
+		Log::info("New Artist saved", $request->all());
 
         $request->session()->flash('successMessage', 'Artist saved successfully');
-        return redirect()->action('ArtistsController@show', [$artist->id]);
+        return redirect()->action('PostsController@show', [$artist->id]);
     }
     public function show(Request $request, $id)
     {
@@ -82,7 +82,12 @@ class ArtistsController extends Controller
         $data['artist'] = $artist;
         return view('artists.show')->with($data);
     }
-
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function edit(Request $request, $id)
     {
         $artist = Artist::find($id);
@@ -93,15 +98,21 @@ class ArtistsController extends Controller
         }
 
 		if($artist->user->id != \Auth::id()) {
-			Session::flash('errorMessage', "Only the artist can edit this post.");
-			return redirect()->action('ArtistsController@index');
+			Session::flash('errorMessage', "Only the Artist author can edit this Artist.");
+			return redirect()->action('PostsController@index');
 		}
         $data = [];
         $data['artist'] = $artist;
 
         return view('artists.edit')->with($data);
     }
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $rules = Artist::$rules;
@@ -109,24 +120,24 @@ class ArtistsController extends Controller
         $artist = Artist::find($id);
         if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
-            return redirect()->action('ArtistsController@index');
+            return redirect()->action('PostsController@index');
         }
-        $artist->title = $request->title;
-        $artist->url = $request->url;
-        $artist->content = $request->content;
-        $artist->created_by = $request->id;
+		$artist->artist_name = $request->artist_name;
+        $artist->email = $request->email;
+        $artist->bio = $request->bio;
+        $artist->genre = $request->genre;
         $artist->save();
         $request->session()->flash('successMessage', 'Artist saved successfully');
-        return redirect()->action('ArtistsController@show', [$artist->id]);
+        return redirect()->action('PostsController@show', [$artist->id]);
     }
     public function destroy(Request $request, $id)
     {
         $artist = Artist::find($id);
         if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
-            return redirect()->action('ArtistsController@index');
+            return redirect()->action('PostsController@index');
         }
         $artist->delete();
-        return view('artist.index');
+        return view('artists.index');
     }
 }

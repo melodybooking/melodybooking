@@ -1,36 +1,137 @@
 html {
-  position: relative;
-  min-height: 100%;
+
+  	position: relative;
+ 	min-height: 100%;
+  	font-family: 'Crimson Text', serif;
+
 }
 
 body {
-
+	
+	font-family: 'Crimson Text', serif;
 	margin-top:100px;
 	padding:20px;
+
 }
+
+/*footer*/
 
 footer {
 	
-	padding-top: 20px;
+	font-family: 'Crimson Text', serif;
+	padding-top: 10px;
 	position: absolute;
 	bottom: 0;
 	height: 120px;
-	background: linear-gradient(to bottom right, #ECEBF3, #4D6A6D);
+	background: linear-gradient(to bottom right, #CFDBD5, #4D6A6D);
 
 }
 
-body > div > img.col-md-4
+/*welcome blade images*/
 
-{
-	background-color: #9BC4BC;
-	padding: 1px;
+.welcomeSlides {
+
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
 }
 
-#header {
+.welcomeSlides li {
+
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+
+}
+
+.welcomeSlides li:first-child {
+
+  position: relative;
+  display: block;
+  float: left;
+
+}
+
+.welcomeSlides img {
+
+  display: block;
+  height: 400px;
+  float: left;
+  width: 800px;
+  border: 0;
+
+}
+
+#slideShowContainer {
+	
+	margin-top: 30px;
+	height: 400px;
+	width:800px;
+
+}
+
+/* nav bar Header*/
+
+#navbarBrand{ 
+
+  background: url("/img/gradient.jpg") center / contain no-repeat;
+
+}
+
+#navbarBrand > h3 > a {
 
 	color: black;
+
+}
+
+#navbarBrand > h3 > a:hover {
+
+	color: #284B63 ;
+
+}
+
+
+#header {
+	
+	font-family: 'Crimson Text', serif;
+	font-size: 18px;
+	color: black;
 	margin-bottom:150px;
-	background-image: url("/img/gradient2.jpg");
+	background: linear-gradient(to bottom right, #CFDBD5, #4D6A6D);
+
+}
+
+/*nav bar header*/
+#navbar > ul > li > a {
+
+	font-family: 'Crimson Text', serif;
+	color: black;
+
+}
+
+#navbar > ul > li > a:hover {
+
+	font-family: 'Crimson Text', serif;
+	color: #284B63;
+
+}
+
+/*links*/
+
+a {
+	color: #CFDBD5;
+}
+
+a:hover {
+
+	color: #284B63
 
 }
 
@@ -41,9 +142,12 @@ a.btn-sm {
 
 }
 
-.modal-header, h4, .close {
+/*modals*/
 
-  	background-color: #5cb85c;
+.modal-header, h4, .close {
+	
+	font-family: 'Crimson Text', serif;
+  	background-color: #4D6A6D;
   	color:white !important;
   	text-align: center;
   	font-size: 30px;
@@ -52,24 +156,149 @@ a.btn-sm {
 
 .modal-footer {
 
+	font-family: 'Crimson Text', serif;
   	background-color: #f9f9f9;
 
 }
 
 div#loginModal {
+	
+	font-family: 'Crimson Text', serif;	
 	opacity: .95;
+
 }
 
 div#signUpModal {
+
+	font-family: 'Crimson Text', serif;	
 	opacity: .95;
+
+}
+
+#userLoginEmail {
+
+	color: #B4B8AB;
+
+}
+
+#userLoginEmail:focus {
+
+	color: #040F16;
+
+}
+
+#userLoginPassword {
+
+	color: #B4B8AB;
+
+}
+
+#userLoginPassword:focus {
+
+	color: #040F16;
+
+}
+
+#newUserName {
+
+	color: #B4B8AB;
+
+}
+
+#newUserName:focus {
+
+	color: #040F16;
+
+}
+
+#newUserEmail {
+	
+	color: #B4B8AB;
+
+}
+
+#newUserEmail:focus {
+
+	color: #040F16;
+
+}
+
+#newUserPassword {
+
+	color: #B4B8AB;
+
+}
+
+#newUserPassword:focus {
+
+	color: #040F16;
+
+}
+
+#newUserConfirmPassword {
+
+	color: #B4B8AB;
+
+}
+
+.modal.fade .modal-dialog {
+
+    -webkit-transform: scale(0.1);
+    -moz-transform: scale(0.1);
+    -ms-transform: scale(0.1);
+    transform: scale(0.1);
+    top: -300px;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
 }
 
 
+.modal.fade.in .modal-dialog {
 
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform: translate3d(0, 300px, 0);
+    transform: translate3d(0, 300px, 0);
+    opacity: 1;
 
+}
 
+/*img upload*/
 
+#previewGallery img {
+	
 
+	margin-top: 5px;
+	padding: 1px;
+	border-radius: 1px;
+	height: 100px;
+	width: 200px;
+	
+}
 
+.img-thumbnail {
 
+	margin-top: 5px;
+	width: auto;
+	height: auto;
+	background-color: #040F14;
+	border-style: solid;
+	text-align: center;
 
+}
+
+#createArtist > div:nth-child(10)
+
+{
+
+	padding-top: 5px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom: 10px;
+
+}
