@@ -1,20 +1,21 @@
-
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
     <div class="container">
 
       	<div id="navbarBrand" class="text-center navbar-header">
 
+
       		<h3><a href="#"> Melody Booking </a>
 
       			@if (Auth::check())
 
-					<strong>|| Hello: {{ Auth::user()->name }}</strong>
+					  <strong>|| Hello: {{ Auth::user()->name }}</strong>
 
-				@endif
+				    @endif
 
-			</h3>
-      	
+			    </h3>
+
+
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
 	          	<span class="sr-only">Toggle navigation</span>
@@ -44,31 +45,31 @@
 		            	<li class="divider"></li>
 
 						<li><a href="#">Home</a></li>
-				
-		        		@if (Auth::check()) 
+
+		        		@if (Auth::check())
 
 			                <li><a href="#">Edit Availabilty</a></li>
 
 			                <li><a href="#">Edit Account</a></li>
 
-		    				<li><a href="#">Edit Password</a></li> 
+		    				<li><a href="#">Edit Password</a></li>
 
-		    				<li><a href="#">Log Out</a></li>
+		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
-		        		@else 
+		        		@else
 
 							<!-- Button trigger modal -->
 
 		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
 		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
-								
+
 		        		@endif
 
 		                <li><a href="#">Featured Artist</a></li>
 
 		                <li><a href="#">Contact Us</a></li>
-		              
+
 		            </ul>
 
 	          	</li>
@@ -117,7 +118,7 @@
 
             <div class="modal-body rounded">
 
-                <form method="POST">
+                <form method="POST" action="{{ action('Auth\AuthController@postRegister') }}" enctype="multipart/form-data">
 
                     {!! csrf_field() !!}
 
@@ -180,7 +181,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Register</button>
+                       <button class="btn btn-primary" type="submit">Register</button>
 
                     </div>
 
@@ -218,7 +219,7 @@
 
             <div class="modal-body">
 
-                <form method="POST">
+                <form method="POST" action="{{ action('Auth\AuthController@postLogin') }}">
 
                     {!! csrf_field() !!}
 
@@ -238,7 +239,7 @@
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 
-                       <button type="button" class="btn btn-primary" type="submit">Submit</button>
+                       <button class="btn btn-primary" type="submit">Submit</button>
 
                    </div>
 
@@ -251,11 +252,3 @@
     </div>
 
 </div>
-
-
-
-
-
-
-		
-	
