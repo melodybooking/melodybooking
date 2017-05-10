@@ -17,14 +17,19 @@ body {
 
 /* nav bar name Header*/
 
-#navbarBrand{ 
+#navbarBrand { 
 
-  background: url("/img/gradient.jpg") center / contain no-repeat;
+	
+	background: url("/img/melodybookinglogo.jpg") center / contain no-repeat;
 
 }
 
 #navbarBrand > h3 > a {
-
+	
+	text-shadow: rgb(0, 0, 0) 4px 4px 4px;
+	font-style: normal;
+	font-size: 44px;
+	font-family: 'Lobster', normal;
 	color: #EAF4F4;
 
 }
