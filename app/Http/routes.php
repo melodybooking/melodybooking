@@ -11,23 +11,23 @@
 |
 */
 
-// Route::get('/', function () {
+Route::get('/', function () {
 
-//     return view('welcome');
+    return view('welcome');
 
-// });
+});
 
-// Route::get('/create', function () {
+Route::get('/create', function () {
 
-// 	return view('artists/create_artists');
+	return view('artists/create_artists');
 	
-// });
+});
 
-// Route::get('/edit', function () {
+Route::get('/edit', function () {
 
-// 	return view('artists/edit_artists');
+	return view('artists/edit_artists');
 
-// });
+});
 
 // <?php
 

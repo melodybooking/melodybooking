@@ -11,20 +11,77 @@ body {
 	font-family: 'Crimson Text', serif;
 	margin-top:100px;
 	padding:20px;
+	background-image: url('/img/melodybookingbackground2.jpg');
 
 }
 
+/* nav bar name Header*/
+
+#navbarBrand{ 
+
+  background: url("/img/gradient.jpg") center / contain no-repeat;
+
+}
+
+#navbarBrand > h3 > a {
+
+	color: #EAF4F4;
+
+}
+
+#navbarBrand > h3 > a:hover {
+
+	color: #B8D3D1 ;
+
+}
+
+
+#header {
+	
+	font-family: 'Crimson Text', serif;
+	font-size: 18px;
+	color: #EAF4F4;
+	margin-bottom:150px;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+
+}
+
+/*nav bar header navigation drop down*/
+
+#navbar > ul > li > a {
+
+	font-family: 'Crimson Text', serif;
+	color: #EAF4F4;
+
+}
+
+#navbar > ul > li > a:hover {
+
+	font-family: 'Crimson Text', serif;
+	color: #B8D3D1;
+
+}
 /*footer*/
 
 footer {
-	
+
+	right: 0;
+	left: 0;
+	margin:0px;
+	padding:0px;
+	min-width:100%;
+	color: #EAF4F4;
 	font-family: 'Crimson Text', serif;
-	padding-top: 10px;
+	padding-top: 2px;
 	position: absolute;
 	bottom: 0;
 	height: 120px;
-	background: linear-gradient(to bottom right, #CFDBD5, #4D6A6D);
+	background: linear-gradient(to bottom right, #CFDBD5, #00100B);
 
+}
+
+footer a {
+	color: #EAF4F4;
 }
 
 /*welcome blade images*/
@@ -76,64 +133,14 @@ footer {
 	height: 400px;
 	width: 800px;
 	
-
-}
-
-/* nav bar Header*/
-
-#navbarBrand{ 
-
-  background: url("/img/gradient.jpg") center / contain no-repeat;
-
-}
-
-#navbarBrand > h3 > a {
-
-	color: black;
-
-}
-
-#navbarBrand > h3 > a:hover {
-
-	color: #284B63 ;
-
-}
-
-
-#header {
-	
-	font-family: 'Crimson Text', serif;
-	font-size: 18px;
-	color: black;
-	margin-bottom:150px;
-	background: linear-gradient(to bottom right, #CFDBD5, #4D6A6D);
-
-}
-
-/*nav bar header*/
-#navbar > ul > li > a {
-
-	font-family: 'Crimson Text', serif;
-	color: black;
-
-}
-
-#navbar > ul > li > a:hover {
-
-	font-family: 'Crimson Text', serif;
-	color: #284B63;
-
 }
 
 /*links*/
 
-a {
-	color: #CFDBD5;
-}
 
 a:hover {
 
-	color: #284B63
+	color: #B8D3D1
 
 }
 
@@ -144,7 +151,7 @@ a.btn-sm {
 
 }
 
-/*modals*/
+/*User Login and User Register modals*/
 
 .modal-header, h4, .close {
 	
@@ -270,7 +277,7 @@ div#signUpModal {
 
 }
 
-/*img upload*/
+/*create artist img upload*/
 
 #previewGallery img {
 	
@@ -304,3 +311,7 @@ div#signUpModal {
 	margin-bottom: 10px;
 
 }
+
+/*create artist form*/
+
+

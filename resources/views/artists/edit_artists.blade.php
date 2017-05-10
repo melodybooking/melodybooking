@@ -197,15 +197,23 @@
         
             <input name="soundcloud_url" id="soundcloud_url" class="form-control" 
         
-            @if ($errors->has('soundcloud_url'))
-        
-                <div class="alert alert-warning" role="alert">
-        
-                    {{ $errors->first('soundcloud_url') }}
-        
-                </div>
-        
-            @endif
+            @if(isset($artist->soundcloud_url))
+
+				value="{{ $artist->soundcloud_url }}"
+
+			@else
+
+				value="{{ old('soundcloud_url') }}"
+
+			@endif
+
+			><br>
+
+			@if ($errors->has('soundcloud_url'))
+
+				{!! $errors->first('soundcloud_url', '<span class="help-block">Bandcamp Url error</span>') !!}
+
+			@endif
 
         </div>
 
@@ -289,7 +297,7 @@
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 

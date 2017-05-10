@@ -10,7 +10,7 @@
 
             <label for="name">Artist's Name</label>
 
-            <input type="text" id="name" name="name" value="{{ old('name') }}" class="form-control">
+            <input id="createArtistName" type="text" id="name" name="name" value="{{ old('name') }}" class="form-control">
 
             @if ($errors->has('title'))
 
@@ -217,7 +217,7 @@
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 
