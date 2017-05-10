@@ -18,24 +18,24 @@ class PostsController extends Controller
     public function index(Request $request)
     {
      	if(isset($request->search)) {
-			$posts = Post::select('posts.*')
+			$artist = Artist::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
 			->orwhere('artist_name', 'like', "%$request->search%")
-			->orderBy('posts.created_at', 'DESC')
+			->orderBy('artists.created_at', 'DESC')
 			->paginate(6)->appends(['search' =>$request->search]);
 		} else {
-			$posts = Post::with('user')->orderBy('posts.created_at', 'DESC')->paginate(6);
+			$artists = Artist::with('user')->orderBy('artists.created_at', 'DESC')->paginate(6);
 		}
 
         $data = [];
-        $data['posts'] = $posts;
-        return view('posts.index')->with($data);
+        $data['artists'] = $artists;
+        return view('artists.index')->with($data);
     }
 
     public function create(Request $request)
     {
-        return view('posts.create');
+        return view('artists.create_artists');
     }
 
 	public function imageUploadPost(Request $request)
@@ -52,35 +52,35 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-		$rules = Post::$rules;
+		$rules = Artist::$rules;
         $this->validate($request, $rules);
-        $post = new Post();
-        $post->artist_name = $request->artist_name;
-        $post->email = $request->email;
-        $post->bio = $request->bio;
-        $post->genre = $request->genre;
+        $artist = new Artist();
+		$artist->artist_name = $request->artist_name;
+        $artist->email = $request->email;
+        $artist->bio = $request->bio;
+        $artist->genre = $request->genre;
 
 
 		if($request->hasFile('image')) {
-	    $post->image = $this->imageUploadPost($request);
+	    $artist->image = $this->imageUploadPost($request);
 		}
-		$post->save();
+		$artist->save();
 		Log::info("New Artist saved", $request->all());
 
         $request->session()->flash('successMessage', 'Artist saved successfully');
-        return redirect()->action('PostsController@show', [$post->id]);
+        return redirect()->action('PostsController@show', [$artist->id]);
     }
     public function show(Request $request, $id)
     {
-        $post = Post::find($id);
+        $artist = Artist::find($id);
 
-        if (!$post) {
+        if (!$artist) {
             Log::error("Artist with id of $id not found.");
 			abort(404);
         }
         $data = [];
-        $data['post'] = $post;
-        return view('posts.show')->with($data);
+        $data['artist'] = $artist;
+        return view('artists.show')->with($data);
     }
     /**
      * Show the form for editing the specified resource.
@@ -90,21 +90,21 @@ class PostsController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $post = Post::find($id);
+        $artist = Artist::find($id);
 
-        if (!$post) {
+        if (!$artist) {
             Log::error("Artist with id of $id not found.");
             abort(404);
         }
 
-		if($post->user->id != \Auth::id()) {
+		if($artist->user->id != \Auth::id()) {
 			Session::flash('errorMessage', "Only the Artist author can edit this Artist.");
 			return redirect()->action('PostsController@index');
 		}
         $data = [];
-        $data['post'] = $post;
+        $data['artist'] = $artist;
 
-        return view('posts.edit')->with($data);
+        return view('artists.edit')->with($data);
     }
     /**
      * Update the specified resource in storage.
@@ -115,29 +115,29 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rules = Post::$rules;
+        $rules = Artist::$rules;
         $this->validate($request, $rules);
-        $post = Post::find($id);
-        if (!$post) {
+        $artist = Artist::find($id);
+        if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
             return redirect()->action('PostsController@index');
         }
-		$post->artist_name = $request->artist_name;
-        $post->email = $request->email;
-        $post->bio = $request->bio;
-        $post->genre = $request->genre;
-        $post->save();
+		$artist->artist_name = $request->artist_name;
+        $artist->email = $request->email;
+        $artist->bio = $request->bio;
+        $artist->genre = $request->genre;
+        $artist->save();
         $request->session()->flash('successMessage', 'Artist saved successfully');
-        return redirect()->action('PostsController@show', [$post->id]);
+        return redirect()->action('PostsController@show', [$artist->id]);
     }
     public function destroy(Request $request, $id)
     {
-        $post = Post::find($id);
-        if (!$post) {
+        $artist = Artist::find($id);
+        if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
             return redirect()->action('PostsController@index');
         }
-        $post->delete();
-        return view('posts.index');
+        $artist->delete();
+        return view('artists.index');
     }
 }
