@@ -23,7 +23,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
-	protected $redirectPath = '/artists';
+	protected $redirectPath = '/posts';
 	protected $loginPath = '/login';
 
     /**
@@ -62,7 +62,8 @@ class AuthController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => bcrypt($data['password']),
+			'artist' => $data['artist'],
         ]);
     }
 }
