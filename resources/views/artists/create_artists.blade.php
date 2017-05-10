@@ -71,26 +71,6 @@
 
             @endif
 
-        </div>
-            <div class="form-group">
-            
-            <label for="genre">Genre</label>
-            
-            <input name="genre" id="genre" class="form-control">
-            
-
-            @if ($errors->has('genre'))
-
-            <div class="alert alert-warning" role="alert">
-
-                {!! $errors->first('genre') !!}
-
-            </div>
-
-            @endif
-
-        </div>
-
         <div class="form-group">
 
             <label for="facebook_url">Facebook Url</label>

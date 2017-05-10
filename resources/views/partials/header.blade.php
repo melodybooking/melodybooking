@@ -4,6 +4,7 @@
 
       	<div id="navbarBrand" class="text-center navbar-header">
 
+
       		<h3><a href="#"> Melody Booking </a>
 
       			@if (Auth::check())
@@ -13,6 +14,7 @@
 				    @endif
 
 			    </h3>
+
 
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
@@ -168,9 +170,8 @@
                     </div>
 
                     <div class="form-group">
-						<input type="hidden" value="0" name="artist">
-                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
+                        <input  id="artist" type="checkbox" name="artist"> Check If Artist
 
                     </div>
 
