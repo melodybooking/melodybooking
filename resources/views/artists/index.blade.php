@@ -6,18 +6,15 @@
 
 				<div class="container">
 					<div class="row" id="itemsPage">
-						@foreach($posts as $post)
+						@foreach($artists as $artist)
 						<article class= "col-md-4">
-							<h3><a href="{{ action('PostsController@show', $post->id) }}">{{ $post->title }}</a></h3>
-							<p>{{ substr($post->url, 0, 40) . "..." }}</p>
-							<p>{{ substr($post->content, 0, 40) . "..." }}</p>
-							<p>Posted by: <strong>{{ $post->user->name }}</strong></p>
-							<p>on: <strong>{{ $post->created_at->setTimezone('America/Chicago')->toDayDateTimeString() }}</strong></p>
+							<h3><a href="{{ action('PostsController@show', $artist->id) }}">{{ $artist->artist_name }}</a></h3>
+							<p><img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showArtistImage" alt="Image"></p>
 						</article>
 						@endforeach
 					</div>
 				</div>
 
-{!! $posts->render() !!}
+{!! $artists->render() !!}
 
 @stop
