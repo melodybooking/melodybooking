@@ -170,8 +170,9 @@
                     </div>
 
                     <div class="form-group">
+						<input type="hidden" value="0" name="artist">
+                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
-                        <input  id="artist" type="checkbox" name="artist"> Check If Artist
 
                     </div>
 
