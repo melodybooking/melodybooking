@@ -2,20 +2,21 @@
 
 @section('content')
 
-    <form id="createArtist" class="border" method="post" enctype="multipart/form-data">
+    <form id="createArtist" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data" >
 
         {!! csrf_field() !!}
 
         <div class="form-group">
 
-            <label for="title">Artist's Name</label>
 
-            <input type="text" id="artistName" name="artistName" value="{{ old('artistName') }}" class="form-control">
+            <label for="artist_name">Artist's Name</label>
 
-            @if ($errors->has('title'))
+            <input type="text" id="artist_name" name="artist_name" value="{{ old('artist_name') }}" class="form-control">
 
-                {!! $errors->first('artistName', '<span class="help-block">:message</span>') !!}
-            
+            @if ($errors->has('artist_name'))
+
+                {!! $errors->first('artist_name', '<span class="help-block">:message</span>') !!}            
+
             @endif
 
         </div>
@@ -25,130 +26,166 @@
             <label for="email">Email</label>
 
             <input type="text" id="email" name="email" value="{{ old('email') }}" class="form-control">
-            
+
             @if ($errors->has('email'))
-                
+
                 <div class="alert alert-warning" role="alert">
-                    
+
                     {{ $errors->first('email') }}
                </div>
-            
+
             @endif
 
         </div>
 
         <div class="form-group">
-            
+
+            <label for="genre">Genre</label>
+
+            <input type="text" id="genre" name="genre" value="{{ old('genre') }}" class="form-control">
+
+            @if ($errors->has('genre'))
+
+                <div class="alert alert-warning" role="alert">
+
+                    {{ $errors->first('genre') }}
+               </div>
+
+            @endif
+
+        </div>
+
+        <div class="form-group">
+
             <label for="content">Artist's Biography</label>
-            
+
             <textarea name="bio" id="bio" cols="30" rows="10" class="form-control">{{ old('bio') }}</textarea>
-            
+
             @if ($errors->has('bio'))
-                
+
                 <div class="alert alert-warning" role="alert">
-                  
+
                 	{{ $errors->first('bio') }}
-               
+
                 </div>
+
+            @endif
+
+        </div>
+            <div class="form-group">
             
+            <label for="genre">Genre</label>
+            
+            <input name="genre" id="genre" class="form-control">
+            
+
+            @if ($errors->has('genre'))
+
+            <div class="alert alert-warning" role="alert">
+
+                {!! $errors->first('genre') !!}
+
+            </div>
+
             @endif
 
         </div>
 
         <div class="form-group">
 
-            <label for="facebookUrl">Facebook Url</label>
+            <label for="facebook_url">Facebook Url</label>
             
-            <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('facebookUrl') }}</input>
+            <input name="facebook_url" id="facebook_url"  class="form-control">{{ old('facebook_url') }}</input>
             
-            @if ($errors->has('bio'))
-            
-                <div class="alert alert-warning" role="alert">
-            
-                    {{ $errors->first('bio') }}
-            
-                </div>
-            
-            @endif
-
-        </div> 
-
-        <div class="form-group">
-
-            <label for="instagramUrl">Instagram Url</label>
-            
-            <input name="instagramUrl" id="instagramUrl" class="form-control">{{ old('content') }}</input>
-            
-            @if ($errors->has('bio'))
+            @if ($errors->has('facebook_url'))
             
                 <div class="alert alert-warning" role="alert">
             
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('facebook_url') }}
             
+
                 </div>
-            
+
             @endif
 
         </div>
 
         <div class="form-group">
 
-        
-            <label for="twitterUrl">Twitter Url</label>
-        
-            <input name="twitterUrl" id="twitterUrl"  class="form-control">{{ old('content') }}</input>
-        
-            @if ($errors->has('bio'))
-        
+            <label for="instagram_url">Instagram Url</label>
+            
+            <input name="instagram_url" id="instagram_url" class="form-control">{{ old('instagram_url') }}</input>
+            
+            @if ($errors->has('instagram_url'))
+            
                 <div class="alert alert-warning" role="alert">
-        
-                    {{ $errors->first('bio') }}
-        
+            
+                    {{ $errors->first('instagram_url') }}
+            
                 </div>
-        
+
             @endif
 
         </div>
 
         <div class="form-group">
 
-            <label for="soundcloudUrl">Sound Cloud Url</label>
+            <label for="twitter_url">Twitter Url</label>
         
-            <input name="soundcloudUrl" id="soundcloudUrl" class="form-control">{{ old('content') }}</input>
+            <input name="twitter_url" id="twitter_url"  class="form-control">{{ old('twitter_url') }}</input>
         
-            @if ($errors->has('bio'))
+            @if ($errors->has('twitter_url'))
         
                 <div class="alert alert-warning" role="alert">
         
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('twitter_url') }}
         
                 </div>
-        
+
             @endif
 
         </div>
 
         <div class="form-group">
 
-            <label for="facebookUrl">BandCamp Url</label>
+            <label for="soundcloud_url">Sound Cloud Url</label>
         
-            <input name="facebookUrl" id="facebookUrl"  class="form-control">{{ old('content') }}</input>
+            <input name="soundcloud_url" id="soundcloud_url" class="form-control">{{ old('soundcloud_url') }}</input>
         
-            @if ($errors->has('bio'))
+            @if ($errors->has('soundcloud_url'))
         
                 <div class="alert alert-warning" role="alert">
         
-                    {{ $errors->first('bio') }}
+                    {{ $errors->first('soundcloud_url') }}
         
                 </div>
-        
+
             @endif
 
-        </div> 
-		
+        </div>
+
+        <div class="form-group">
+
+            <label for="bandcamp_url">BandCamp Url</label>
+        
+            <input name="bandcamp_url" id="bandcamp_url"  class="form-control">{{ old('bandcamp_url') }}</input>
+        
+            @if ($errors->has('bandcamp_url'))
+        
+                <div class="alert alert-warning" role="alert">
+        
+                    {{ $errors->first('bandcamp_url') }}
+       
+                </div>
+
+            @endif
+
+        </div>
+
 		<!-- Image upload -->
+
 		<div>
-	    
+
 	        @if (count($errors) > 0)
 
 				<div class="alert alert-danger">
@@ -181,9 +218,11 @@
 
 			@endif
 
-			<div class="control-group">
+            <!-- image preview -->
 
-				 <label for="image">Image</label>
+			<div id="imageContainer" class="control-group">
+
+				 <label for="image">Image/s Upload</label>
 
 					<div>
 
@@ -193,19 +232,20 @@
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
-							<input type="file" name="image" id="image" required/>
-
 						</span>
 
 			   		</div>
 
-					<img class="img-thumbnail thumbnail" id="preview" style="width: 200px; height: 150px;">
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
 
-					<div>
+					<div id="previewGallery" class="img-responsive center-align gallery">
 
-						<button class="btn btn-primary" type="submit" style="margin-bottom: 5%;">
+					</div>
 
- 							<i class="icon-user icon-white"></i>Save</button>
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+						<button class="btn btn-success" type="submit" style="margin-top: 5%; margin-bottom: 5%;">Save</button>
 
 					</div>
 
@@ -216,23 +256,7 @@
 		<input type="hidden" name="id" value="{{Auth::id()}}">
 
     </form>
-	
-	<script type="text/javascript"> 
 
-	document.getElementById("image").onchange = function () {
-		 var reader = new FileReader();
-
-		 reader.onload = function (e) {
-			 // get loaded data and render thumbnail.
-			 document.getElementById("preview").src = e.target.result;
-		 };
-
-		 // read the image file as a data URL.
-		 reader.readAsDataURL(this.files[0]);
-
-	 };
-
-	 </script>
+    <br>
 
 @stop
-
