@@ -2,6 +2,13 @@
 
 @section('content')
 
+<div class="img-responsive container">
+
+    <div id="slideshow">
+
+
+@section('content')
+
 <div>
 
     <p>CONTENT 
@@ -10,7 +17,11 @@
 
     </p>
 
-</div>
+
+    </div>
+
+    <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
 
 <div id="slideShowContainer" class="container img-responsive center-align">
     
@@ -36,6 +47,7 @@
 </div>
 
 @stop
+
 
 
 
