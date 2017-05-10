@@ -4,7 +4,6 @@
 
       	<div id="navbarBrand" class="text-center navbar-header">
 
-
       		<h3><a href="#"> Melody Booking </a>
 
       			@if (Auth::check())
@@ -14,7 +13,6 @@
 				    @endif
 
 			    </h3>
-
 
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
