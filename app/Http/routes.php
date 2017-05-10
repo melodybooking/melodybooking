@@ -17,10 +17,10 @@
 //
 // });
 //
-// Route::get('/create', function () {
-//
-// 	return view('artists/create_artists');
-// });
+Route::get('/create', function () {
+
+	return view('artists/create_artists');
+});
 //
 // <?php
 
