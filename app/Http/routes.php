@@ -22,13 +22,13 @@ Route::get('/create', function () {
 	return view('artists/create_artists');
 });
 
-get('protected', ['middleware' => ['auth', 'admin'], function() {
-    // this page requires that you be logged in AND be an Admin
-    return view( ... );
-}]);
+// get('protected', ['middleware' => ['auth', 'admin'], function() {
+//     // this page requires that you be logged in AND be an Admin
+//     return view( ... );
+// }]);
 
-get('protected', ['middleware' => ['auth'], function() {
-    // this page requires that you be logged inbut you don't need to be an admin
-    return view( ... );
-}]);
+// get('protected', ['middleware' => ['auth'], function() {
+//     // this page requires that you be logged inbut you don't need to be an admin
+//     return view( ... );
+// }]);
 
