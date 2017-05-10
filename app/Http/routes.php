@@ -12,11 +12,11 @@
 */
 
 // Route::get('/', function () {
-//
+
 //     return view('welcome');
-//
+
 // });
-//
+
 // Route::get('/create', function () {
 
 // 	return view('artists/create_artists');
@@ -28,7 +28,7 @@
 // 	return view('artists/edit_artists');
 
 // });
-//
+
 // <?php
 
 /*
