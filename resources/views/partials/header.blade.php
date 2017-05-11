@@ -5,15 +5,7 @@
       	<div id="navbarBrand" class="text-center navbar-header">
 
 
-      		<h3><a href="/"> Melody Booking </a>
-
-      			@if (Auth::check())
-
-					  <strong>|| Hello: {{ Auth::user()->name }}</strong>
-
-				    @endif
-
-			    </h3>
+      		<h3><a href="/"> Melody Booking </a></h3>
 
 
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -39,10 +31,6 @@
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
 
 		            <ul class="dropdown-menu" role="menu">
-
-		            	<li class="dropdown-header">User Menu</li>
-
-		            	<li class="divider"></li>
 
 						<li><a href="#">Home</a></li>
 
