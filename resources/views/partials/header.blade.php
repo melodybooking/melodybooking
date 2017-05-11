@@ -38,11 +38,7 @@
 	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
 
 		            <ul class="dropdown-menu" role="menu">
-
-		            	<li class="dropdown-header">User Menu</li>
-
-		            	<li class="divider"></li>
-
+                        
 						<li><a href="#">Home</a></li>
 
 		        		@if (Auth::check())
