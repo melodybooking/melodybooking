@@ -52,7 +52,7 @@
 
 			                <li><a href="#">Edit Account</a></li>
 
-		    				<li><a href="#">Edit Password</a></li>
+		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
 		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
@@ -65,6 +65,7 @@
 		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
 		        		@endif
+						<li><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
 		                <li><a href="#">Featured Artist</a></li>
 
