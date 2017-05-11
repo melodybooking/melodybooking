@@ -2,15 +2,8 @@
 
 @section('content')
 
-<div class="img-responsive container">
-
-    <div id="slideshow">
-
-
-@section('content')
-
 <div id="slideShowContainer" class="container img-responsive center-align">
-    
+
     <div id="slideshow" class="img-responsive">
 
         <ul class="center-align welcomeSlides">
@@ -27,15 +20,8 @@
 
         </ul>
 
-    </div> 
-    
+    </div>
+
 </div>
 
 @stop
-
-
-
-
-
-
-
