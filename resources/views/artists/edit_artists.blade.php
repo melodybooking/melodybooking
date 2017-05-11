@@ -281,7 +281,7 @@
 
             <!-- image preview -->
 
-			<div id="imageContainer row" class="control-group">
+			<div id="imageContainer" class="control-group">
 
 				 <label for="image">Image/s Upload</label>
 
@@ -293,13 +293,25 @@
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
+
+
 						</span>
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add">
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
+
+						@if(isset($artist->image))
+
+							<img src="/uploads/images/{{ $artist->image }}"></img>
+
+						@else
+
+							value="{{ old('image') }}"
+
+						@endif
 
 					</div>
 
