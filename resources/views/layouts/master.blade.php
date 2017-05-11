@@ -26,9 +26,9 @@
 	<body>
 
 
-		
+
 		@include('partials.header')
-		
+
 			<main class="container-fluid img-responsive">
 
 				@if (Session::has('successMessage'))
@@ -37,13 +37,6 @@
 				@if (Session::has('errorMessage'))
 					<div class="alert alert-danger">{{ session('errorMessage') }}</div>
 				@endif
-
-        @if (Session::has('successMessage'))
-          <div class="alert alert-success">{{ session('successMessage') }}</div>
-        @endif
-        @if (Session::has('errorMessage'))
-          <div class="alert alert-danger">{{ session('errorMessage') }}</div>
-        @endif
 
 
 		    @yield('content')
@@ -54,7 +47,7 @@
 		</main>
 
 		@include('partials.footer')
-		
+
 
 	</body>
 
