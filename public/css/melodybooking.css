@@ -7,12 +7,12 @@ html {
 }
 
 body {
-
-	padding-top: 125px;
+	
 	font-family: 'Crimson Text', serif;
-	margin-top:100px;
 	padding:20px;
-	background-image: url('/img/melodybookingbackground2.jpg');
+	background-image: url('/img/IMG_6701.jpg');
+	background-size: 100%; 
+	padding-bottom: 120px;
 
 }
 
@@ -20,18 +20,18 @@ body {
 
 #navbarBrand { 
 
-	
-	background: url("/img/melodybookinglogo.jpg") center / contain no-repeat;
+
+	background: url("/img/melodybookinglogo2.png") left center / contain no-repeat;
 
 }
 
 #navbarBrand > h3 > a {
 	
+	
 	text-shadow: rgb(0, 0, 0) 4px 4px 4px;
-	font-style: normal;
 	font-size: 44px;
 	font-family: 'Lobster', normal;
-	color: #EAF4F4;
+	color: #F4E87C;
 
 }
 
@@ -41,9 +41,21 @@ body {
 
 }
 
+@media (min-width: 100px) { 
+	body { 
+		margin-top: 150px;; 
+	} 
+} 
+
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
 
 #header {
 	
+	margin-bottom: 150px;
 	font-family: 'Crimson Text', serif;
 	font-size: 18px;
 	color: #EAF4F4;
@@ -78,7 +90,7 @@ footer {
 	min-width:100%;
 	color: #EAF4F4;
 	font-family: 'Crimson Text', serif;
-	padding-top: 2px;
+	padding: 20px;
 	position: absolute;
 	bottom: 0;
 	height: 120px;

@@ -1,19 +1,18 @@
-<nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
+<nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top">
 
     <div class="container">
 
       	<div id="navbarBrand" class="text-center navbar-header">
 
-
-      		<h3><a href="#"> Melody Booking </a>
+      		<h3 class="align-center"><a href="/"> Melody Booking </a>
 
       			@if (Auth::check())
 
-					  <strong>|| Hello: {{ Auth::user()->name }}</strong>
+					<strong>|| Hello: {{ Auth::user()->name }}</strong>
 
-				    @endif
+				@endif
 
-			    </h3>
+			</h3>
 
 
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">

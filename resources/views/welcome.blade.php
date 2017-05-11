@@ -9,33 +9,19 @@
 
 @section('content')
 
-<div>
-
-    <p>CONTENT 
-
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ducimus labore consequuntur quia quibusdam asperiores suscipit, ut obcaecati. Porro nobis magnam laudantium eius sapiente repudiandae adipisci accusantium quas consectetur molestias.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis hic, ab, labore aspernatur explicabo velit voluptatem nemo laborum numquam. Cumque maxime culpa placeat reprehenderit, soluta iste et! Reprehenderit, veniam tempore.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, tempora, temporibus. Cupiditate accusantium, quia tempore dicta perspiciatis atque dignissimos sunt repudiandae aperiam incidunt cum. Expedita ex amet iste laborum ratione.
-
-    </p>
-
-
-    </div>
-
-    <p class="row col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-
 <div id="slideShowContainer" class="container img-responsive center-align">
     
-    <div id="slideshow" class="row center align img-responsive">
+    <div id="slideshow" class="img-responsive">
 
-        <ul class="welcomeSlides">
+        <ul class="center-align welcomeSlides">
 
-            <li><img alt="" src="\img\gradient.jpg"></li>
+            <li><img alt="" src="\img\g.jpg"></li>
 
-            <li><img alt="" src="\img\gradient2.jpg"></li>
+            <li><img alt="" src="\img\rc.jpg"></li>
 
-            <li><img alt="" src="\img\gradient.jpg"></li>
+            <li><img alt="" src="\img\ml.jpg"></li>
 
-            <li><img alt="" src="\img\gradient2.jpg"></li>
+            <li><img alt="" src="\img\kk.jpg"></li>
 
             <li><img alt="" src="\img\gradient.jpg"></li>
 
