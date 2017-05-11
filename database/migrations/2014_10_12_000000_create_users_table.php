@@ -23,6 +23,11 @@ class CreateUsersTable extends Migration
         });
     }
 
+    public function isAdmin()
+    {
+    return $this->admin; // this looks for an admin column in your users table
+    }
+
     /**
      * Reverse the migrations.
      *
