@@ -77,7 +77,7 @@
 
 	        </ul>
 
-	        <form method="GET" class="navbar-form navbar-right">
+	        <form method="GET" class="navbar-form navbar-right" action="{{action('PostsController@index')}}">
 
 				{!! csrf_field() !!}
 

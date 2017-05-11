@@ -18,7 +18,7 @@ class PostsController extends Controller
     public function index(Request $request)
     {
      	if(isset($request->search)) {
-			$artist = Post::select('artists.*')
+			$artists = Post::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
 			->orwhere('artist_name', 'like', "%$request->search%")
