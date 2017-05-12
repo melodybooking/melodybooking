@@ -59,18 +59,58 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+    public function password (Request $request, $id)
+
+    {
+        
+        $user = User::find(Auth::id());
+  
+        return view('users.password')->with('user', $user);
+
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        
+        $user = User::find(Auth::id());
+
+
+        $rules = [
+            'password' => 'required|confirmed|min:6',
+        ];
+
+        $this->validate($request, $rules);
+
+        $user->password = $request->password;
+
+        $user->save();
+
+        Session::flash('successMessage', "Password updated successfully.");
+         
+        
+
+       return redirect()->action('UserController@show');
+
+    }
+
     public function update(Request $request, $id)
     {
-        // $rules = User::$rules;
 
-        // $rules = [
-        //     'name' => 'required|max:255',
-        //     'email' => 'required|email|max:255|unique:users',
-        //     'password' => 'required|confirmed|min:6',
-        // ];
-
-        // $this->validate($request, $rules);
         $user = User::find($id);
+        
+        $rules = User::$rules;
+
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+
+        ];
+
+        $this->validate($request, $rules);
+
+        
 
         if (!$user) {
             $request->session()->flash('errorMessage', 'User cannot be found');
@@ -83,7 +123,7 @@ class UserController extends Controller
 	
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+      
         $user->save();
         $request->session()->flash('successMessage', 'User updated successfully');
 
