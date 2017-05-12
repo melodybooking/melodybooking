@@ -2,7 +2,7 @@
 
     <div class="container">
 
-      	<div id="navbarBrand" class="text-center navbar-header">
+      	<div id="navbarBrand" class="hidden-xs-down text-center navbar-header">
 
 
       		<h3><a href="/"> Melody Booking </a></h3>
@@ -32,13 +32,15 @@
 
 		            <ul class="dropdown-menu" role="menu">
 
-						<li><a href="#">Home</a></li>
+						<li><a href="/">Home</a></li>
+
+                        <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
 		        		@if (Auth::check())
 
 			                <li><a href="#">Edit Availabilty</a></li>
 
-			                <li><a href="#">Edit Account</a></li>
+			                <li><a href="">Edit User Account</a></li>
 
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
@@ -53,9 +55,6 @@
 		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
 		        		@endif
-						<li><a href="{{action('PostsController@index')}}">All Artists</a></li>
-
-		                <li><a href="#">Featured Artist</a></li>
 
 		                <li><a href="#">Contact Us</a></li>
 
@@ -65,19 +64,18 @@
 
 	        </ul>
 
-	        <form method="GET" class="navbar-form navbar-right" action="{{action('PostsController@index')}}">
+                <form id="searchBar" method="GET" class="navbar-form navbar-right" action="{{action('PostsController@index')}}">
 
-				{!! csrf_field() !!}
+                    {!! csrf_field() !!}
 
-				<div class="img-responsive form-group">
+                    <div class="img-responsive form-group">
 
-					Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                        Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-				</div>
+                    </div>
 
-				<input class=" btn btn-primary" type="submit" value="submit">
-
-			</form>
+                    <input class=" btn btn-primary" type="submit" value="submit">
+                </form>
 
       	</div>
 
@@ -159,9 +157,10 @@
                     </div>
 
                     <div class="form-group">
-						<input type="hidden" value="0" name="artist">
-                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
+						<input type="hidden" value="0" name="artist">
+
+                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
                     </div>
 

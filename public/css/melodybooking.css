@@ -17,15 +17,27 @@ body {
 }
 
 /* nav bar name Header*/
+#navbar > ul > li > a {
 
-#navbarBrand { 
+	padding-top: 38px;
 
+}
+
+#searchBar {
+
+	padding-top:25px;
+
+}
+
+#navbarBrand {
+
+	height: auto;
+	width: auto;
 	background: url("/img/melodybookinglogo2.png") left center / contain no-repeat;
 
 }
 
 #navbarBrand > h3 > a {
-	
 	
 	text-shadow: rgb(0, 0, 0) 4px 4px 4px;
 	font-size: 44px;
@@ -42,14 +54,18 @@ body {
 
 @media (min-width: 100px) { 
 	body { 
-		margin-top: 150px;; 
+		margin-top: 200px;; 
 	} 
 } 
 
-@media (max-width: 979px) {
-  body {
-    padding-top: 0px;
-  }
+/*@media only screen and (min-device-width : 200px) and (max-device-width : 767px) {
+	
+}*/
+
+@media (max-width: 1900px) {
+  	body {
+    	padding-top: 0px;
+  	}
 }
 
 #header {
@@ -59,11 +75,28 @@ body {
 	font-size: 18px;
 	color: #EAF4F4;
 	margin-bottom:200px;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	background: linear-gradient(to bottom left, #00100B, #4D6A6D);
 
 }
 
 /*nav bar header navigation drop down*/
+
+#navbar > ul > li > ul {
+	
+	font-family: 'Crimson Text', serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+
+}
+
+#navbar > ul > li > ul > li > a {
+	font-family: 'Crimson Text', serif;
+	color:#EAF4F4;
+}
+
+#navbar > ul > li > ul > li > a:hover {
+	font-family: 'Crimson Text', serif;
+	color:#B8D3D8;
+}
 
 #navbar > ul > li > a {
 
@@ -103,57 +136,57 @@ footer a {
 
 }
 
+#slideshow{
+	height: 600;
+	width:auto;
+	text-align: center;
+
+}
 /*welcome blade images*/
 
-.welcomeSlides {
+.rslides {
 
 	position: relative;
 	list-style: none;
-	overflow: auto;
+	overflow: hidden;
 	width: 100%;
 	padding: 0;
 	margin: 0;
 
 }
 
-.welcomeSlides li {
+.rslides li {
+
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+
+}
+
+.rslides li:first-child {
+
+	position: relative;
+	display: block;
+	float: left;
+
+}
+
+.rslides img {
 	
-  	-webkit-backface-visibility: hidden;
-  	position: absolute;
-  	display: none;
-  	width: auto;
-  	left: 0;
-  	top: 0;
-
-}
-
-.welcomeSlides li:first-child {
-
-  	position: relative;
-  	display: block;
-  	float: left;
-
-}
-
-.welcomeSlides img {
-
- 	display: block;
-  	height: 600px;
-  	float: left;
-  	width: 800px;
-
-}
-
-#slideShowContainer {
-
-	margin-top: 30px;
-	height: 600px;
-	width: 800px;
+	border-radius: 15px;
+	text-align: center
+	display: block;
+	height: 55vw;
+	float: left;
+	width: 100%;
 	
+
 }
 
-/*links*/
-
+/*links on every page*/
 
 a:hover {
 
@@ -318,6 +351,20 @@ div#signUpModal {
 
 }
 
+/*create artist form*/
+
+#createArtist {
+
+	border-radius: 15px;
+	font-family: 'Crimson Text', serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+
+
+}
+
+
 #createArtist > div:nth-child(10)
 
 {
@@ -328,7 +375,66 @@ div#signUpModal {
 	margin-bottom: 10px;
 
 }
+/*edit artist form*/
 
-/*create artist form*/
+#editForm {
+
+	border-radius: 15px;
+	font-family: 'Crimson Text', serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+
+}
+
+#editForm > div:nth-child(10)
+
+{
+
+	padding-top: 5px;
+	margin:auto;
+	margin-top:10px;
+	margin-bottom: 10px;
+
+}
+
+/*index of artists*/
+
+body > main > h1 {
+
+	font-family: 'Crimson Text', serif;
+	color: #F4E87C;
+
+}
+
+#itemsPage {
+
+	text-align: center;
+	font-family: 'Lobster', normal;
+
+}
+
+#itemsPage a {
+
+	color:black;
+
+}
+
+#itemsPage a:hover {
+
+	color:#00635D;
+
+}
+
+#artistIndexSquare img {
+	background-color: black;
+	box-shadow: 0px 4px 4px black;
+	border-radius: 15px;
+	margin: 0 auto;
+	height: 300px;
+	width:300px;
+
+}
+
 
 
