@@ -2,7 +2,9 @@
 
 @section('content')
 
-<h1>Edit Account Information</h1>
+<div id="editForm" class="container">
+
+	<h1>Edit Account Information</h1>
 
 	<form  class="form-group"  method="POST" action="{{ action('PostsController@update', [$artist->id]) }}">
 
@@ -328,10 +330,18 @@
 	</form>
 
 	<!-- Delete post -->
-			<form action="{{ action('PostsController@destroy', [$artist->id]) }}" method="POST">
-				<input type="submit" class="btn btn-danger" value="Delete" style="margin-top: 5px; margin-bottom: 5%;">
-				{!!csrf_field()!!}
-				{{ method_field('DELETE') }}
-			</form>
+	<form action="{{ action('PostsController@destroy', [$artist->id]) }}" method="POST">
+
+		<input type="submit" class="btn btn-danger" value="Delete" style="margin-top: 5px; margin-bottom: 5%;">
+
+		{!!csrf_field()!!}
+
+		{{ method_field('DELETE') }}
+		
+	</form>
+
+</div>
+
+
 
 @stop

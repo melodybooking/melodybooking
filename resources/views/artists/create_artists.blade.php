@@ -200,6 +200,12 @@
 				<img src="{{ Session::get('path') }}">
 
 			@endif
+            
+            <form action="/file-upload" class="dropzone">
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                </div>
+            </form>
 
             <!-- image preview -->
 
@@ -219,7 +225,7 @@
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add">
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 

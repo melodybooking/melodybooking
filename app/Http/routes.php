@@ -12,16 +12,12 @@
 */
 
 
-Route::get('/about', function () {
 
-    return view('artists/about_us');
-
-});
 //
-Route::get('/create', function () {
+// Route::get('/create', function () {
 
-	return view('artists/create_artists');
-});
+// 	return view('artists/create_artists');
+// });
 //
 
 // <?php
@@ -52,6 +48,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // User route...
 Route::get('/myposts', 'UserController@show');
+Route::get('/edit','UserController@edit');
 
 // Image upload routes
 
