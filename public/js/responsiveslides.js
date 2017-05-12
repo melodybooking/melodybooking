@@ -9,6 +9,7 @@
 /*jslint browser: true, sloppy: true, vars: true, plusplus: true, indent: 2 */
 
 (function ($, window, i) {
+  
   $.fn.responsiveSlides = function (options) {
 
     // Default settings

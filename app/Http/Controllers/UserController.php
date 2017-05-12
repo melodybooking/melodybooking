@@ -48,7 +48,7 @@ class UserController extends Controller
             abort(404);
         }
 
-        return view('user.edit', ['user' => $user]);
+        return view('artists.editUser', ['user' => $user]);
     }
     /**
      * Update the specified resource in storage.
@@ -61,6 +61,7 @@ class UserController extends Controller
     {
         $rules = User::$rules;
         $user = User::find($id);
+        
         if (!$user) {
             $request->session()->flash('errorMessage', 'User cannot be found');
             abort(404);
