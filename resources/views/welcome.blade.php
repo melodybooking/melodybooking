@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div id="slideShowContainer" class="container img-responsive center-align">
+<div id="slideShowContainer" class="container-fluid center-align img-responsive ">
 
-    <div id="slideshow" class="img-responsive">
+    <div id="slideshow" class="center-align container">
 
-        <ul class="center-align welcomeSlides">
+        <ul class="center-align rslides">
 
             <li><img alt="" src="\img\g.jpg"></li>
 

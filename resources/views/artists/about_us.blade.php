@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div id="aboutUs" class="container">
 
 	<div>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magnam rerum sunt, pariatur aliquam assumenda neque ipsam, maxime dignissimos! Dolorum recusandae beatae neque vel rerum consequatur, itaque ratione qui quasi!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum necessitatibus labore nam architecto doloremque placeat debitis molestiae enim quo illum similique, veniam, quis incidunt, velit porro quasi odit dolor eveniet.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut qui, ea veniam architecto ut aliquid ab iure placeat sed aperiam quo dolore tempora esse, rerum, corporis adipisci. Dolorum, quibusdam, dolore.
