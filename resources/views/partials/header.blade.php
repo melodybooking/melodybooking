@@ -2,18 +2,10 @@
 
     <div class="container">
 
-      	<div id="navbarBrand" class="text-center navbar-header">
+      	<div id="navbarBrand" class="hidden-xs-down text-center navbar-header">
 
 
-      		<h3><a href="#"> Melody Booking </a>
-
-      			@if (Auth::check())
-
-					  <strong>|| Hello: {{ Auth::user()->name }}</strong>
-
-				    @endif
-
-			    </h3>
+      		<h3><a href="/"> Melody Booking </a></h3>
 
 
 	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -40,19 +32,17 @@
 
 		            <ul class="dropdown-menu" role="menu">
 
-		            	<li class="dropdown-header">User Menu</li>
+						<li><a href="/">Home</a></li>
 
-		            	<li class="divider"></li>
-
-						<li><a href="#">Home</a></li>
+                        <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
 		        		@if (Auth::check())
 
 			                <li><a href="#">Edit Availabilty</a></li>
 
-			                <li><a href="#">Edit Account</a></li>
+			                <li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-		    				<li><a href="#">Edit Password</a></li>
+		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
 		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
@@ -66,8 +56,6 @@
 
 		        		@endif
 
-		                <li><a href="#">Featured Artist</a></li>
-
 		                <li><a href="#">Contact Us</a></li>
 
 		            </ul>
@@ -76,19 +64,18 @@
 
 	        </ul>
 
-	        <form method="GET" class="navbar-form navbar-right">
+                <form id="searchBar" method="GET" class="navbar-form navbar-right" action="{{action('PostsController@index')}}">
 
-				{!! csrf_field() !!}
+                    {!! csrf_field() !!}
 
-				<div class="img-responsive form-group">
+                    <div class="img-responsive form-group">
 
-					Search: <input class="form-control text-left" type="text" name="search" id="search">
+                        Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-				</div>
+                    </div>
 
-				<input class=" btn btn-primary" type="submit" value="submit">
-
-			</form>
+                    <input class=" btn btn-primary" type="submit" value="submit">
+                </form>
 
       	</div>
 
@@ -131,6 +118,7 @@
                             {{ $errors->first('name') }}
 
                         @endif
+                        
                     </div>
 
                     <div class="form-group">Email
@@ -170,9 +158,10 @@
                     </div>
 
                     <div class="form-group">
-						<input type="hidden" value="0" name="artist">
-                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
+						<input type="hidden" value="0" name="artist">
+
+                        <input  id="artist" type="checkbox" name="artist" value="1"> Check If Artist/Artist Representative
 
                     </div>
 

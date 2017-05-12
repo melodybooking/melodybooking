@@ -18,7 +18,7 @@ class PostsController extends Controller
     public function index(Request $request)
     {
      	if(isset($request->search)) {
-			$artist = Post::select('artists.*')
+			$artists = Post::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
 			->orwhere('artist_name', 'like', "%$request->search%")
@@ -65,7 +65,7 @@ class PostsController extends Controller
 		$artist->twitter_url = $request->twitter_url;
 		$artist->soundcloud_url = $request->soundcloud_url;
 		$artist->bandcamp_url = $request->bandcamp_url;
-		
+
 
 		if($request->hasFile('image')) {
 	    $artist->image = $this->imageUploadPost($request);
@@ -110,7 +110,7 @@ class PostsController extends Controller
         $data = [];
         $data['artist'] = $artist;
 
-        return view('artists.edit')->with($data);
+        return view('artists.edit_artists')->with($data);
     }
     /**
      * Update the specified resource in storage.

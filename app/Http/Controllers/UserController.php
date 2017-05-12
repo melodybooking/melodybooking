@@ -32,13 +32,15 @@ class UserController extends Controller
     }
 
     public function show(Request $request)
+
     {
         $user = User::findOrFail(Auth::id());
 
-        return view('users.show', ['user' => $user]);
+        return view('users.user_show', ['user' => $user]);
     }
 
     public function edit(Request $request)
+
     {
         $user = User::find(Auth::id());
 
@@ -48,7 +50,7 @@ class UserController extends Controller
             abort(404);
         }
 
-        return view('user.edit', ['user' => $user]);
+        return view('users.edit_user', ['user' => $user]);
     }
     /**
      * Update the specified resource in storage.
@@ -57,10 +59,59 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+
+    public function password (Request $request, $id)
+
     {
-        $rules = User::$rules;
+        
+        $user = User::find(Auth::id());
+  
+        return view('users.password')->with('user', $user);
+
+    }
+
+    public function updatePassword(Request $request, $id)
+    {
+        
+        $user = User::find(Auth::id());
+
+
+        $rules = [
+            'password' => 'required|confirmed|min:6',
+        ];
+
+        $this->validate($request, $rules);
+
+        $user->password = $request->password;
+
+        $user->save();
+
+        Session::flash('successMessage', "Password updated successfully.");
+         
+        
+
+       return redirect()->action('UserController@show');
+
+    }
+
+    public function update(Request $request, $id)
+
+    {
+
         $user = User::find($id);
+
+        $rules = User::$rules;
+
+        $rules = [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+
+        ];
+
+        $this->validate($request, $rules);
+
+
         if (!$user) {
             $request->session()->flash('errorMessage', 'User cannot be found');
             abort(404);
@@ -69,18 +120,22 @@ class UserController extends Controller
 		if($user->email != $request->email) {
 			$rules['email'] .= '|unique:users';
 		}
-		$this->validate($request, $rules);
-
+	
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+      
         $user->save();
+
         $request->session()->flash('successMessage', 'User updated successfully');
+
+
         return redirect()->action('UserController@show', [$user->id]);
     }
+
     public function destroy(Request $request, $id)
     {
         $user = User::find($id);
+        
         if (!$user) {
 			Log::info("Cannot delete User: $id");
             $request->session()->flash('errorMessage', 'User cannot be found');

@@ -12,16 +12,12 @@
 */
 
 
-// Route::get('/', function () {
-//
-//     return view('welcome');
-//
-// });
-//
-Route::get('/create', function () {
 
-	return view('artists/create_artists');
-});
+//
+// Route::get('/create', function () {
+
+// 	return view('artists/create_artists');
+// });
 //
 
 // <?php
@@ -37,9 +33,10 @@ Route::get('/create', function () {
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/','HomeController@showWelcome');
 
 Route::resource('/posts', 'PostsController'); // A resource controller
+Route::resource('/users', 'UserController'); 
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -51,7 +48,8 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // User route...
-Route::get('/myposts', 'UserController@show');
+Route::get('/users', 'UserController@show');
+Route::get('/users/{id}/edit', 'UserController@edit');
 
 // Image upload routes
 

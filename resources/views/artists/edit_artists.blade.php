@@ -2,9 +2,11 @@
 
 @section('content')
 
-<h1>Edit Account Information</h1>
+<div id="editForm" class="container">
 
-	<form  class="form-group"  method="POST">
+	<h1>Edit Account Information</h1>
+
+	<form  class="form-group"  method="POST" action="{{ action('PostsController@update', [$artist->id]) }}">
 
 		{!! csrf_field() !!}
 
@@ -12,23 +14,23 @@
 
             <label for="name">Artist's Name</label>
 
-            <input type="text" id="name" name="name" class="form-control"
+            <input type="text" id="artist_name" name="artist_name" class="form-control"
 
-            @if(isset($artist->name))
+            @if(isset($artist->artist_name))
 
-				value="{{ $artist->name }}"
+				value="{{ $artist->artist_name }}"
 
 			@else
 
-				value="{{ old('name') }}"
+				value="{{ old('artist_name') }}"
 
 			@endif
 
 			><br>
 
-			@if ($errors->has('name'))
+			@if ($errors->has('artist_name'))
 
-				{!! $errors->first('name', '<span class="help-block">Name error</span>') !!}
+				{!! $errors->first('artist_name', '<span class="help-block">Name error</span>') !!}
 
 			@endif
 
@@ -39,7 +41,7 @@
             <label for="email">Email</label>
 
             <input type="text" id="email" name="email" class="form-control"
-            
+
              @if(isset($artist->email))
 
 				value="{{ $artist->email }}"
@@ -61,11 +63,11 @@
         </div>
 
         <div class="form-group">
-            
+
             <label for="bio">Artist's Biography</label>
-            
-            <textarea name="bio" id="bio" cols="30" rows="10" class="form-control"
-            
+
+            <input type="text" name="bio" id="bio" cols="30" rows="10" class="form-control"
+
              @if(isset($artist->bio))
 
 				value="{{ $artist->bio }}"
@@ -76,7 +78,7 @@
 
 			@endif
 
-			></textarea><br>
+			><br>
 
 			@if ($errors->has('bio'))
 
@@ -87,11 +89,11 @@
         </div>
 
         <div class="form-group">
-            
+
             <label for="genre">Genre</label>
-            
+
             <input name="genre" id="genre" class="form-control"
-            
+
              @if(isset($artist->genre))
 
 				value="{{ $artist->genre }}"
@@ -116,9 +118,9 @@
         <div class="form-group">
 
             <label for="facebook_url">Facebook Url</label>
-            
-            <input name="facebook_url" id="facebook_url"  class="form-control" 
-            
+
+            <input name="facebook_url" id="facebook_url"  class="form-control"
+
             @if(isset($artist->facebook_url))
 
 				value="{{ $artist->facebook_url }}"
@@ -137,14 +139,14 @@
 
 			@endif
 
-        </div> 
+        </div>
 
         <div class="form-group">
 
             <label for="instagram_url">Instagram Url</label>
-            
-            <input name="instagram_url" id="instagram_url" class="form-control" 
-            
+
+            <input name="instagram_url" id="instagram_url" class="form-control"
+
              @if(isset($artist->instagram_url))
 
 				value="{{ $artist->instagram_url }}"
@@ -168,9 +170,9 @@
         <div class="form-group">
 
             <label for="twitter_url">Twitter Url</label>
-        
-            <input name="twitter_url" id="twitter_url"  class="form-control" 
-        
+
+            <input name="twitter_url" id="twitter_url"  class="form-control"
+
              @if(isset($artist->twitter_url))
 
 				value="{{ $artist->twitter_url }}"
@@ -194,9 +196,9 @@
         <div class="form-group">
 
             <label for="soundcloud_url">Sound Cloud Url</label>
-        
-            <input name="soundcloud_url" id="soundcloud_url" class="form-control" 
-        
+
+            <input name="soundcloud_url" id="soundcloud_url" class="form-control"
+
             @if(isset($artist->soundcloud_url))
 
 				value="{{ $artist->soundcloud_url }}"
@@ -220,9 +222,9 @@
         <div class="form-group">
 
             <label for="bandcamp_url">BandCamp Url</label>
-        
-            <input name="bandcamp_url" id="bandcamp_url"  class="form-control" 
-        
+
+            <input name="bandcamp_url" id="bandcamp_url"  class="form-control"
+
             @if(isset($artist->bandcamp_url))
 
 				value="{{ $artist->bandcamp_url }}"
@@ -241,12 +243,12 @@
 
 			@endif
 
-        </div> 
-		
+        </div>
+
 		<!-- Image upload -->
 
 		<div>
-	    
+
 	        @if (count($errors) > 0)
 
 				<div class="alert alert-danger">
@@ -281,7 +283,7 @@
 
             <!-- image preview -->
 
-			<div id="imageContainer row" class="control-group">
+			<div id="imageContainer" class="control-group">
 
 				 <label for="image">Image/s Upload</label>
 
@@ -293,15 +295,27 @@
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
+
+
 						</span>
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add"></input>
+					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add">
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 
-					</div>	
+						@if(isset($artist->image))
+
+							<img src="/uploads/images/{{ $artist->image }}"></img>
+
+						@else
+
+							value="{{ old('image') }}"
+
+						@endif
+
+					</div>
 
 			</div>
 
@@ -315,14 +329,19 @@
 
 	</form>
 
-	<form  class="form-group" method="POST">
-		
-		{{ csrf_field() }}
+	<!-- Delete post -->
+	<form action="{{ action('PostsController@destroy', [$artist->id]) }}" method="POST">
 
-		<input class = "btn btn-danger" type="submit" value="delete information">
+		<input type="submit" class="btn btn-danger" value="Delete" style="margin-top: 5px; margin-bottom: 5%;">
+
+		{!!csrf_field()!!}
 
 		{{ method_field('DELETE') }}
-
+		
 	</form>
+
+</div>
+
+
 
 @stop

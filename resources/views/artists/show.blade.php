@@ -7,7 +7,7 @@
 		<p>{{ $artist->bio }}</p>
 		<p></p>
 
-		@if (Auth::id() == $post->created_by)
+		@if (Auth::id() == $artist->created_by)
 	 	<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit</a>
 		@endif
 	</article>
