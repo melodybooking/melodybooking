@@ -38,7 +38,7 @@
 
                 <?php endif; ?>
 
-                <form method="POST" action="{{ action('UserController@update', [Auth::id()] ) }}" data-validation required-message="This field is required">
+                <form method="POST" action="{{ action('UserController@update', [Auth::id()] )  }}" data-validation required-message="This field is required">
 
                     {{ csrf_field() }}
 
@@ -58,14 +58,6 @@
 
                     </div>
 
-                    <div class="form-group">
-
-                        <label>Password</label>
-
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="<?= Auth::user()->password; ?>" required>
-
-                    </div>
-
                     <div>
 
                         <input type="hidden" name="id" value="{{ Auth::id() }}">
@@ -78,7 +70,7 @@
 
                 </form>
 
-                <form  class="form-group" action="{{ action('UserController@destroy', [$user->id] ) }}" method="POST">
+                <form  class="form-group" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
                     
                     {{ csrf_field() }}
 
