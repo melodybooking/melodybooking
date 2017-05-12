@@ -351,6 +351,19 @@ div#signUpModal {
 
 }
 
+/*edit user form*/
+
+#userEditContainer {
+
+	border-radius: 15px;
+	font-family: 'Crimson Text', serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+	width:auto;
+
+}
+
 /*create artist form*/
 
 #createArtist {
@@ -375,6 +388,8 @@ div#signUpModal {
 	margin-bottom: 10px;
 
 }
+
+
 /*edit artist form*/
 
 #editForm {

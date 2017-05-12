@@ -40,7 +40,7 @@
 
 			                <li><a href="#">Edit Availabilty</a></li>
 
-			                <li><a href="">Edit User Account</a></li>
+			                <li><a href=" {{ action('UserController@edit') }} ">Edit User Account</a></li>
 
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
