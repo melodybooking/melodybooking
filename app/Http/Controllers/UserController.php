@@ -135,6 +135,7 @@ class UserController extends Controller
     public function destroy(Request $request, $id)
     {
         $user = User::find($id);
+        
         if (!$user) {
 			Log::info("Cannot delete User: $id");
             $request->session()->flash('errorMessage', 'User cannot be found');

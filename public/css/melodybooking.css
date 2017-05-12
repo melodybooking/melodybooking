@@ -444,15 +444,16 @@ body > main > h1 {
 
 #artistIndexSquare {
 
-	height: 300px;
-	width:300px;
-	overflow:hidden;
+
+	
 
 }
 
 #artistIndexSquare img {
 
-	
+	overflow:hidden;
+	height:auto;
+	width:90%;
 	background-color: black;
 	box-shadow: 0px 4px 4px black;
 	border-radius: 15px;
