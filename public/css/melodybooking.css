@@ -441,13 +441,23 @@ body > main > h1 {
 
 }
 
+
+#artistIndexSquare {
+
+	height: 300px;
+	width:300px;
+	overflow:hidden;
+
+}
+
 #artistIndexSquare img {
+
+	
 	background-color: black;
 	box-shadow: 0px 4px 4px black;
 	border-radius: 15px;
 	margin: 0 auto;
-	height: 300px;
-	width:300px;
+	
 
 }
 

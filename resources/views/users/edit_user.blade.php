@@ -38,7 +38,7 @@
 
                 <?php endif; ?>
 
-                <form method="POST" action="{{ action('UserController@update', [Auth::id()] )  }}" data-validation required-message="This field is required">
+                <form class ="form-group" method="POST" action="{{ action('UserController@update', [Auth::id()]) }}" data-validation required-message="This field is required">
 
                     {{ csrf_field() }}
 
@@ -58,15 +58,11 @@
 
                     </div>
 
-                    <div>
+                    <input type="hidden" name="id" value="{{ Auth::id() }}">
 
-                        <input type="hidden" name="id" value="{{ Auth::id() }}">
+                    <input class ="btn btn-primary" type="submit" value="update information">
 
-                        <input class ="btn btn-primary" type="submit" value="update information">
-
-                        {{ method_field('PUT') }}
-
-                    </div>
+                    {{ method_field('PUT') }}
 
                 </form>
 

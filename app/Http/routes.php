@@ -33,7 +33,7 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/','HomeController@showWelcome');
 
 Route::resource('/posts', 'PostsController'); // A resource controller
 Route::resource('/users', 'UserController'); 
