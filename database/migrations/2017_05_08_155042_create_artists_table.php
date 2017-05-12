@@ -24,7 +24,7 @@ class CreateArtistsTable extends Migration
 			$table->string('soundcloud_url', 100)->nullable();
 			$table->string('bandcamp_url', 100)->nullable();
 			$table->integer('created_by')->unsigned(); //column definition
-			$table->foreign('created_by')->references('id')->on('users'); //foreign key
+			$table->foreign('created_by')->references('id')->on('users')->onDelete('cascade'); //foreign key
 			$table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();

@@ -118,6 +118,7 @@
                             {{ $errors->first('name') }}
 
                         @endif
+                        
                     </div>
 
                     <div class="form-group">Email

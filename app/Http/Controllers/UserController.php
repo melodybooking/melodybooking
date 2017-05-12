@@ -96,21 +96,21 @@ class UserController extends Controller
     }
 
     public function update(Request $request, $id)
+
     {
 
         $user = User::find($id);
-        
+
         $rules = User::$rules;
 
         $rules = [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+            'email' => 'required|email|max:255',
 
         ];
 
         $this->validate($request, $rules);
 
-        
 
         if (!$user) {
             $request->session()->flash('errorMessage', 'User cannot be found');
@@ -125,6 +125,7 @@ class UserController extends Controller
         $user->email = $request->email;
       
         $user->save();
+
         $request->session()->flash('successMessage', 'User updated successfully');
 
 
@@ -134,6 +135,7 @@ class UserController extends Controller
     public function destroy(Request $request, $id)
     {
         $user = User::find($id);
+        
         if (!$user) {
 			Log::info("Cannot delete User: $id");
             $request->session()->flash('errorMessage', 'User cannot be found');
