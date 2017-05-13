@@ -64,16 +64,16 @@ class UserController extends Controller
     public function password (Request $request, $id)
 
     {
-        
+
         $user = User::find(Auth::id());
-  
+
         return view('users.password')->with('user', $user);
 
     }
 
     public function updatePassword(Request $request, $id)
     {
-        
+
         $user = User::find(Auth::id());
 
 
@@ -88,8 +88,8 @@ class UserController extends Controller
         $user->save();
 
         Session::flash('successMessage', "Password updated successfully.");
-         
-        
+
+
 
        return redirect()->action('UserController@show');
 
@@ -120,10 +120,10 @@ class UserController extends Controller
 		if($user->email != $request->email) {
 			$rules['email'] .= '|unique:users';
 		}
-	
+
         $user->name = $request->name;
         $user->email = $request->email;
-      
+
         $user->save();
 
         $request->session()->flash('successMessage', 'User updated successfully');
@@ -135,7 +135,7 @@ class UserController extends Controller
     public function destroy(Request $request, $id)
     {
         $user = User::find($id);
-        
+
         if (!$user) {
 			Log::info("Cannot delete User: $id");
             $request->session()->flash('errorMessage', 'User cannot be found');

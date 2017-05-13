@@ -36,17 +36,25 @@
 
                         <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
-		        		@if (Auth::check())
+
+
+		        		@if ( Auth::check() && Auth::user()->artist == 1 )
 
 			                <li><a href="#">Edit Availabilty</a></li>
 
-			                <li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
-
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
-		    				<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-		        		@else
+							<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+
+		        		@elseif ( Auth::check() && Auth::user()->artist == 0)
+
+							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+
+							<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+
+						@else
 
 							<!-- Button trigger modal -->
 
@@ -118,7 +126,7 @@
                             {{ $errors->first('name') }}
 
                         @endif
-                        
+
                     </div>
 
                     <div class="form-group">Email
