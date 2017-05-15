@@ -105,6 +105,8 @@ body {
 
 }
 
+/*navbar title*/
+
 #navbarBrand > h3 > a {
 
 	
@@ -155,7 +157,7 @@ body {
 #navbar > ul > li > ul {
 	
 	font-family: 'Work Sans', sans-serif;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	background: linear-gradient(to bottom right, #00100B, #91C7B1);
 
 }
 
@@ -166,7 +168,7 @@ body {
 
 #navbar > ul > li > ul > li > a:hover {
 	font-family: 'Work Sans', sans-serif;
-	color:#878E88;
+	color:#0599c2;
 }
 
 #navbar > ul > li > a {
@@ -179,7 +181,7 @@ body {
 #navbar > ul > li > a:hover {
 
 	font-family: 'Work Sans', sans-serif;
-	color: #878E88;
+	color: #0599c2;
 
 }
 /*footer*/
@@ -253,7 +255,6 @@ footer a {
 	height: 55vw;
 	float: left;
 	width: 100%;
-	
 
 }
 
@@ -261,7 +262,7 @@ footer a {
 
 a {
 
-  color: #0C7489;
+  color: #EAF4F4;
   -webkit-transition: all 0.25s ease-out;
   -moz-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
@@ -274,7 +275,7 @@ a:visited {
 
 a:hover, a:focus {
     color: #0599c2;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a.btn-sm {
@@ -499,9 +500,11 @@ div#signUpModal {
 /*index of artists*/
 
 body > main > h1 {
-
-	font-family: 'Lato', sans-serif;
-	color: #F4E87C;
+	
+	font-size: 56px;
+	font-family: 'Lobster', normal;
+	text-shadow: rgb(242, 242, 89) 1px 1px 2px;
+	color: #4A6E6F;
 
 }
 
@@ -514,18 +517,15 @@ body > main > h1 {
 
 #itemsPage a {
 
-	color:black;
+	color: #283044;
 
 }
 
 #itemsPage a:hover {
 
-	color:#00635D;
+	color:#0599c2;
 
 }
-
-
-
 
 #artistIndexSquare img {
 
