@@ -1,14 +1,12 @@
 <nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
 
-    <div class="container">
+    <div class="container-fluid">
 
-      	<div id="navbarBrand" class="hidden-xs-down text-center navbar-header">
+      	<div id="navbarBrand" class="img-responsive text-center navbar-header">
 
+      		<h3 class="img-responsive"><a href="/">Melody Booking </a></h3>
 
-      		<h3><a href="/"> Melody Booking </a></h3>
-
-
-	        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	        <button type="button" class="navbar-right navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
 	          	<span class="sr-only">Toggle navigation</span>
 
@@ -28,9 +26,9 @@
 
 	          	<li class="dropdown">
 
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation<span class="caret"></span></a>
+	            <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a>
 
-		            <ul class="dropdown-menu" role="menu">
+		            <ul class=" dropdown-menu" role="menu">
 
 						<li><a href="/">Home</a></li>
 
@@ -70,20 +68,23 @@
 
 	          	</li>
 
-	        </ul>
+	       
 
-                <form id="searchBar" method="GET" class="navbar-form navbar-right" action="{{action('PostsController@index')}}">
+                    <form id="searchBar" method="GET" class=" navbar-form" action="{{action('PostsController@index')}}">
 
-                    {!! csrf_field() !!}
+                        {!! csrf_field() !!}
 
-                    <div class="img-responsive form-group">
+                        <div class="img-responsive form-group">
 
-                        Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                            Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-                    </div>
+                        </div>
 
-                    <input class=" btn btn-primary" type="submit" value="submit">
-                </form>
+                        <input class=" btn btn-primary" type="submit" value="submit">
+
+                    </form>
+
+             
 
       	</div>
 

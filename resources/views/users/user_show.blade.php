@@ -2,18 +2,20 @@
 
 @section('content')
 
-{{ $user->name }}
+<div id="userShowContainer" class="container text-left">
 
-{{ $user->email }}
+		<p><strong>Username:</strong> {{ $user->name }}</p>
 
+		<p><strong>Email:</strong> {{ $user->email }}</p>
 
+		<form action="{{ action('UserController@edit', \Auth::id() ) }}" method="GET">
 
-	<form action="{{ action('UserController@edit', \Auth::id() ) }}" method="GET">
+			{!!csrf_field()!!}
+			
+			<input type="submit" class="btn btn-primary" value="Edit User Account Information" style="margin-top: 5px; margin-bottom: 5%;">
 
-		{!!csrf_field()!!}
-		
-		<input type="submit" class="btn btn-primary" value="Edit User" style="margin-top: 5px; margin-bottom: 5%;">
+		</form>
 
-	</form>
+</div>
 
 @stop
