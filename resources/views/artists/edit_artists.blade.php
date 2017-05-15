@@ -6,7 +6,7 @@
 
 	<h1>Edit Account Information</h1>
 
-	<form  class="form-group"  method="POST" action="{{ action('PostsController@update', [$artist->id]) }}">
+	<form  class="form-group"  method="POST" action="{{ action('PostsController@update', [$artist->id]) }}" enctype="multipart/form-data">
 
 		{!! csrf_field() !!}
 
@@ -285,7 +285,7 @@
 
 			<div id="imageContainer" class="control-group">
 
-				 <label for="image">Image/s Upload</label>
+				 <label for="image">Edit Profile Picture</label>
 
 					<div>
 
@@ -301,13 +301,13 @@
 
 			   		</div>
 
-					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add">
+					<input class="btn-primary btn" type="file" name="image" id="image">
 
 					<div id="previewGallery" class="img-responsive center-align gallery">
 
 						@if(isset($artist->image))
 
-							<img src="/uploads/images/{{ $artist->image }}"></img>
+							<img id="preview" src="/uploads/images/{{ $artist->image }}"></img>
 
 						@else
 
@@ -337,10 +337,27 @@
 		{!!csrf_field()!!}
 
 		{{ method_field('DELETE') }}
-		
+
 	</form>
 
 </div>
+
+<!--JS to render image thumbnail-->
+
+	 <script type="text/javascript">
+	 document.getElementById("image").onchange = function () {
+		 var reader = new FileReader();
+
+		 reader.onload = function (e) {
+			 // get loaded data and render thumbnail.
+			 document.getElementById("preview").src = e.target.result;
+		 };
+
+		 // read the image file as a data URL.
+		 reader.readAsDataURL(this.files[0]);
+
+	 };
+	 </script>
 
 
 

@@ -132,6 +132,9 @@ class PostsController extends Controller
         $artist->email = $request->email;
         $artist->bio = $request->bio;
         $artist->genre = $request->genre;
+		if($request->hasFile('image')) {
+	    $artist->image = $this->imageUploadPost($request);
+		}
         $artist->save();
         $request->session()->flash('successMessage', 'Artist saved successfully');
         return redirect()->action('PostsController@show', [$artist->id]);

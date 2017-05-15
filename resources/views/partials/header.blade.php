@@ -36,8 +36,6 @@
 
 		        		@if ( Auth::check() && Auth::user()->artist == 1 )
 
-			                <li><a href="#">Edit Availabilty</a></li>
-
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
 							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
@@ -52,36 +50,36 @@
 
 						@else
 
-							<!-- Button trigger modal -->
+            <!-- Button trigger modal -->
 
-		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+                      <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+                      <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
-		        		@endif
+            @endif
 
-		                <li><a href="#">Contact Us</a></li>
-                    
-                    </ul>
+                  <li><a href="#">Contact Us</a></li>
 
-                
+                  </ul>
 
-                    <form id="searchBar" method="GET" class=" container-fluid" action="{{action('PostsController@index')}}">
 
-                        {!! csrf_field() !!}
+                  <form id="searchBar" method="GET" class="navbar-form container-fluid" action="{{action('PostsController@index')}}">
 
-                        <div class="img-responsive form-group">
 
-                            Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                      {!! csrf_field() !!}
 
-                        </div>
+                      <div class="img-responsive form-group">
 
-                        <input class=" btn btn-primary" type="submit" value="submit">
+                          Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-                    </form>
+                      </div>
 
-                </li>
+                      <input class=" btn btn-primary" type="submit" value="submit">
 
+                  </form>
+
+
+              </li>
 
       	</div>
 
