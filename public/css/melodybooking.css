@@ -87,7 +87,7 @@ body {
 
 /*search bar*/
 #searchBar {
-
+	margin-left: 10px;
 	padding:31px;
 
 }
@@ -155,12 +155,13 @@ body {
 
 #navbar > ul > li > ul {
 	
+	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
-	background: linear-gradient(to bottom right, #00100B, #91C7B1);
-
+	
 }
 
 #navbar > ul > li > ul > li > a {
+
 	font-family: 'Work Sans', sans-serif;
 	color:#EAF4F4;
 }

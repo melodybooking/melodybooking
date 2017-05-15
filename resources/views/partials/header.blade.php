@@ -26,15 +26,13 @@
 
 	          	<li class="dropdown">
 
-	            <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a>
+	            <!-- <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a> -->
 
-		            <ul class=" dropdown-menu" role="menu">
+		            <ul role="menu">
 
 						<li><a href="/">Home</a></li>
 
                         <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
-
-
 
 		        		@if ( Auth::check() && Auth::user()->artist == 1 )
 
@@ -63,14 +61,12 @@
 		        		@endif
 
 		                <li><a href="#">Contact Us</a></li>
+                    
+                    </ul>
 
-		            </ul>
+                
 
-	          	</li>
-
-	       
-
-                    <form id="searchBar" method="GET" class=" navbar-form" action="{{action('PostsController@index')}}">
+                    <form id="searchBar" method="GET" class=" container-fluid" action="{{action('PostsController@index')}}">
 
                         {!! csrf_field() !!}
 
@@ -84,7 +80,8 @@
 
                     </form>
 
-             
+                </li>
+
 
       	</div>
 
