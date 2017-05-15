@@ -53,7 +53,7 @@
                 </div>
 
             @endif
-            
+
         </div>
             <div class="form-group">
 
@@ -200,18 +200,18 @@
 				<img src="{{ Session::get('path') }}">
 
 			@endif
-            
-            <form action="/file-upload" class="dropzone">
+
+            <!-- <form action="/file-upload" class="dropzone">
                 <div class="fallback">
                     <input name="file" type="file" multiple />
                 </div>
-            </form>
+            </form> -->
 
             <!-- image preview -->
 
 			<div id="imageContainer" class="control-group">
 
-				 <label for="image">Image/s Upload</label>
+				 <label for="image">Profile Picture</label>
 
 					<div>
 
@@ -247,5 +247,22 @@
     </form>
 
     <br>
+
+	<!--JS to render image thumbnail-->
+
+		 <script type="text/javascript">
+		 document.getElementById("image").onchange = function () {
+			 var reader = new FileReader();
+
+			 reader.onload = function (e) {
+				 // get loaded data and render thumbnail.
+				 document.getElementById("preview").src = e.target.result;
+			 };
+
+			 // read the image file as a data URL.
+			 reader.readAsDataURL(this.files[0]);
+
+		 };
+		 </script>
 
 @stop
