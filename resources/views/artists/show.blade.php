@@ -9,24 +9,44 @@
 
 ?>
 
-	<h3>{{ $artist->artist_name }}</h3>
+	<div class="container-fluid" id="artistShow">
 
-	<article class= "col-md-4">
-		<p>{{ $artist->bio }}</p>
-		<p></p>
+		<article class= "col-md-12">
 
-		@if (Auth::id() == $artist->created_by)
-	 	<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit</a>
-		@endif
-	</article>
+			<h3>{{ $artist->artist_name }}</h3>
 
-	<div class= "col-md-4">
-		<img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showItemImage" alt="Image">
-	</div>
+			<p>{{ $artist->bio }}</p>
+
+			<p><strong>Genre:</strong> {{ $artist->genre}}</p>
+
+			<div class= "col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showItemImage" alt="Image">
+
+			</div>
+
 
 	<!-- Button trigger modal -->
 	<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contact Artist</button>
 
+			<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+				<h5>Contact Info</h5>
+
+				<p>{{ $artist->email }}</p>
+		
+				@if (Auth::id() == $artist->created_by)
+
+		 			<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
+
+				@endif
+
+			</div>
+
+		</article>
+
+	</div>
+  
 	<!-- Modal -->
 	<div class="modal fade slide left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">

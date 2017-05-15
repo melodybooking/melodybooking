@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="userShowContainer" class="container text-left">
+<div id="userShowContainer" class="container-fluid center-align">
 
 		<p><strong>Username:</strong> {{ $user->name }}</p>
 

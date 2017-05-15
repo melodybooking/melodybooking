@@ -2,37 +2,42 @@
 
 @section('content')
 
-	<form class="form-group" action="{{ action('UserController@updatePassword', [Auth::id()] ) }}" method="POST">
+	<div class="container" id="editPasswordContainer">
 
-		{!! csrf_field() !!}
+		<form class="form-group" action="{{ action('UserController@updatePassword', [Auth::id()] ) }}" method="POST">
 
-		password: <input class="form-group" type="password" 
+			<h3> Update User Password</h3>
 
-		name="password"
+			{!! csrf_field() !!}
 
-		id="password" 
+			password: <input class="form-control" type="password" 
 
-		><br>
+			name="password"
+			id="password" 
 
-		@if ($errors->has('password'))
-			{!! $errors->first('password', '<span class="help-block">Password ERROR</span>') !!}
+			><br>
 
-		@endif
+			@if ($errors->has('password'))
+				{!! $errors->first('password', '<span class="help-block">Password ERROR</span>') !!}
 
-		confirm password: <input class="form-group" type="password" 
+			@endif
 
-		name="password_confirmation"
-		id="password_confirmation"
+			confirm password: <input class="form-control" type="password" 
 
-		><br>
+			name="password_confirmation"
+			id="password_confirmation"
 
-		@if ($errors->has('password'))
-			{!! $errors->first('password', '<span class="help-block">Password ERROR</span>') !!}
+			><br>
 
-		@endif
+			@if ($errors->has('password'))
+				{!! $errors->first('password', '<span class="help-block">Password ERROR</span>') !!}
 
-		<input type="submit" value="submit">
+			@endif
+ 
+			<input class="btn btn-primary" type="submit" value="submit">
 
-	</form>
+		</form>
+
+	</div>
 
 @stop
