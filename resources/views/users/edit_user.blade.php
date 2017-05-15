@@ -75,7 +75,7 @@
                 </form>
 
                 <form  class="form-group" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
-                    
+
                     {{ csrf_field() }}
 
                     <input class = "btn btn-danger" type="submit" value="delete information">
@@ -93,5 +93,5 @@
     </section>
 
 </div>
-    
+
 @stop
