@@ -38,8 +38,6 @@
 
 		        		@if ( Auth::check() && Auth::user()->artist == 1 )
 
-			                <li><a href="#">Edit Availabilty</a></li>
-
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
 							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
@@ -68,7 +66,7 @@
 
 	          	</li>
 
-	       
+
 
                     <form id="searchBar" method="GET" class=" navbar-form" action="{{action('PostsController@index')}}">
 
@@ -84,7 +82,7 @@
 
                     </form>
 
-             
+
 
       	</div>
 

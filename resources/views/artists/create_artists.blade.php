@@ -201,14 +201,6 @@
 
 			@endif
 
-            <!-- <form action="/file-upload" class="dropzone">
-                <div class="fallback">
-                    <input name="file" type="file" multiple />
-                </div>
-            </form> -->
-
-            <!-- image preview -->
-
 			<div id="imageContainer" class="control-group">
 
 				 <label for="image">Profile Picture</label>
