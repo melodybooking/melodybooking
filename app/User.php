@@ -28,6 +28,8 @@ class User extends Model implements AuthenticatableContract,
         'email' => 'required|email|max:255',
     ];
 
+    
+
     /**
      * The attributes that are mass assignable.
      *

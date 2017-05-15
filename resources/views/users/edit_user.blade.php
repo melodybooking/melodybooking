@@ -58,6 +58,14 @@
 
                     </div>
 
+                        <form action="{{ action('UserController@password', \Auth::id() ) }}" method="GET">
+
+                            {!!csrf_field()!!}
+            
+                            <input type="submit" class="btn btn-primary" value="Edit User Password" style="margin-top: 5px; margin-bottom: 5%;">
+
+                        </form>
+
                     <input type="hidden" name="id" value="{{ Auth::id() }}">
 
                     <input class ="btn btn-primary" type="submit" value="update information">

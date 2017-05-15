@@ -50,6 +50,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 // User route...
 Route::get('/users', 'UserController@show');
 Route::get('/users/{id}/edit', 'UserController@edit');
+Route::get('/users/{id}/edit', 'UserController@password');
 
 // Image upload routes
 

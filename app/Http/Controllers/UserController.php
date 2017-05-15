@@ -99,7 +99,7 @@ class UserController extends Controller
 
     {
 
-        $user = User::find($id);
+        $user = User::find(Auth::id());
 
         $rules = User::$rules;
 
@@ -134,7 +134,7 @@ class UserController extends Controller
 
     public function destroy(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = User::find(Auth::id());
         
         if (!$user) {
 			Log::info("Cannot delete User: $id");

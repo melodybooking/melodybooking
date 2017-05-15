@@ -10,7 +10,8 @@
 	    <title>Melody Booking</title>
 
 	    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Work+Sans" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="/css/melodybooking.css">
 
