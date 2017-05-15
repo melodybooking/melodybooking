@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
         'email' => 'required|email|max:255',
     ];
 
-    public function setPasswordAttribute($password) {   
+    public function setPasswordAttribute($password) { 
 
         if ( $password !== null ) {
 
