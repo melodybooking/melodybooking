@@ -28,7 +28,22 @@ class User extends Model implements AuthenticatableContract,
         'email' => 'required|email|max:255',
     ];
 
-    
+    public function setPasswordAttribute($password) {   
+
+        if ( $password !== null ) {
+
+            if ( is_null(request()->bcrypt) ) {
+
+                $this->attributes['password'] = bcrypt($password);
+
+            } else {
+
+                $this->attributes['password'] = $password;
+            }
+
+        }
+        
+    }
 
     /**
      * The attributes that are mass assignable.
