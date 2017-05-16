@@ -14,6 +14,9 @@
 	    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Work+Sans" rel="stylesheet">
 	    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="/css/melodybooking.css">
+	    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+	    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
 
 		<script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script rel="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -22,13 +25,16 @@
 		<script rel="text/javascript" src="/js/masterblade.js"></script>
 		<script rel="text/javascript" src="/js/responsiveslides.min.js"></script>
 		<script rel="text/javascript" src="/js/responsiveslides.js"></script>
-		
+		<script src="/js/html5audio.js" type="text/javascript"></script>
+		<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
 
+
+		
 	</head>
 
 	<body>
-
-
 
 		@include('partials.header')
 
@@ -45,6 +51,11 @@
 	    @yield('content')
 
 		</main>
+
+		<br>
+		<br>
+
+		@include('partials.audio')
 
 		@include('partials.footer')
 
