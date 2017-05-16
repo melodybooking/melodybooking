@@ -41,7 +41,7 @@
 
 				<div style="padding-top:10px; padding-bottom:10px;"  class="row">
 
-					<a class=" btn " href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+					<!-- <a class=" btn " href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
 
 					<a class=" btn " href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
 
@@ -49,7 +49,7 @@
 
 					<a class=" btn " href="{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
 
-					<a class=" btn " href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a class=" btn " href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a> -->
 
 				</div>
 
