@@ -2,12 +2,6 @@
 
 @section('content')
 
-<?php
-
-// require($_SERVER['DOCUMENT_ROOT'] . 'vendor/autoload.php');
-// use Mailgun\Mailgun;
-
-?>
 
 	<div class="container-fluid" id="artistShow">
 
@@ -30,10 +24,6 @@
 	<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contact Artist</button>
 
 			<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-				<h5>Contact Info</h5>
-
-				<p>{{ $artist->email }}</p>
 
 				@if (Auth::id() == $artist->created_by)
 
@@ -60,22 +50,23 @@
 	      </div>
 	      <div class="modal-body">
 	        <p class="lead">Please get in touch for bookings!</p>
-	        <form method="post" id="myForm" action="show.blade.php">
+	        <form method="POST" id="myForm" action="{{ action('PostsController@sendMail') }}">
 
 				{!! csrf_field() !!}
 
 	          <div class="form-group">
 	            <label for="name">Your name:</label>
-	            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" required/>
+	            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ Auth::user()->name }}" required/>
 	          </div>
 	          <div class="form-group">
 	            <label for="email">Your email:</label>
 	            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}" required/>
 	          </div>
 	          <div class="form-group">
-	            <label for="comment">Your message:</label>
-	            <textarea class="form-control" id="comment" name="comment" required></textarea>
+	            <label for="text">Your message:</label>
+	            <textarea class="form-control" id="text" name="text" required></textarea>
 	          </div>
+			  <input type="hidden" name="id" value="{{ $artist->id }}">
 	          <input type="submit" name="submit" class="btn btn-success btn-lg" value="submit">
 	        </form>
 	      </div>
@@ -85,26 +76,5 @@
 	    </div>
 	</div>
 
-
-	<?php
-	// 
-	// if (isset($_POST['name'])) {
-	// 	$userName=$_POST['name'];
-	// 	$artistEmail = $artist->email;
-	// 	$message = $_POST['comment'];
-	//
-	// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
-	// // Enter domain which you find in Default Password
-	// $domain = "001ddaa1b197c22c3ee3e4b70e57dcd8";
-	//
-	// # Make the call to the client.
-	// $result = $mgClient->sendMessage($domain, array(
-	// "from" => "$userName <mailgun@001ddaa1b197c22c3ee3e4b70e57dcd8>",
-	// "email" => "Baz <$artistEmail>",
-	// "comment" => "$message"
-	// ));
-	// echo "<script>alert('Email Sent Successfully.. !!');</script>";
-	// }
-?>
 
 @stop
