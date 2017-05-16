@@ -753,11 +753,13 @@ font-weight: bold;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
-	opacity: .9;
+	opacity: .95;
 	width:auto;
 	height:auto;
 
 }
+
+
 
 #artistShow h5 {
 	text-decoration: underline;
@@ -767,6 +769,8 @@ font-weight: bold;
 	
 	border-radius: 10px;
 }
+
+
 
 
 

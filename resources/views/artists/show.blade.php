@@ -11,7 +11,7 @@
 
 	<div class="container-fluid" id="artistShow">
 
-		<article class= "col-md-12">
+		<article class= "col-lg-12 col-sm-12 col-xs-12 col-md-12">
 
 			<h3>{{ $artist->artist_name }}</h3>
 
@@ -24,14 +24,9 @@
 				<img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showItemImage" alt="Image">
 
 			</div>
+			
+			<div style="padding-top:10px; padding-bottom:10px;" class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-
-
-			<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-				<h5>Contact Info</h5>
-
-				<p>{{ $artist->email }}</p>
 
 				<!-- Button trigger modal -->
 
@@ -39,9 +34,21 @@
 		
 				@if (Auth::id() == $artist->created_by)
 
-		 			<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
+		 		<button class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</button>
 
 				@endif
+
+			<div style="padding-top:10px; padding-bottom:10px;"  class="row">
+				<a class=" btn " href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+
+				<a class=" btn " href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
+
+				<a class=" btn " href="{{ $artist->soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a>
+
+				<a class=" btn " href="{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
+
+				<a class=" btn " href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+			</div>
 
 			</div>
 
