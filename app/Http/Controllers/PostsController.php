@@ -3,9 +3,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers;
 use App\Models\Post;
+use App\User;
 use Log;
 use Session;
+use Auth;
+use Mailgun\Mailgun;
 
 class PostsController extends Controller
 {
@@ -149,4 +153,28 @@ class PostsController extends Controller
         $artist->delete();
         return view('artists.index');
     }
+
+	public function sendMail(Request $request) {
+		$id = $request->id;
+		$user = User::find(Auth::id());
+
+		$artist = Post::find($id);
+
+		$mgClient = new Mailgun(env("MAILGUN_SECRET"));
+		// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
+		// Enter domain which you find in Default Password
+		$domain = env("MAILGUN_DOMAIN");
+		// $domain = "sandboxcfe4de21b1034deeb0c68f6eaac84ea8.mailgun.org";
+
+		# Make the call to the client.
+		$result = $mgClient->sendMessage($domain, array(
+			"from" => "$user->email",
+			"to" => "$artist->email",
+			"subject" => "Booking Request",
+			"text" => "$request->text"
+		));
+
+		$request->session()->flash('successMessage', 'Message sent successfully');
+        return redirect()->action('PostsController@show', [$artist->id]);
+	}
 }
