@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div id="userEditContainer" class="container-fluid">
+<div id="userEditContainer" class="container text-left">
 
     <section id="login">
 
         <div class="row">
 
-            <h1 class="section-title text-center">Edit User Account</h1>
+            <h1 class="section-title text-center container ">Edit User Account</h1>
 
             <div class="col-md-6 col-md-offset-3">
 
@@ -60,25 +60,25 @@
 
                     <input type="hidden" name="id" value="{{ Auth::id() }}">
 
-                    <input class ="btn btn-primary" type="submit" value="update information">
+                    <input class ="btn btn-primary" type="submit" value="Update Information">
 
                     {{ method_field('PUT') }}
 
                 </form>
 
-                <form action="{{ action('UserController@password', \Auth::id() ) }}" method="GET">
+                <form action="{{ action('UserController@password', [ Auth::id() ] ) }}" method="GET">
 
                     {!!csrf_field()!!}
             
-                    <input type="submit" class="btn btn-primary" value="Edit User Password" style="margin-top: 5px; margin-bottom: 5%;">
+                    <input type="submit" class="btn btn-success" value="Edit Password" style="margin-top: 5px; margin-bottom: 15px;">
 
                 </form>
 
-                <form  class="form-group" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
+                <form class="form-group" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
 
                     {{ csrf_field() }}
 
-                    <input class = "btn btn-danger" type="submit" value="delete information">
+                    <input class = "btn btn-danger" type="submit" style="margin-top: 5px; margin-bottom: 25px;" value="Delete Information">
 
                     {{ method_field('DELETE') }}
 

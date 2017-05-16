@@ -2,12 +2,11 @@
 
 @section('content')
 
-    <form id="createArtist" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data" >
+    <form id="createArtist" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data"  >
 
         {!! csrf_field() !!}
 
         <div class="form-group">
-
 
             <label for="artist_name">Artist's Name</label>
 
@@ -200,14 +199,6 @@
 				<img src="{{ Session::get('path') }}">
 
 			@endif
-
-            <!-- <form action="/file-upload" class="dropzone">
-                <div class="fallback">
-                    <input name="file" type="file" multiple />
-                </div>
-            </form> -->
-
-            <!-- image preview -->
 
 			<div id="imageContainer" class="control-group">
 

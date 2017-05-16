@@ -26,19 +26,15 @@
 
 	          	<li class="dropdown">
 
-	            <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a>
+	            <!-- <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a> -->
 
-		            <ul class=" dropdown-menu" role="menu">
+		            <ul role="menu">
 
 						<li><a href="/">Home</a></li>
 
                         <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
-
-
 		        		@if ( Auth::check() && Auth::user()->artist == 1 )
-
-			                <li><a href="#">Edit Availabilty</a></li>
 
 		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
@@ -54,37 +50,36 @@
 
 						@else
 
-							<!-- Button trigger modal -->
+            <!-- Button trigger modal -->
 
-		                    <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+                      <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-		                    <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+                      <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
-		        		@endif
+            @endif
 
-		                <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Contact Us</a></li>
 
-		            </ul>
+                  </ul>
 
-	          	</li>
 
-	       
+                  <form id="searchBar" method="GET" class="navbar-form container-fluid" action="{{action('PostsController@index')}}">
 
-                    <form id="searchBar" method="GET" class=" navbar-form" action="{{action('PostsController@index')}}">
 
-                        {!! csrf_field() !!}
+                      {!! csrf_field() !!}
 
-                        <div class="img-responsive form-group">
+                      <div class="img-responsive form-group">
 
-                            Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                          Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-                        </div>
+                      </div>
 
-                        <input class=" btn btn-primary" type="submit" value="submit">
+                      <input class=" btn btn-primary" type="submit" value="submit">
 
-                    </form>
+                  </form>
 
-             
+
+              </li>
 
       	</div>
 

@@ -87,8 +87,7 @@ body {
 
 /*search bar*/
 #searchBar {
-
-
+	margin-left: 10px;
 	padding:31px;
 
 }
@@ -135,7 +134,7 @@ body {
 	}
 }
 
-@media (max-width: 1900px) {
+@media (max-width: 9999px) {
   	body {
     	padding-top: 0px;
   	}
@@ -156,12 +155,13 @@ body {
 
 #navbar > ul > li > ul {
 	
+	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
-	background: linear-gradient(to bottom right, #00100B, #91C7B1);
-
+	
 }
 
 #navbar > ul > li > ul > li > a {
+
 	font-family: 'Work Sans', sans-serif;
 	color:#EAF4F4;
 }
@@ -435,6 +435,21 @@ div#signUpModal {
 
 }
 
+/*user show form*/
+
+#userShowContainer {
+
+	padding-top: 30px;
+	border-radius: 15px;
+	font-family: 'Work Sans', sans-serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+	width:auto;
+	height:auto;
+
+}
+
 /*edit user form*/
 
 #userEditContainer {
@@ -445,6 +460,21 @@ div#signUpModal {
 	color: #EAF4F4;
 	opacity: .9;
 	width:auto;
+	height:auto;
+
+}
+
+/*edit user password form*/ 
+
+#editPasswordContainer {
+
+	border-radius: 15px;
+	font-family: 'Work Sans', sans-serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+	width:auto;
+	
 
 }
 
@@ -452,6 +482,7 @@ div#signUpModal {
 
 #createArtist {
 
+	padding-top: 20px;
 	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
@@ -465,7 +496,6 @@ div#signUpModal {
 #createArtist > div:nth-child(10)
 
 {
-
 	padding-top: 5px;
 	margin:auto;
 	margin-top:10px;
@@ -539,6 +569,7 @@ body > main > h1 {
 	
 
 }
+
 
 .example {
 margin: 50px auto 0;
@@ -689,4 +720,32 @@ margin: 0 0 5px 15px;
 .playlist li.active {
 font-weight: bold;
 }
+
+/*individual artist show*/
+
+#artistShow {
+	
+	padding: 10px;
+	padding-bottom: 25px;
+	border-radius: 15px;
+	font-family: 'Work Sans', sans-serif;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	color: #EAF4F4;
+	opacity: .9;
+	width:auto;
+	height:auto;
+
+}
+
+#artistShow h5 {
+	text-decoration: underline;
+}
+
+#artistShow img {
+	
+	border-radius: 10px;
+}
+
+
+
 
