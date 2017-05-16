@@ -4,10 +4,6 @@
 
 	<h1 style="text-align: center; margin-bottom: 5%;">Artists</h1>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> c25990474b096c03105b5fb92698f7c14831d534
 		<div class="align-center container">
 			
 			<div class="img-responsive" id="itemsPage">
