@@ -200,38 +200,46 @@
 
 			@endif
 
-			<div id="imageContainer" class="control-group">
+						<div id="imageContainer" class="control-group">
 
-				 <label for="image">Profile Picture</label>
+							 <label for="image">Profile Picture</label>
 
-					<div>
+								<div>
 
-						<span class="btn-primary btn-file">
+									<span class="btn-primary btn-file">
 
-							<span class="fileupload-new"></span>
+										<span class="fileupload-new"></span>
 
-							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
+										<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
 
-						</span>
+									</span>
 
-			   		</div>
+						   		</div>
 
-					<input class="btn-primary btn" type="file" name="image" multiple id="gallery-photo-add">
+								<input class="btn-primary btn" type="file" name="image" id="image">
 
-					<div id="previewGallery" class="img-responsive center-align gallery">
+								<div id="previewGallery" class="img-responsive center-align gallery">
+
+									<img id="preview"></img>
+
+								</div>
+
+
+								<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+									<button class="btn btn-success" type="submit" style="margin-top: 5%; margin-bottom: 5%;">Save</button>
+
+								</div>
+
+						</div>
 
 					</div>
 
+					<input type="hidden" name="id" value="{{Auth::id()}}">
 
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			    </form>
 
-						<button class="btn btn-success" type="submit" style="margin-top: 5%; margin-bottom: 5%;">Save</button>
-
-					</div>
-
-			</div>
-
-		</div>
+			    <br>
 
 		<input type="hidden" name="id" value="{{Auth::id()}}">
 
