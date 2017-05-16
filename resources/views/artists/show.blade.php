@@ -2,12 +2,6 @@
 
 @section('content')
 
-<?php
-
-// require __DIR__ . '/../vendor/autoload.php';
-// use Mailgun\Mailgun;
-
-?>
 
 	<div class="container-fluid" id="artistShow">
 
@@ -30,9 +24,14 @@
 
 				<!-- Button trigger modal -->
 
+
 				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#contactArtistModal">Contact Artist</button>
 		
-				@if (Auth::id() == $artist->created_by)
+
+			<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+
+	  		@if (Auth::id() == $artist->created_by)
 
 		 		<button class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</button>
 
@@ -55,8 +54,9 @@
 		</article>
 
 	</div>
-  
+
 	<!-- Modal -->
+
 	<div class="modal rounded fade slide left" id="contactArtistModal" tabindex="-1" role="dialog" aria-labelledby="contactArtistModal">
 		 <div class="modal-dialog" role="document">
 		    <div class="rounded modal-content">
@@ -100,29 +100,42 @@
 		</div>
 	</div>
 
+	<div class="modal fade slide left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
 
+	        </button>
+	        <h1 class="modal-title" id="myModalLabel">Contact Artist</h1>
 
+	      </div>
+	      <div class="modal-body">
+	        <p class="lead">Please get in touch for bookings!</p>
+	        <form method="POST" id="myForm" action="{{ action('PostsController@sendMail') }}">
 
+				{!! csrf_field() !!}
 
-	<?php
-
-	// if (isset($_POST['name'])) {
-	// 	$userName=$_POST['name'];
-	// 	$artistEmail = $artist->email;
-	// 	$message = $_POST['comment'];
-	//
-	// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
-	// // Enter domain which you find in Default Password
-	// $domain = "001ddaa1b197c22c3ee3e4b70e57dcd8";
-	//
-	// # Make the call to the client.
-	// $result = $mgClient->sendMessage($domain, array(
-	// "from" => "$userName <mailgun@001ddaa1b197c22c3ee3e4b70e57dcd8>",
-	// "email" => "Baz <$artistEmail>",
-	// "comment" => "$message"
-	// ));
-	// echo "<script>alert('Email Sent Successfully.. !!');</script>";
-	// }
-?>
+	          <div class="form-group">
+	            <label for="name">Your name:</label>
+	            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="{{ Auth::user()->name }}" required/>
+	          </div>
+	          <div class="form-group">
+	            <label for="email">Your email:</label>
+	            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}" required/>
+	          </div>
+	          <div class="form-group">
+	            <label for="text">Your message:</label>
+	            <textarea class="form-control" id="text" name="text" required></textarea>
+	          </div>
+			  <input type="hidden" name="id" value="{{ $artist->id }}">
+	          <input type="submit" name="submit" class="btn btn-success btn-lg" value="submit">
+	        </form>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel Form</button>
+	      </div>
+	    </div>
+	</div>
 
 @stop
