@@ -18,7 +18,6 @@
 
 		</div>
 
-
 <!-- Button trigger modal -->
 	@if (Auth::check())
 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contact Artist</button>
@@ -27,6 +26,7 @@
 		<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 			@if (Auth::id() == $artist->created_by)
+
 
 				<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
 
@@ -80,6 +80,5 @@
 </div>
 	</div>
 @endif
-
 
 @stop

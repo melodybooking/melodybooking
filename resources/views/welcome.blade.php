@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div id="slideShowContainer" class="container-fluid center-align img-responsive ">
+<div id="slideShowContainer" class="container-fluid center-align img-responsive">
 
-    <div id="slideshow" class="center-align container">
+    <div id="slideshow" class="center-align">
 
         <ul class="center-align rslides">
 

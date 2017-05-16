@@ -20,66 +20,66 @@
 
     	</div>
 
-      	<div id="navbar" class="navbar-collapse collapse">
+      	<div id="navbar" class="navbar-collapse center-align container-fluid collapse">
 
 	        <ul class="nav navbar-nav navbar-right">
 
-	          	<li class="dropdown">
+	          	<li class="dropdown center-align row col-xs-12 col-lg-12 col-sm-12 col-md-12">
 
 	            <!-- <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a> -->
 
-		            <ul role="menu">
+		        <ul class="container-fluid" role="menu">
 
-						<li><a href="/">Home</a></li>
+						<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="/">Home</a></li>
 
-                        <li><a href="{{action('PostsController@index')}}">All Artists</a></li>
+            <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">All Artists</a></li>
 
-		        		@if ( Auth::check() && Auth::user()->artist == 1 )
+		        	@if ( Auth::check() && Auth::user()->artist == 1 )
 
-		    				<li><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
+		    			<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
-							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 		        		@elseif ( Auth::check() && Auth::user()->artist == 0)
 
-							<li><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 						@else
 
             <!-- Button trigger modal -->
 
-                      <li><a data-toggle="modal" href="#loginModal">Log In</a></li>
+              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-                      <li><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
             @endif
 
-                  <li><a href="#">Contact Us</a></li>
+              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="#">Contact Us</a></li>
 
-                  </ul>
-
-
-                  <form id="searchBar" method="GET" class="navbar-form container-fluid" action="{{action('PostsController@index')}}">
+              </ul>
 
 
-                      {!! csrf_field() !!}
+                <form id="searchBar" method="GET" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-fluid" action="{{action('PostsController@index')}}">
 
-                      <div class="img-responsive form-group">
+                    {!! csrf_field() !!}
 
-                          Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                    <div class="img-responsive form-group">
 
-                      </div>
+                        Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
 
-                      <input class=" btn btn-primary" type="submit" value="submit">
+                    </div>
 
-                  </form>
+                    <input class=" btn btn-primary" type="submit" value="submit">
+
+                </form>
 
 
-              </li>
+                </li>
+            </ul>
 
       	</div>
 
@@ -115,7 +115,7 @@
 
                     <div class="form-group">Name
 
-                        <input id="newUserName" class="form-control" type="name" name="name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="{{ old('name') }}">
 
                         @if( $errors->has('name') )
 
@@ -127,7 +127,7 @@
 
                     <div class="form-group">Email
 
-                        <input id="newUserEmail" class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="{{ old('email') }}">
 
                          @if( $errors->has('email') )
 
@@ -139,7 +139,7 @@
 
                     <div class="form-group">Password
 
-                        <input id="newUserPassword" class="form-control" type="password" name="password">
+                        <input id="newUserPassword" class="form-control" placeholder="Password" type="password" name="password">
 
                          @if( $errors->has('password') )
 
@@ -151,7 +151,7 @@
 
                     <div class="form-group">Confirm Password
 
-                        <input id="newUserConfirmPassword" class="form-control" type="password" name="password_confirmation">
+                        <input id="newUserConfirmPassword" class="form-control" placeholder="Confirm Password" type="password" name="password_confirmation">
 
                          @if( $errors->has('password') )
 
@@ -218,18 +218,20 @@
                     {!! csrf_field() !!}
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
-                        <input id="userLoginEmail" class="form-control" type="email" name="email" value="{{ old('email') }}">
+                        <input id="userLoginEmail" class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                            
                     </div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
-                        <input id="userLoginPassword" class="form-control" type="password" name="password" id="password">
+                        <input id="userLoginPassword" class="form-control" type="password" placeholder="Password" name="password" id="password">
+                       
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <input type="checkbox" name="remember"> Remember Me
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer rounded">
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 

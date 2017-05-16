@@ -35,6 +35,7 @@
 
 
 Route::get('/','HomeController@showWelcome');
+Route::get('/about', 'UserController@aboutUs');
 
 Route::resource('/posts', 'PostsController'); // A resource controller
 Route::resource('/users', 'UserController');
@@ -54,6 +55,7 @@ Route::get('/users/{id}/edit', 'UserController@edit');
 Route::post('/users/{id}/edit', 'UserController@edit');
 Route::get('/users/{id}/password', 'UserController@password');
 Route::post('/users/{id}/password','UserController@updatePassword');
+
 
 // Image upload routes
 
