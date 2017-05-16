@@ -1,4 +1,4 @@
-* {
+x* {
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -18,7 +18,14 @@ body {
 	
 	font-family: 'Work Sans', sans-serif;
 	padding:20px;
-	background-image: url('/img/IMG_6701_c2.jpg');
+	
+
+	background: url('/img/IMG_6701_c2.jpg') repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	
 	background-size: 100%; 
 	padding-bottom: 120px;
 
@@ -124,7 +131,7 @@ body {
 
 @media (min-width: 100px) { 
 	body { 
-		margin-top: 200px;; 
+		margin-top: 150px;; 
 	} 
 } 
 
@@ -142,11 +149,10 @@ body {
 
 #header {
 	
-	margin-bottom: 150px;
+	margin-bottom: 100px;
 	font-family: 'Work Sans', sans-serif;
-	font-size: 18px;
+	font-size: 14px;
 	color: #EAF4F4;
-	margin-bottom:200px;
 	background: linear-gradient(to bottom left, #00100B, #4D6A6D);
 
 }
@@ -154,7 +160,7 @@ body {
 /*nav bar header navigation drop down*/
 
 #navbar > ul > li > ul {
-	
+	padding:;
 	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
 	
@@ -209,21 +215,26 @@ footer a {
 
 }
 
-#slideshow{
-
-	text-align: center;
-
-}
 /*welcome blade images*/
+
+#slideShow {
+
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
 
 .rslides {
 
 	position: relative;
 	list-style: none;
 	overflow: hidden;
-	width: 100%;
+	width: auto;
 	padding: 0;
-	margin: 0;
+	margin:0;
+	margin-left: 0px;
+	margin-right: 0px;
 
 }
 
@@ -233,8 +244,10 @@ footer a {
 	position: absolute;
 	display: none;
 	width: 100%;
+	height: 55vw;
 	left: 0;
 	top: 0;
+	text-align: center;
 
 }
 
@@ -247,11 +260,12 @@ footer a {
 }
 
 .rslides img {
-	
+
+	text-align: center;
 	border-radius: 15px;
 	text-align: center
 	display: block;
-	height: 55vw;
+	height: 50vw;
 	float: left;
 	width: 100%;
 

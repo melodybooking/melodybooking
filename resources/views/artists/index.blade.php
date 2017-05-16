@@ -4,8 +4,6 @@
 
 	<h1 style="text-align: center; margin-bottom: 5%;">Artists</h1>
 
-	<audio src="../../mp3/nananana.mp3" preload="auto"/>
-
 		<div class="align-center container">
 			
 			<div class="img-responsive" id="itemsPage">
