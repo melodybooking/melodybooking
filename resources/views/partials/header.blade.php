@@ -63,7 +63,7 @@
                   </ul>
 
 
-                  <form id="searchBar" method="GET" class="navbar-form container-fluid" action="{{action('PostsController@index')}}">
+                  <form id="searchBar" method="GET" class="container-fluid" action="{{action('PostsController@index')}}">
 
 
                       {!! csrf_field() !!}
@@ -115,7 +115,7 @@
 
                     <div class="form-group">Name
 
-                        <input id="newUserName" class="form-control" type="name" name="name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="{{ old('name') }}">
 
                         @if( $errors->has('name') )
 
@@ -127,7 +127,7 @@
 
                     <div class="form-group">Email
 
-                        <input id="newUserEmail" class="form-control" type="email" name="email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="{{ old('email') }}">
 
                          @if( $errors->has('email') )
 
@@ -139,7 +139,7 @@
 
                     <div class="form-group">Password
 
-                        <input id="newUserPassword" class="form-control" type="password" name="password">
+                        <input id="newUserPassword" class="form-control" placeholder="Password" type="password" name="password">
 
                          @if( $errors->has('password') )
 
@@ -151,7 +151,7 @@
 
                     <div class="form-group">Confirm Password
 
-                        <input id="newUserConfirmPassword" class="form-control" type="password" name="password_confirmation">
+                        <input id="newUserConfirmPassword" class="form-control" placeholder="Confirm Password" type="password" name="password_confirmation">
 
                          @if( $errors->has('password') )
 
@@ -218,18 +218,20 @@
                     {!! csrf_field() !!}
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
-                        <input id="userLoginEmail" class="form-control" type="email" name="email" value="{{ old('email') }}">
+                        <input id="userLoginEmail" class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                            
                     </div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
-                        <input id="userLoginPassword" class="form-control" type="password" name="password" id="password">
+                        <input id="userLoginPassword" class="form-control" type="password" placeholder="Password" name="password" id="password">
+                       
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <input type="checkbox" name="remember"> Remember Me
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer rounded">
 
                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 

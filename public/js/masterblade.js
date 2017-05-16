@@ -24,7 +24,7 @@ $(document).ready(function() {
 		  pauseControls: true,    // Boolean: Pause when hovering controls, true or false
 		  prevText: "Previous",   // String: Text for the "previous" button
 		  nextText: "Next",       // String: Text for the "next" button
-		  maxwidth: "", 
+		  maxwidth: "700", 
 		  maxheight: "500",          // Integer: Max-width of the slideshow, in pixels
 		  navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
 		  manualControls: "",     // Selector: Declare custom pager navigation

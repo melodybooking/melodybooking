@@ -210,8 +210,7 @@ footer a {
 }
 
 #slideshow{
-	height: 600;
-	width:auto;
+
 	text-align: center;
 
 }
@@ -303,6 +302,15 @@ a.btn-sm {
   	background-color: #f9f9f9;
 
 }
+
+div#contactArtistModal {
+
+	border-radius: 15px;
+	font-family: 'Work Sans', sans-serif;	
+	opacity: .95;
+
+}
+
 
 div#loginModal {
 	
