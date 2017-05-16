@@ -2,6 +2,13 @@
 
 @section('content')
 
+<?php
+
+// require __DIR__ . '/../vendor/autoload.php';
+// use Mailgun\Mailgun;
+
+?>
+
 	<div class="container-fluid" id="artistShow">
 
 		<article class= "col-md-12">
@@ -53,14 +60,17 @@
 	      </div>
 	      <div class="modal-body">
 	        <p class="lead">Please get in touch for bookings!</p>
-	        <form method="post" id="myForm">
+	        <form method="post" id="myForm" action="show.blade.php">
+
+				{!! csrf_field() !!}
+
 	          <div class="form-group">
 	            <label for="name">Your name:</label>
 	            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" required/>
 	          </div>
 	          <div class="form-group">
 	            <label for="email">Your email:</label>
-	            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="" required/>
+	            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}" required/>
 	          </div>
 	          <div class="form-group">
 	            <label for="comment">Your message:</label>
@@ -73,5 +83,28 @@
 	        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel Form</button>
 	      </div>
 	    </div>
-	  </div>
+	</div>
+
+
+	<?php
+
+	// if (isset($_POST['name'])) {
+	// 	$userName=$_POST['name'];
+	// 	$artistEmail = $artist->email;
+	// 	$message = $_POST['comment'];
+	//
+	// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
+	// // Enter domain which you find in Default Password
+	// $domain = "001ddaa1b197c22c3ee3e4b70e57dcd8";
+	//
+	// # Make the call to the client.
+	// $result = $mgClient->sendMessage($domain, array(
+	// "from" => "$userName <mailgun@001ddaa1b197c22c3ee3e4b70e57dcd8>",
+	// "email" => "Baz <$artistEmail>",
+	// "comment" => "$message"
+	// ));
+	// echo "<script>alert('Email Sent Successfully.. !!');</script>";
+	// }
+?>
+
 @stop
