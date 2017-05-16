@@ -5,7 +5,7 @@
 
 	<div class="container-fluid" id="artistShow">
 
-		<article class= "col-md-12">
+		<article class= "col-lg-12 col-sm-12 col-xs-12 col-md-12">
 
 			<h3>{{ $artist->artist_name }}</h3>
 
@@ -18,18 +18,36 @@
 				<img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showItemImage" alt="Image">
 
 			</div>
+			
+			<div style="padding-top:10px; padding-bottom:10px;" class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 
-	<!-- Button trigger modal -->
-	<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contact Artist</button>
+				<!-- Button trigger modal -->
+
+
+				<button type="button" class="btn btn-success" data-toggle="modal" data-target="#contactArtistModal">Contact Artist</button>
+		
 
 			<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-				@if (Auth::id() == $artist->created_by)
 
-		 			<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
+	  		@if (Auth::id() == $artist->created_by)
+
+		 		<button class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</button>
 
 				@endif
+
+			<div style="padding-top:10px; padding-bottom:10px;"  class="row">
+				<a class=" btn " href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+
+				<a class=" btn " href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
+
+				<a class=" btn " href="{{ $artist->soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a>
+
+				<a class=" btn " href="{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
+
+				<a class=" btn " href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+			</div>
 
 			</div>
 
@@ -38,6 +56,50 @@
 	</div>
 
 	<!-- Modal -->
+
+	<div class="modal rounded fade slide left" id="contactArtistModal" tabindex="-1" role="dialog" aria-labelledby="contactArtistModal">
+		 <div class="modal-dialog" role="document">
+		    <div class="rounded modal-content">
+		      <div class="rounded modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+
+		        </button>
+		        <h1 class="modal-title" id="myModalLabel">Contact Artist</h1>
+
+		      </div>
+		      <div id="contactModalArtistBody" class="rounded modal-body">
+		        <p class="lead">Please get in touch for bookings!</p>
+
+		        <form method="post" id="myForm">
+		        <div class="rounded form-group">
+
+		        <form method="post" id="myForm" action="show.blade.php">
+
+					{!! csrf_field() !!}
+
+		          <div class="form-group">
+		            <label for="name">Your name:</label>
+		            <input type="text" name="name" id="name" class="form-control" placeholder="Name" value="" required/>
+		          </div>
+		          <div class="form-group">
+		            <label for="email">Your email:</label>
+		            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ Auth::user()->email }}" required/>
+		          </div>
+		          <div class="form-group">
+		            <label for="comment">Your message:</label>
+		            <textarea class="form-control" id="comment" name="comment" required></textarea>
+		          </div>
+		          <input type="submit" name="submit" class="btn btn-success btn-lg" value="submit">
+		        </form>
+		      	</div>
+		      <div class="rounded modal-footer">
+		        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel Form</button>
+		      </div>
+		    </div>
+	  	</div>
+		</div>
+	</div>
+
 	<div class="modal fade slide left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -75,6 +137,5 @@
 	      </div>
 	    </div>
 	</div>
-
 
 @stop

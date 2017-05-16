@@ -4,9 +4,10 @@
 
 	<h1 style="text-align: center; margin-bottom: 5%;">Artists</h1>
 
-		<div class="container">
 
-			<div class="row img-responsive" id="itemsPage">
+		<div class="align-center container">
+			
+			<div class="img-responsive" id="itemsPage">
 
 				@foreach($artists as $artist)
 

@@ -39,6 +39,11 @@ class UserController extends Controller
         return view('users.user_show', ['user' => $user]);
     }
 
+    public function aboutUs() {
+
+        return view('artists.about_us');
+    }
+
     public function edit(Request $request)
 
     {
