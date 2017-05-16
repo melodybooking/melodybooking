@@ -4,8 +4,8 @@
 
 <?php
 
-require($_SERVER['DOCUMENT_ROOT'] . 'vendor/autoload.php');
-use Mailgun\Mailgun;
+// require($_SERVER['DOCUMENT_ROOT'] . 'vendor/autoload.php');
+// use Mailgun\Mailgun;
 
 ?>
 
@@ -87,24 +87,24 @@ use Mailgun\Mailgun;
 
 
 	<?php
-
-	if (isset($_POST['name'])) {
-		$userName=$_POST['name'];
-		$artistEmail = $artist->email;
-		$message = $_POST['comment'];
-
-	$mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
-	// Enter domain which you find in Default Password
-	$domain = "001ddaa1b197c22c3ee3e4b70e57dcd8";
-
-	# Make the call to the client.
-	$result = $mgClient->sendMessage($domain, array(
-	"from" => "$userName <mailgun@001ddaa1b197c22c3ee3e4b70e57dcd8>",
-	"email" => "Baz <$artistEmail>",
-	"comment" => "$message"
-	));
-	echo "<script>alert('Email Sent Successfully.. !!');</script>";
-	}
+	// 
+	// if (isset($_POST['name'])) {
+	// 	$userName=$_POST['name'];
+	// 	$artistEmail = $artist->email;
+	// 	$message = $_POST['comment'];
+	//
+	// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
+	// // Enter domain which you find in Default Password
+	// $domain = "001ddaa1b197c22c3ee3e4b70e57dcd8";
+	//
+	// # Make the call to the client.
+	// $result = $mgClient->sendMessage($domain, array(
+	// "from" => "$userName <mailgun@001ddaa1b197c22c3ee3e4b70e57dcd8>",
+	// "email" => "Baz <$artistEmail>",
+	// "comment" => "$message"
+	// ));
+	// echo "<script>alert('Email Sent Successfully.. !!');</script>";
+	// }
 ?>
 
 @stop
