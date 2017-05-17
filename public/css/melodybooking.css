@@ -32,9 +32,16 @@ body {
 }
 
 /* nav bar name Header*/
-#navbar > ul > li > a {
 
+#navbarBrand > h3 > a {
+
+	text-align: center;
 	padding-top: 38px;
+
+}
+
+#navbar > ul > li > a {
+	
 
 }
 
@@ -293,7 +300,7 @@ a {
 }
 
 a:visited {
-    color: #96C0B7;
+    color: #D6D5C9;
 }
 
 a:hover, a:focus {
@@ -445,9 +452,14 @@ div#signUpModal {
 
 /*create artist img upload*/
 
+#image {
+	
+	width:100px;
+
+}
+
 #previewGallery img {
 	
-
 	margin-top: 5px;
 	padding: 1px;
 	border-radius: 1px;
@@ -755,6 +767,12 @@ font-weight: bold;
 
 /*individual artist show*/
 
+#socialMediaIcons > a.btn {
+
+	padding:5px;
+
+}
+
 #artistShow {
 	
 	padding: 10px;
@@ -778,7 +796,10 @@ font-weight: bold;
 #artistShow img {
 	
 	border-radius: 10px;
+
 }
+
+/*about us page*/
 
 #aboutUs {
 	
