@@ -219,12 +219,24 @@
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
                         <input id="userLoginEmail" class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                            
-                    </div>
+						@if ($errors->has('email'))
+						<script>$(document).ready(function () {
+								$('#loginModal').modal('show');
+							});
+						</script>
+						<p class="help-block">{{ $errors->first('email') }}</p>
+						@endif
+					</div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
                         <input id="userLoginPassword" class="form-control" type="password" placeholder="Password" name="password" id="password">
-                       
+						@if ($errors->has('password'))
+						<script>$(document).ready(function () {
+								$('#loginModal').modal('show');
+							});
+						</script>
+						<p class="help-block">{{ $errors->first('password') }}</p>
+						@endif
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
