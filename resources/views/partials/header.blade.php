@@ -63,7 +63,7 @@
               </ul>
 
 
-                <form id="searchBar" method="GET" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-fluid" action="{{action('PostsController@index')}}">
+                <form id="searchBar" method="GET" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 container-fluid" action="{{action('PostsController@index')}}">
 
                     {!! csrf_field() !!}
 
