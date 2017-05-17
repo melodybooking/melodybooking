@@ -115,7 +115,7 @@
 
                     <div class="form-group">Name
 
-                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="">
 
                         @if( $errors->has('name') )
 
@@ -127,7 +127,7 @@
 
                     <div class="form-group">Email
 
-                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="">
 
                          @if( $errors->has('email') )
 

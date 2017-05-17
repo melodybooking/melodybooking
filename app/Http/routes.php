@@ -67,3 +67,8 @@ Route::get('image-upload',function(){
    return view('upload.index');
 });
 Route::post('image-upload','PostsController@imageUploadPost');
+
+
+// Mail route
+
+Route::post('sendMail', 'PostsController@sendMail');
