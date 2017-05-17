@@ -49,8 +49,7 @@
 		<br>
 
 		@include('partials.footer')
-
-
+		
 	</body>
 
 </html>

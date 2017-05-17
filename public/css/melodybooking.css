@@ -479,16 +479,58 @@ div#signUpModal {
 
 }
 
-/*user show form*/
+/*user account show page*/
+
+#userItemsPage {
+
+	text-align:center;
+	padding-bottom: 20px;
+
+}
+
+#userItemsPage > p {
+
+
+	font-size: 34px;
+	color: #F4E87C;
+	font-family: 'Lobster', normal;
+	text-shadow: rgb(150, 30, 0) 1px 2px 2px;
+
+
+}
+
+
+#userItemsPage > article > h3 > a {
+	
+	font-family: 'Lobster', normal;
+	color: #EAF4F4;
+
+}
+
+#userItemsPage > article > h3 > a:hover {
+	
+	color:#0599c2;
+
+}
+
+#userArtistImage { 
+
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: 0px 2px 4px #0A100D;
+
+}
 
 #userShowContainer {
-
+	
+	color: #F4E87C;
+	font-size: 14px;
 	padding-top: 30px;
 	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
-	opacity: .9;
+	opacity: .95;
 	width:auto;
 	height:auto;
 
@@ -519,7 +561,6 @@ div#signUpModal {
 	opacity: .9;
 	width:auto;
 	
-
 }
 
 /*create artist form*/
@@ -533,13 +574,11 @@ div#signUpModal {
 	color: #EAF4F4;
 	opacity: .9;
 
-
 }
 
 
-#createArtist > div:nth-child(10)
+#createArtist > div:nth-child(10) {
 
-{
 	padding-top: 5px;
 	margin:auto;
 	margin-top:10px;
@@ -582,20 +621,29 @@ body > main > h1 {
 
 }
 
-#itemsPage {
+div#artistIndexContainer {
+	
+	border-radius: 15px;
+	padding: 20px;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 
+}
+
+#indexItemsPage {
+	
+	padding:5px;
 	text-align: center;
 	font-family: 'Lobster', normal;
 
 }
 
-#itemsPage a {
+#indexItemsPage a {
 
 	color: #283044;
 
 }
 
-#itemsPage a:hover {
+#indexItemsPage a:hover {
 
 	color:#0599c2;
 
@@ -611,10 +659,27 @@ body > main > h1 {
 	border-radius: 15px;
 	margin: 0 auto;
 	
+}
+
+
+#indexItemsPage > p {
+
+	color: #F4E87C;
+	text-shadow: rgb(250, 20, 0) 1px 2px 4px;
+	font-size: 34px;
+	text-decoration: underline;
+
+}
+
+#artistIndexSquare a {
+	
+	color:#EAF4F4;
+	font-size: 26px;
 
 }
 
 /*audio player */
+
 .example {
 margin: 50px auto 0;
 width: 800px;
