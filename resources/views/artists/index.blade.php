@@ -4,7 +4,6 @@
 
 	<h1 style="text-align: center; margin-bottom: 5%;">Artists</h1>
 
-
 		<div class="align-center container">
 			
 			<div class="img-responsive" id="itemsPage">

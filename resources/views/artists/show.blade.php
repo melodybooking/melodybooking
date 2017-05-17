@@ -27,7 +27,6 @@
 
 			@if (Auth::id() == $artist->created_by)
 
-
 				<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
 
 			@endif
@@ -78,7 +77,7 @@
 	  </div>
 	</div>
 </div>
-	</div>
+</div>
 @endif
 
 @stop

@@ -317,7 +317,7 @@ a.btn-sm {
 
 }
 
-div#contactArtistModal {
+div#myModal {
 
 	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;	
@@ -759,8 +759,6 @@ font-weight: bold;
 
 }
 
-
-
 #artistShow h5 {
 	text-decoration: underline;
 }
@@ -769,6 +767,7 @@ font-weight: bold;
 	
 	border-radius: 10px;
 }
+
 
 
 
