@@ -15,7 +15,9 @@ class PostsController extends Controller
 {
 	public function __construct(){
 
-		$this->middleware('auth', ['except' => ['index', 'show',]]);
+
+		$this->middleware('auth', ['except' => ['index', 'show', 'posts']]);
+
 	}
     // getting access to the request, is as a easy as adding it as a parameter to any controller
     // action
@@ -161,10 +163,8 @@ class PostsController extends Controller
 		$artist = Post::find($id);
 
 		$mgClient = new Mailgun(env("MAILGUN_SECRET"));
-		// $mgClient = new Mailgun('key-5f749c9863a43eac33c98d10e010f827');
-		// Enter domain which you find in Default Password
+
 		$domain = env("MAILGUN_DOMAIN");
-		// $domain = "sandboxcfe4de21b1034deeb0c68f6eaac84ea8.mailgun.org";
 
 		# Make the call to the client.
 		$result = $mgClient->sendMessage($domain, array(
