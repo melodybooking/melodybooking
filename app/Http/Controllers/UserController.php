@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PostsController;
+use App\Models\Post;
 use App\User;
 use Log;
 use Session;
@@ -35,8 +37,9 @@ class UserController extends Controller
 
     {
         $user = User::findOrFail(Auth::id());
+		$artist = Post::where('created_by', $user->id) -> get();
 
-        return view('users.user_show', ['user' => $user]);
+        return view('users.user_show', ['user' => $user], ['artist' => $artist]);
     }
 
     public function aboutUs() {
