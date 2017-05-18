@@ -133,12 +133,12 @@
 
                         @endif
 
-						@if ($errors->has('email'))
+						@if ($errors->has('email') && old('password_confirmation') )
 						<script>$(document).ready(function () {
 								$('#signUpModal').modal('show');
 							});
 						</script>
-						<p class="help-block">{{ $errors->first('email') }}</p>
+						
 						@endif
 
                     </div>
@@ -225,7 +225,7 @@
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
                         <input id="userLoginEmail" class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-						@if ($errors->has('email'))
+						@if ($errors->has('email') && !old('password_confirmation'))
 						<script>$(document).ready(function () {
 								$('#loginModal').modal('show');
 							});
@@ -236,7 +236,7 @@
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
                         <input id="userLoginPassword" class="form-control" type="password" placeholder="Password" name="password" id="password">
-						@if ($errors->has('password'))
+						@if ($errors->has('password') && !old('password_confirmation'))
 						<script>$(document).ready(function () {
 								$('#loginModal').modal('show');
 							});
