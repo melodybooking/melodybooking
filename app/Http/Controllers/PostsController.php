@@ -15,7 +15,9 @@ class PostsController extends Controller
 {
 	public function __construct(){
 
+
 		$this->middleware('auth', ['except' => ['index', 'show', 'posts']]);
+
 	}
     // getting access to the request, is as a easy as adding it as a parameter to any controller
     // action

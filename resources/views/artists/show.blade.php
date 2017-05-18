@@ -18,15 +18,35 @@
 
 		</div>
 
+		<div style="padding-top: 5px; padding-bottom: 5px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="socialMediaIcons">
+			
+			<a class=" btn btn-primary" href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+
+			<a class=" btn btn-success" href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
+
+			<a class=" btn btn-warning" href="{{ $artist->soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a>
+
+			<a class=" btn btn-info" href="{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
+
+			<a class=" btn btn-danger" href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+
+		</div>
+
 <!-- Button trigger modal -->
+
 	@if (Auth::check())
-<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">Contact Artist</button>
+	
+		<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding-top: 5px; padding-bottom: 5px;">
+
+			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Contact Artist</button>
+		
+		</div>
+
 	@endif
 
-		<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<div style="padding-top: 5px; padding-bottom: 5px;" class ="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
 			@if (Auth::id() == $artist->created_by)
-
 
 				<a class="btn btn-primary" href="{{ action('PostsController@edit', $artist->id) }}">Edit Artist Profile</a>
 
@@ -39,6 +59,7 @@
 </div>
 
 <!-- Modal -->
+
 @if (Auth::check())
 <div class="modal fade slide left" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -78,7 +99,7 @@
 	  </div>
 	</div>
 </div>
-	</div>
+</div>
 @endif
 
 @stop

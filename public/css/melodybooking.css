@@ -1,4 +1,4 @@
-x* {
+* {
 
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -32,9 +32,16 @@ body {
 }
 
 /* nav bar name Header*/
-#navbar > ul > li > a {
 
+#navbarBrand > h3 > a {
+
+	text-align: center;
 	padding-top: 38px;
+
+}
+
+#navbar > ul > li > a {
+	
 
 }
 
@@ -94,13 +101,16 @@ body {
 
 /*search bar*/
 #searchBar {
-	margin-left: 10px;
-	padding:31px;
+
+	padding-left:30px;
+	padding-top:3px;
 
 }
 
 #searchBar > div {
+
 	width: auto;
+
 }
 /*navbar logo image*/
 
@@ -130,21 +140,27 @@ body {
 }
 
 @media (min-width: 100px) { 
+
 	body { 
 		margin-top: 150px;; 
 	} 
+
 } 
 
 @media only screen and (min-device-width : 700px) and (max-device-width : 1000px) {
+
 	body {
 		margin-top: 150px;
 	}
+
 }
 
 @media (max-width: 9999px) {
+
   	body {
     	padding-top: 0px;
   	}
+
 }
 
 #header {
@@ -160,7 +176,7 @@ body {
 /*nav bar header navigation drop down*/
 
 #navbar > ul > li > ul {
-	padding:;
+	
 	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
 	
@@ -190,6 +206,7 @@ body {
 	color: #0599c2;
 
 }
+
 /*footer*/
 
 footer {
@@ -283,7 +300,7 @@ a {
 }
 
 a:visited {
-    color: #96C0B7;
+    color: #D6D5C9;
 }
 
 a:hover, a:focus {
@@ -317,7 +334,7 @@ a.btn-sm {
 
 }
 
-div#contactArtistModal {
+div#myModal {
 
 	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;	
@@ -435,9 +452,14 @@ div#signUpModal {
 
 /*create artist img upload*/
 
+#image {
+	
+	width:100px;
+
+}
+
 #previewGallery img {
 	
-
 	margin-top: 5px;
 	padding: 1px;
 	border-radius: 1px;
@@ -457,16 +479,58 @@ div#signUpModal {
 
 }
 
-/*user show form*/
+/*user account show page*/
+
+#userItemsPage {
+
+	text-align:center;
+	padding-bottom: 20px;
+
+}
+
+#userItemsPage > p {
+
+
+	font-size: 34px;
+	color: #F4E87C;
+	font-family: 'Lobster', normal;
+	text-shadow: rgb(150, 30, 0) 1px 2px 2px;
+
+
+}
+
+
+#userItemsPage > article > h3 > a {
+	
+	font-family: 'Lobster', normal;
+	color: #EAF4F4;
+
+}
+
+#userItemsPage > article > h3 > a:hover {
+	
+	color:#0599c2;
+
+}
+
+#userArtistImage { 
+
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: 0px 2px 4px #0A100D;
+
+}
 
 #userShowContainer {
-
+	
+	color: #F4E87C;
+	font-size: 14px;
 	padding-top: 30px;
 	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
-	opacity: .9;
+	opacity: .95;
 	width:auto;
 	height:auto;
 
@@ -497,7 +561,6 @@ div#signUpModal {
 	opacity: .9;
 	width:auto;
 	
-
 }
 
 /*create artist form*/
@@ -511,13 +574,11 @@ div#signUpModal {
 	color: #EAF4F4;
 	opacity: .9;
 
-
 }
 
 
-#createArtist > div:nth-child(10)
+#createArtist > div:nth-child(10) {
 
-{
 	padding-top: 5px;
 	margin:auto;
 	margin-top:10px;
@@ -560,20 +621,29 @@ body > main > h1 {
 
 }
 
-#itemsPage {
+div#artistIndexContainer {
+	
+	border-radius: 15px;
+	padding: 20px;
+	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 
+}
+
+#indexItemsPage {
+	
+	padding:5px;
 	text-align: center;
 	font-family: 'Lobster', normal;
 
 }
 
-#itemsPage a {
+#indexItemsPage a {
 
 	color: #283044;
 
 }
 
-#itemsPage a:hover {
+#indexItemsPage a:hover {
 
 	color:#0599c2;
 
@@ -589,9 +659,26 @@ body > main > h1 {
 	border-radius: 15px;
 	margin: 0 auto;
 	
+}
+
+
+#indexItemsPage > p {
+
+	color: #F4E87C;
+	text-shadow: rgb(250, 20, 0) 1px 2px 4px;
+	font-size: 34px;
+	text-decoration: underline;
 
 }
 
+#artistIndexSquare a {
+	
+	color:#EAF4F4;
+	font-size: 26px;
+
+}
+
+/*audio player */
 
 .example {
 margin: 50px auto 0;
@@ -745,6 +832,12 @@ font-weight: bold;
 
 /*individual artist show*/
 
+#socialMediaIcons > a.btn {
+
+	padding:5px;
+
+}
+
 #artistShow {
 	
 	padding: 10px;
@@ -759,19 +852,61 @@ font-weight: bold;
 
 }
 
-
-
 #artistShow h5 {
+
 	text-decoration: underline;
+
 }
 
 #artistShow img {
 	
 	border-radius: 10px;
+
 }
 
+/*about us page*/
 
+#aboutUs {
+	
+	font-color: #181D27;
+	padding: 25px;
+	border-radius: 15px;
+	background-color: #63A088;
 
+}
 
+#aboutUs > div:nth-child(2) > a:nth-child(1) {
+	
+	color: #0F1020;
+	
+}
 
+#aboutUs > div:nth-child(2) > a:nth-child(1):hover {
 
+	color: #3A506B;
+
+}
+
+#aboutUs > div:nth-child(3) > a:nth-child(1) {
+
+	color: #0F1020;
+
+}
+
+#aboutUs > div:nth-child(3) > a:nth-child(1):hover {
+
+	color: #3A506B;
+
+}
+
+#aboutUs > div:nth-child(4) > a:nth-child(1) {
+
+	color: #0F1020;
+
+}
+
+#aboutUs > div:nth-child(4) > a:nth-child(1):hover {
+
+	color: #3A506B;
+
+};

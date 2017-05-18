@@ -63,7 +63,7 @@
               </ul>
 
 
-                <form id="searchBar" method="GET" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 container-fluid" action="{{action('PostsController@index')}}">
+                <form id="searchBar" method="GET" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 container-fluid" action="{{action('PostsController@index')}}">
 
                     {!! csrf_field() !!}
 
@@ -115,7 +115,7 @@
 
                     <div class="form-group">Name
 
-                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="{{ old('name') }}">
+                        <input id="newUserName" class="form-control" type="name" name="name" placeholder="Name" value="">
 
                         @if( $errors->has('name') )
 
@@ -127,7 +127,7 @@
 
                     <div class="form-group">Email
 
-                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="{{ old('email') }}">
+                        <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="">
 
                          @if( $errors->has('email') )
 
@@ -219,12 +219,24 @@
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6"> Email
                         <input id="userLoginEmail" class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}">
-                            
-                    </div>
+						@if ($errors->has('email'))
+						<script>$(document).ready(function () {
+								$('#loginModal').modal('show');
+							});
+						</script>
+						<p class="help-block">{{ $errors->first('email') }}</p>
+						@endif
+					</div>
 
                     <div class ="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6 "> Password
                         <input id="userLoginPassword" class="form-control" type="password" placeholder="Password" name="password" id="password">
-                       
+						@if ($errors->has('password'))
+						<script>$(document).ready(function () {
+								$('#loginModal').modal('show');
+							});
+						</script>
+						<p class="help-block">{{ $errors->first('password') }}</p>
+						@endif
                     </div>
 
                     <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">

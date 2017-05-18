@@ -33,7 +33,6 @@
 |
 */
 
-
 Route::get('/','HomeController@showWelcome');
 Route::get('/about', 'UserController@aboutUs');
 
@@ -68,6 +67,7 @@ Route::get('image-upload',function(){
    return view('upload.index');
 });
 Route::post('image-upload','PostsController@imageUploadPost');
+
 
 // Mail route
 
