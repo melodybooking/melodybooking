@@ -127,13 +127,9 @@
 
                         <input id="newUserEmail" class="form-control" type="email" name="email" placeholder="Email" id="email" value="">
 
-                         @if( $errors->has('email') )
-
-                            {{ $errors->first('email') }}
-
-                        @endif
-
+                    
 						@if ($errors->has('email') && old('password_confirmation') )
+
 						<script>$(document).ready(function () {
 								$('#signUpModal').modal('show');
 							});
