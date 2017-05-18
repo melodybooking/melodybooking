@@ -135,6 +135,14 @@
 
                         @endif
 
+						@if ($errors->has('email'))
+						<script>$(document).ready(function () {
+								$('#signUpModal').modal('show');
+							});
+						</script>
+						<p class="help-block">{{ $errors->first('email') }}</p>
+						@endif
+
                     </div>
 
                     <div class="form-group">Password
