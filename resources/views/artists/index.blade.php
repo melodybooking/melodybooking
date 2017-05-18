@@ -20,10 +20,11 @@
 
 				@endforeach
 
+				{!! $artists->render() !!}
+
 			</div>
 
 		</div>
 
-	{!! $artists->render() !!}
 
 @stop

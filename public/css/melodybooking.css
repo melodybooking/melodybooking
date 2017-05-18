@@ -140,9 +140,15 @@ body {
 
 @media (min-width: 100px) {
 
+<<<<<<< HEAD
 	body {
 		margin-top: 150px;;
 	}
+=======
+	body {
+		margin-top: 200px;
+	}
+>>>>>>> 9384b7c550fc775a878d1c6d04611285688cf3e2
 
 }
 
@@ -276,11 +282,12 @@ footer a {
 }
 
 .rslides img {
+
 	background-color: black;
 	object-fit:cover;
 	text-align: center;
 	border-radius: 15px;
-	text-align: center
+	text-align: center;
 	display: block;
 	height: 50vw;
 	float: left;
@@ -651,7 +658,7 @@ div#artistIndexContainer {
 
 #artistIndexSquare img {
 
-
+	background-color: black;
 	height:400px;
 	width:400px;
 	object-fit:cover;
