@@ -15,17 +15,17 @@ html {
 }
 
 body {
-	
+
 	font-family: 'Work Sans', sans-serif;
 	padding:20px;
-	
 
-	background: url('/img/IMG_6701_c2.jpg') repeat center center fixed; 
+
+	background: url('/img/IMG_6701_c2.jpg') repeat center center fixed;
   	-webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
   	background-size: cover;
-	background-size: 100%; 
+	background-size: 100%;
 	padding-bottom: 120px;
 
 }
@@ -40,7 +40,7 @@ body {
 }
 
 #navbar > ul > li > a {
-	
+
 
 }
 
@@ -90,7 +90,7 @@ body {
         margin: 15px 0;
     }
     /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
+    .navbar-collapse.collapse.in {
         display: block!important;
     }
     .collapsing {
@@ -124,12 +124,12 @@ body {
 
 #navbarBrand > h3 > a {
 
-	
+
 	text-shadow: rgb(0, 0, 0) 4px 4px 4px;
 	font-size: 44px;
 	font-family: 'Lobster', normal;
 	color: #F4E87C;
-	
+
 }
 
 #navbarBrand > h3 > a:hover {
@@ -138,13 +138,19 @@ body {
 
 }
 
-@media (min-width: 100px) { 
+@media (min-width: 100px) {
 
-	body { 
-		margin-top: 200px; 
-	} 
+<<<<<<< HEAD
+	body {
+		margin-top: 150px;;
+	}
+=======
+	body {
+		margin-top: 200px;
+	}
+>>>>>>> 9384b7c550fc775a878d1c6d04611285688cf3e2
 
-} 
+}
 
 @media only screen and (min-device-width : 700px) and (max-device-width : 1000px) {
 
@@ -163,7 +169,7 @@ body {
 }
 
 #header {
-	
+
 	margin-bottom: 100px;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 14px;
@@ -175,10 +181,10 @@ body {
 /*nav bar header navigation drop down*/
 
 #navbar > ul > li > ul {
-	
+
 	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
-	
+
 }
 
 #navbar > ul > li > ul > li > a {
@@ -281,7 +287,7 @@ footer a {
 	object-fit:cover;
 	text-align: center;
 	border-radius: 15px;
-	text-align: center
+	text-align: center;
 	display: block;
 	height: 50vw;
 	float: left;
@@ -319,7 +325,7 @@ a.btn-sm {
 /*User Login and User Register modals*/
 
 .modal-header, h4, .close {
-	
+
 	font-family: 'Work Sans', sans-serif;
   	background-color: #4D6A6D;
   	color:white !important;
@@ -338,24 +344,24 @@ a.btn-sm {
 div#myModal {
 
 	border-radius: 15px;
-	font-family: 'Work Sans', sans-serif;	
+	font-family: 'Work Sans', sans-serif;
 	opacity: .95;
 
 }
 
 
 div#loginModal {
-	
-	font-family: 'Work Sans', sans-serif;	
+
+	font-family: 'Work Sans', sans-serif;
 	opacity: .95;
-	
+
 }
 
 div#signUpModal {
 
-	font-family: 'Work Sans', sans-serif;	
+	font-family: 'Work Sans', sans-serif;
 	opacity: .95;
-	
+
 }
 
 #userLoginEmail {
@@ -395,7 +401,7 @@ div#signUpModal {
 }
 
 #newUserEmail {
-	
+
 	color: #B4B8AB;
 
 }
@@ -454,19 +460,19 @@ div#signUpModal {
 /*create artist img upload*/
 
 #image {
-	
+
 	width:100px;
 
 }
 
 #previewGallery img {
-	
+
 	margin-top: 5px;
 	padding: 1px;
 	border-radius: 1px;
 	height: 100px;
 	width: 200px;
-	
+
 }
 
 .img-thumbnail {
@@ -502,19 +508,19 @@ div#signUpModal {
 
 
 #userItemsPage > article > h3 > a {
-	
+
 	font-family: 'Lobster', normal;
 	color: #EAF4F4;
 
 }
 
 #userItemsPage > article > h3 > a:hover {
-	
+
 	color:#0599c2;
 
 }
 
-#userArtistImage { 
+#userArtistImage {
 
 	text-align: center;
 	border-radius: 15px;
@@ -523,7 +529,7 @@ div#signUpModal {
 }
 
 #userShowContainer {
-	
+
 	color: #F4E87C;
 	font-size: 14px;
 	padding-top: 30px;
@@ -551,7 +557,7 @@ div#signUpModal {
 
 }
 
-/*edit user password form*/ 
+/*edit user password form*/
 
 #editPasswordContainer {
 
@@ -561,7 +567,7 @@ div#signUpModal {
 	color: #EAF4F4;
 	opacity: .9;
 	width:auto;
-	
+
 }
 
 /*create artist form*/
@@ -614,7 +620,7 @@ div#signUpModal {
 /*index of artists*/
 
 body > main > h1 {
-	
+
 	font-size: 56px;
 	font-family: 'Lobster', normal;
 	text-shadow: rgb(242, 242, 89) 1px 1px 2px;
@@ -623,7 +629,7 @@ body > main > h1 {
 }
 
 div#artistIndexContainer {
-	
+
 	border-radius: 15px;
 	padding: 20px;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
@@ -631,7 +637,7 @@ div#artistIndexContainer {
 }
 
 #indexItemsPage {
-	
+
 	padding:5px;
 	text-align: center;
 	font-family: 'Lobster', normal;
@@ -660,7 +666,7 @@ div#artistIndexContainer {
 	box-shadow: 0px 2px 2px #283044;
 	border-radius: 15px;
 	margin: 0 auto;
-	
+
 }
 
 
@@ -674,7 +680,7 @@ div#artistIndexContainer {
 }
 
 #artistIndexSquare a {
-	
+
 	color:#EAF4F4;
 	font-size: 26px;
 
@@ -841,7 +847,7 @@ font-weight: bold;
 }
 
 #artistShow {
-	
+
 	padding: 10px;
 	padding-bottom: 25px;
 	border-radius: 15px;
@@ -861,7 +867,7 @@ font-weight: bold;
 }
 
 #artistShow img {
-	
+
 	border-radius: 10px;
 
 }
@@ -869,7 +875,7 @@ font-weight: bold;
 /*about us page*/
 
 #aboutUs {
-	
+
 	font-color: #181D27;
 	padding: 25px;
 	border-radius: 15px;
@@ -878,9 +884,9 @@ font-weight: bold;
 }
 
 #aboutUs > div:nth-child(2) > a:nth-child(1) {
-	
+
 	color: #0F1020;
-	
+
 }
 
 #aboutUs > div:nth-child(2) > a:nth-child(1):hover {
