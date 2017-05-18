@@ -20,15 +20,15 @@
 
 		<div style="padding-top: 5px; padding-bottom: 5px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="socialMediaIcons">
 			
-			<a class=" btn btn-primary" href="https://{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a class=" btn btn-primary" href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
 
-			<a class=" btn btn-success" href="https://{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a class=" btn btn-success" href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
 
-			<a class=" btn btn-warning" href="https://{{ $artist->soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a>
+			<a class=" btn btn-warning" href="{{ $artist->soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a>
 
-			<a class=" btn btn-info" href="https://{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
+			<a class=" btn btn-info" href="{{ $artist->bandcamp_url }}" target="_blank"><i class="fa fa-bandcamp"></i></a>
 
-			<a class=" btn btn-danger" href="https://{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a class=" btn btn-danger" href="{{ $artist->twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a>
 
 		</div>
 
