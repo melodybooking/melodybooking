@@ -15,6 +15,21 @@ class ArtistsTableSeeder extends DatabaseSeeder
 	protected function realArtists()
 	{
 	   $artist = new Post();
+ 	   $artist->artist_name = 'TAYLOR';
+ 	   $artist->email = 'smithtalent.mgmt@gmail.com';
+ 	   $artist->bio = 'Born and raised in San Antonio, TX, Taylor is poised to continue her dominant run in the modeling industry and farther pursue her passion in music. An incredibly talented individual in all creative areas. She is certain to make any event a success.';
+ 	   $artist->genre = 'Pop, Model';
+ 	   $artist->facebook_url = '';
+ 	   $artist->instagram_url = '';
+ 	   $artist->twitter_url = '';
+ 	   $artist->soundcloud_url = '';
+ 	   $artist->bandcamp_url = '';
+ 	   $artist->created_by = '2'; 	   
+ 	   $artist->image = 'taylor.jpg';
+ 	   $artist->save();
+
+
+	   $artist = new Post();
  	   $artist->artist_name = 'Bobby Tables';
  	   $artist->email = 'smithtalent.mgmt@gmail.com';
  	   $artist->bio = 'Best Producer DOA';
@@ -26,6 +41,20 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->bandcamp_url = '';
  	   $artist->created_by = '2'; 	   
  	   $artist->image = 'bobbytables.jpg';
+ 	   $artist->save();
+
+ 	   $artist = new Post();
+ 	   $artist->artist_name = 'Zaytoven';
+ 	   $artist->email = 'zaytovenbookings@gmail.com';
+ 	   $artist->bio = 'Xavier L. Dotson, professionally known as Zaytoven, is an American record producer, DJ, and pianist from Atlanta, Georgia. He is known for his work with Southern rap artists Gucci Mane and Migos, and has released joint projects with artists such as Future, Waka Flaka Flame, Young Scooter, Bankroll Fresh, and Young Dro.';
+ 	   $artist->genre = 'Rap, Producer';
+ 	   $artist->facebook_url = '';
+ 	   $artist->instagram_url = 'https://www.instagram.com/zaytovenbeatz/';
+ 	   $artist->twitter_url = 'https://twitter.com/zaytovenbeatz/';
+ 	   $artist->soundcloud_url = 'https://soundcloud.com/zaytovenbeatz';
+ 	   $artist->bandcamp_url = '';
+ 	   $artist->created_by = '5'; 	   
+ 	   $artist->image = 'zaytoven.jpg';
  	   $artist->save();
 
  	   $artist = new Post();
@@ -43,17 +72,31 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->save();
 
  	   $artist = new Post();
- 	   $artist->artist_name = 'Taylor Gonzales';
- 	   $artist->email = 'smithtalent.mgmt@gmail.com';
- 	   $artist->bio = 'Born and raised in San Antonio, TX, Taylor is poised to continue her dominant run in the modeling industry and farther pursue her passion in music. An incredibly talented individual in all creative areas. She is certain to make any event a success.';
- 	   $artist->genre = 'Pop, Model';
- 	   $artist->facebook_url = '';
- 	   $artist->instagram_url = '';
- 	   $artist->twitter_url = '';
- 	   $artist->soundcloud_url = '';
+ 	   $artist->artist_name = 'Young Thug';
+ 	   $artist->email = 'lyorcohen@300ent.com';
+ 	   $artist->bio = 'Jeffery Lamar Williams (born August 16, 1991), best known professionally as Young Thug, is an American hip hop artist from Atlanta, Georgia. Known for his unconventional vocal style, fashion, and persona, he first received attention for his collaborations with fellow Southern rappers, such as Rich Homie Quan, Birdman, T.I., and Gucci Mane. Young Thug initially released a series of independent mixtapes beginning in 2011 with I Came From Nothing. In early 2013, he signed with Gucci Mane\'s 1017 Records and later that year he released his label debut mixtape 1017 Thug to critical praise. Young Thug received mainstream recognition in 2014 with the songs "Stoner" and "Danny Glover" in addition to appearances on several singles, including "About the Money" and "Lifestyle." That year, he also signed to Lyor Cohen\'s 300 Entertainment and collaborated on the mixtapes Black Portland and Rich Gang: Tha Tour Pt. 1. In 2015, he released a number of mixtapes, including Barter 6 and two installments of his Slime Season series. These were followed in 2016 by the mixtapes I\'m Up, Slime Season 3, and Jeffery in anticipation of his long-delayed debut studio album.';
+ 	   $artist->genre = 'Rap, Experimental';
+ 	   $artist->facebook_url = 'https://www.facebook.com/youngthugmusic/';
+ 	   $artist->instagram_url = 'https://www.instagram.com/thuggerthugger1/';
+ 	   $artist->twitter_url = 'https://twitter.com/youngthug';
+ 	   $artist->soundcloud_url = 'https://soundcloud.com/youngthugworld';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
- 	   $artist->image = 'taylor.jpg';
+ 	   $artist->created_by = '3'; 	   
+ 	   $artist->image = 'youngthug.jpg';
+ 	   $artist->save();
+
+ 	   $artist = new Post();
+ 	   $artist->artist_name = 'Nessly';
+ 	   $artist->email = 'nesslybooking@gmail.com';
+ 	   $artist->bio = 'Atlanta native Nessly has thrived in the SoundCloud rap scene for some time, garnering cosigns from other influential artists and OVO Sound Radio in the process.';
+ 	   $artist->genre = 'Rap, Experimental';
+ 	   $artist->facebook_url = '';
+ 	   $artist->instagram_url = 'https://www.instagram.com/nessly/';
+ 	   $artist->twitter_url = 'https://twitter.com/nessly24k';
+ 	   $artist->soundcloud_url = 'https://soundcloud.com/nessly';
+ 	   $artist->bandcamp_url = '';
+ 	   $artist->created_by = '10'; 	   
+ 	   $artist->image = 'nessly.jpg';
  	   $artist->save();
 
  	   $artist = new Post();
@@ -99,20 +142,6 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->save();
 
  	   $artist = new Post();
- 	   $artist->artist_name = 'Zaytoven';
- 	   $artist->email = 'zaytovenbookings@gmail.com';
- 	   $artist->bio = 'Xavier L. Dotson, professionally known as Zaytoven, is an American record producer, DJ, and pianist from Atlanta, Georgia. He is known for his work with Southern rap artists Gucci Mane and Migos, and has released joint projects with artists such as Future, Waka Flaka Flame, Young Scooter, Bankroll Fresh, and Young Dro.';
- 	   $artist->genre = 'Rap, Producer';
- 	   $artist->facebook_url = '';
- 	   $artist->instagram_url = 'https://www.instagram.com/zaytovenbeatz/';
- 	   $artist->twitter_url = 'https://twitter.com/zaytovenbeatz/';
- 	   $artist->soundcloud_url = 'https://soundcloud.com/zaytovenbeatz';
- 	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '5'; 	   
- 	   $artist->image = 'zaytoven.jpg';
- 	   $artist->save();
-
- 	   $artist = new Post();
  	   $artist->artist_name = 'Wheezy';
  	   $artist->email = 'wheezywaves@gmail.com';
  	   $artist->bio = 'Wheezy tends toward the spacious and spare; his beats give Young Thug room, so that their songs are as much shaped by Thug\'s vocals as any drums. In a serenely stoned conversation over the phone from Atlanta, Wheezy spoke about finding chemistry with Thug, and his Atlanta mentors. He is also currently working with Future, Spooky Black, Travis Scott, and many more.';
@@ -124,20 +153,6 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->bandcamp_url = '';
  	   $artist->created_by = '3'; 	   
  	   $artist->image = 'wheezy.jpg';
- 	   $artist->save();
-
- 	   $artist = new Post();
- 	   $artist->artist_name = 'Nessly';
- 	   $artist->email = 'nesslybooking@gmail.com';
- 	   $artist->bio = 'Atlanta native Nessly has thrived in the SoundCloud rap scene for some time, garnering cosigns from other influential artists and OVO Sound Radio in the process.';
- 	   $artist->genre = 'Rap, Experimental';
- 	   $artist->facebook_url = '';
- 	   $artist->instagram_url = 'https://www.instagram.com/nessly/';
- 	   $artist->twitter_url = 'https://twitter.com/nessly24k';
- 	   $artist->soundcloud_url = 'https://soundcloud.com/nessly';
- 	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '10'; 	   
- 	   $artist->image = 'nessly.jpg';
  	   $artist->save();
 
  	   $artist = new Post();
@@ -194,20 +209,6 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->bandcamp_url = '';
  	   $artist->created_by = '2'; 	   
  	   $artist->image = 'romefortune.jpg';
- 	   $artist->save();
-
- 	   $artist = new Post();
- 	   $artist->artist_name = 'Young Thug';
- 	   $artist->email = 'lyorcohen@300ent.com';
- 	   $artist->bio = 'Jeffery Lamar Williams (born August 16, 1991), best known professionally as Young Thug, is an American hip hop artist from Atlanta, Georgia. Known for his unconventional vocal style, fashion, and persona, he first received attention for his collaborations with fellow Southern rappers, such as Rich Homie Quan, Birdman, T.I., and Gucci Mane. Young Thug initially released a series of independent mixtapes beginning in 2011 with I Came From Nothing. In early 2013, he signed with Gucci Mane\'s 1017 Records and later that year he released his label debut mixtape 1017 Thug to critical praise. Young Thug received mainstream recognition in 2014 with the songs "Stoner" and "Danny Glover" in addition to appearances on several singles, including "About the Money" and "Lifestyle." That year, he also signed to Lyor Cohen\'s 300 Entertainment and collaborated on the mixtapes Black Portland and Rich Gang: Tha Tour Pt. 1. In 2015, he released a number of mixtapes, including Barter 6 and two installments of his Slime Season series. These were followed in 2016 by the mixtapes I\'m Up, Slime Season 3, and Jeffery in anticipation of his long-delayed debut studio album.';
- 	   $artist->genre = 'Rap, Experimental';
- 	   $artist->facebook_url = 'https://www.facebook.com/youngthugmusic/';
- 	   $artist->instagram_url = 'https://www.instagram.com/thuggerthugger1/';
- 	   $artist->twitter_url = 'https://twitter.com/youngthug';
- 	   $artist->soundcloud_url = 'https://soundcloud.com/youngthugworld';
- 	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
- 	   $artist->image = 'youngthug.jpg';
  	   $artist->save();
 
  	   $artist = new Post();
