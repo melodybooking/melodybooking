@@ -138,7 +138,7 @@
 								$('#signUpModal').modal('show');
 							});
 						</script>
-						<p class="help-block">{{ $errors->first('email') }}</p>
+						
 						@endif
 
                     </div>
