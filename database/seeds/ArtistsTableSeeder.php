@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Post;
 
-class ArtistsTableSeeder extends seeder
+class ArtistsTableSeeder extends DatabaseSeeder
 {
 	public function run()
 	{
