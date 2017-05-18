@@ -37,7 +37,7 @@ Route::get('/','HomeController@showWelcome');
 Route::get('/about', 'UserController@aboutUs');
 
 Route::resource('/posts', 'PostsController'); // A resource controller
-Route::resource('/users', 'UserController'); 
+Route::resource('/users', 'UserController');
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
