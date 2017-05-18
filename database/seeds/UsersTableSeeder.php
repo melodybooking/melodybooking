@@ -8,7 +8,7 @@ class UsersTableSeeder extends Seeder
 	public function run()
 	{
 		$this->realUsers();
-        // $this->fakeUsers();
+        $this->fakeUsers();
 	}
 
 	 protected function realUsers()
@@ -25,18 +25,25 @@ class UsersTableSeeder extends Seeder
  	   $user->password = 'password';
  	   $user->artist = '1';
  	   $user->save();
+
+ 	   $user = new \App\User();
+ 	   $user->name = 'Lyor Cohen';
+ 	   $user->email = 'lyorcohent@300ent.com';
+ 	   $user->password = 'password';
+ 	   $user->artist = '1';
+ 	   $user->save();
     }
 
-	 // protected function fakeUsers()
-  //   {
-  //       $faker = Faker\Factory::create();
+	 protected function fakeUsers()
+    {
+        $faker = Faker\Factory::create();
 
-		// for($i = 0; $i <= 50; $i++) {
-		// 	$user = new \App\User();
-		// 	$user->name = $faker->name;
-		// 	$user->email = $faker->email;
-		// 	$user->password = bcrypt('password');
-		// 	$user->save();
-		// 	}
-  //   }
+		for($i = 0; $i <= 50; $i++) {
+			$user = new \App\User();
+			$user->name = $faker->name;
+			$user->email = $faker->email;
+			$user->password = bcrypt('password');
+			$user->save();
+			}
+    }
 }
