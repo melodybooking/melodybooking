@@ -58,8 +58,6 @@
 
             @endif
 
-              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="#">Contact Us</a></li>
-
               </ul>
 
 

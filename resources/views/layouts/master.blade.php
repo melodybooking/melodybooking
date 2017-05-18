@@ -15,6 +15,8 @@
 	    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	    <link href="/css/styles.css" rel="stylesheet" type="text/css">
 	   	<link rel="stylesheet" type="text/css" href="/css/melodybooking.css">
+	   	<link rel="shortcut icon" href="/" type="image/x-icon">
+	   	<link rel="icon" href="/" type="image/x-icon">
 
 
 		<script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
