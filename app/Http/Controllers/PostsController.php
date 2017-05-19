@@ -65,6 +65,7 @@ class PostsController extends Controller
         $artist->email = $request->email;
         $artist->bio = $request->bio;
         $artist->genre = $request->genre;
+		$artist->location = $request->location;
 		$artist->created_by = \Auth::id();
 		$artist->facebook_url = $request->facebook_url;
 		$artist->instagram_url = $request->instagram_url;
