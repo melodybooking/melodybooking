@@ -10,6 +10,8 @@
 
 		<p>{{ $artist->bio }}</p>
 
+		<p><strong>Location:</strong> {{ $artist->location}}</p>
+
 		<p><strong>Genre:</strong> {{ $artist->genre}}</p>
 
 		<div class= "col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -19,7 +21,7 @@
 		</div>
 
 		<div style="padding-top: 5px; padding-bottom: 5px;" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="socialMediaIcons">
-			
+
 			<a class=" btn btn-primary" href="{{ $artist->facebook_url }}" target="_blank"><i class="fa fa-facebook"></i></a>
 
 			<a class=" btn btn-success" href="{{ $artist->instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -35,11 +37,11 @@
 <!-- Button trigger modal -->
 
 	@if (Auth::check())
-	
+
 		<div class ="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="padding-top: 5px; padding-bottom: 5px;">
 
 			<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Contact Artist</button>
-		
+
 		</div>
 
 	@endif

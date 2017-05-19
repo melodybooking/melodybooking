@@ -73,6 +73,26 @@
 
         </div>
 
+        </div>
+            <div class="form-group">
+
+            <label for="location">Location</label>
+
+            <input name="location" id="location" class="form-control">
+
+
+            @if ($errors->has('location'))
+
+            <div class="alert alert-warning" role="alert">
+
+                {!! $errors->first('location') !!}
+
+            </div>
+
+            @endif
+
+        </div>
+
         <div class="form-group">
 
             <label for="facebook_url">Facebook Url</label>
