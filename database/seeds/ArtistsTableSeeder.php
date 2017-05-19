@@ -18,13 +18,14 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->artist_name = 'TAYLOR';
  	   $artist->email = 'smithtalent.mgmt@gmail.com';
  	   $artist->bio = 'Born and raised in San Antonio, TX, Taylor is poised to continue her dominant run in the modeling industry and farther pursue her passion in music. An incredibly talented individual in all creative areas. She is certain to make any event a success.';
+	   $artist->location = 'San Antonio';
  	   $artist->genre = 'Pop, Model';
  	   $artist->facebook_url = '';
  	   $artist->instagram_url = '';
  	   $artist->twitter_url = '';
  	   $artist->soundcloud_url = '';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'taylor.jpg';
  	   $artist->save();
 
@@ -34,12 +35,13 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->email = 'smithtalent.mgmt@gmail.com';
  	   $artist->bio = 'Best Producer DOA';
  	   $artist->genre = 'Rap, Experimental';
+	   $artist->location = 'San Antonio';
  	   $artist->facebook_url = '';
  	   $artist->instagram_url = '';
  	   $artist->twitter_url = '';
  	   $artist->soundcloud_url = '';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'bobbytables.jpg';
  	   $artist->save();
 
@@ -53,7 +55,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/zaytovenbeatz/';
  	   $artist->soundcloud_url = 'https://soundcloud.com/zaytovenbeatz';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '5'; 	   
+ 	   $artist->created_by = '5';
  	   $artist->image = 'zaytoven.jpg';
  	   $artist->save();
 
@@ -67,7 +69,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = '';
  	   $artist->soundcloud_url = '';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'cydniegarcia.jpg';
  	   $artist->save();
 
@@ -81,7 +83,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/youngthug';
  	   $artist->soundcloud_url = 'https://soundcloud.com/youngthugworld';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
+ 	   $artist->created_by = '3';
  	   $artist->image = 'youngthug.jpg';
  	   $artist->save();
 
@@ -95,7 +97,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/nessly24k';
  	   $artist->soundcloud_url = 'https://soundcloud.com/nessly';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '10'; 	   
+ 	   $artist->created_by = '10';
  	   $artist->image = 'nessly.jpg';
  	   $artist->save();
 
@@ -109,7 +111,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/nobueats';
  	   $artist->soundcloud_url = 'https://soundcloud.com/yoshi_nobu';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'NOBU.jpg';
  	   $artist->save();
 
@@ -123,7 +125,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/booumusic';
  	   $artist->soundcloud_url = 'https://soundcloud.com/booumusic';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'BOOU.jpg';
  	   $artist->save();
 
@@ -137,7 +139,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = '';
  	   $artist->soundcloud_url = 'https://soundcloud.com/bankreaux';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'bankreaux.jpg';
  	   $artist->save();
 
@@ -151,7 +153,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/wheezy5th/';
  	   $artist->soundcloud_url = 'https://soundcloud.com/wheezybeat';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
+ 	   $artist->created_by = '3';
  	   $artist->image = 'wheezy.jpg';
  	   $artist->save();
 
@@ -165,7 +167,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/1gunnagunna?lang=en';
  	   $artist->soundcloud_url = '';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
+ 	   $artist->created_by = '3';
  	   $artist->image = 'gunna.jpg';
  	   $artist->save();
 
@@ -179,7 +181,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/21savage';
  	   $artist->soundcloud_url = 'https://soundcloud.com/21savage';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
+ 	   $artist->created_by = '3';
  	   $artist->image = '21savage.jpg';
  	   $artist->save();
 
@@ -193,7 +195,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/rickyracksicu';
  	   $artist->soundcloud_url = 'https://soundcloud.com/rickyracks-1';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '4'; 	   
+ 	   $artist->created_by = '4';
  	   $artist->image = 'rickyracks.jpg';
  	   $artist->save();
 
@@ -207,7 +209,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/romefortune';
  	   $artist->soundcloud_url = 'https://soundcloud.com/romefortune';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '2'; 	   
+ 	   $artist->created_by = '2';
  	   $artist->image = 'romefortune.jpg';
  	   $artist->save();
 
@@ -221,7 +223,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/Thouxanbanfauni';
  	   $artist->soundcloud_url = 'https://soundcloud.com/thouxanban';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '6'; 	   
+ 	   $artist->created_by = '6';
  	   $artist->image = 'thouxanbandfauni.jpg';
  	   $artist->save();
 
@@ -235,7 +237,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/unotheactivist';
  	   $artist->soundcloud_url = 'https://soundcloud.com/678uno';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '7'; 	   
+ 	   $artist->created_by = '7';
  	   $artist->image = 'unotheactivist.jpg';
  	   $artist->save();
 
@@ -249,7 +251,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->twitter_url = 'https://twitter.com/YslDuke';
  	   $artist->soundcloud_url = 'https://soundcloud.com/yslduke';
  	   $artist->bandcamp_url = '';
- 	   $artist->created_by = '3'; 	   
+ 	   $artist->created_by = '3';
  	   $artist->image = 'yslduke.jpg';
  	   $artist->save();
 
@@ -260,7 +262,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
 	// {
 	// 	  $faker = Faker\Factory::create();
 
-	// 	  for($i = 0; $i <= 500; $i++) 
+	// 	  for($i = 0; $i <= 500; $i++)
 	// 	  {
 	// 		  $artist = new Artist();
 	// 		  $artist->artist_name = $faker->name;

@@ -10,7 +10,7 @@
 
 		<p>{{ $artist->bio }}</p>
 
-		<p><strong>Location:</strong> {{ $artist->location}}</p>
+		<p><strong>Location:</strong> {{ $artist->location}} </p>
 
 		<p><strong>Genre:</strong> {{ $artist->genre}}</p>
 
