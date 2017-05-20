@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
 			$user = new \App\User();
 			$user->name = $faker->name;
 			$user->email = $faker->email;
-			$user->password = bcrypt('password');
+			$user->password = 'password';
 			$user->save();
 			}
     }

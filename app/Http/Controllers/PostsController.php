@@ -27,11 +27,12 @@ class PostsController extends Controller
 			$artists = Post::select('artists.*')
 			->join('users', 'created_by', '=', 'users.id')
 			->where('genre', 'like', "%$request->search%")
-			->orwhere('artist_name', 'like', "%$request->search%")
-			->orderBy('artists.created_at', 'DESC')
+			->orWhere('artist_name', 'like', "%$request->search%")
+			->orWhere('location', 'like', "%$request->search%")
+			->orderBy('artists.artist_name', 'ASC')
 			->paginate(6)->appends(['search' =>$request->search]);
 		} else {
-			$artists = Post::with('user')->orderBy('artists.created_at', 'DESC')->paginate(6);
+			$artists = Post::with('user')->orderBy('artists.artist_name', 'ASC')->paginate(6);
 		}
 
         $data = [];
