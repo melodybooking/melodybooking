@@ -33,6 +33,13 @@ class UsersTableSeeder extends Seeder
  	   $user->password = 'password';
  	   $user->artist = '1';
  	   $user->save();
+
+	   $user = new \App\User();
+ 	   $user->name = 'Josh Williams';
+ 	   $user->email = 'joshuamw322@gmail.com';
+ 	   $user->password = 'password';
+ 	   $user->artist = '1';
+ 	   $user->save();
     }
 
 	 protected function fakeUsers()

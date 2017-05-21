@@ -14,6 +14,21 @@ class ArtistsTableSeeder extends DatabaseSeeder
 
 	protected function realArtists()
 	{
+	$artist = new Post();
+  	   $artist->artist_name = 'Red Cardinal';
+  	   $artist->email = 'joshuamw322@gmail.com';
+  	   $artist->bio = '';
+ 	   $artist->location = 'San Antonio';
+  	   $artist->genre = 'Rock';
+  	   $artist->facebook_url = 'https://www.facebook.com/redcardinalsatx';
+  	   $artist->instagram_url = 'https://www.instagram.com/redcardinalsatx/';
+  	   $artist->twitter_url = '';
+  	   $artist->soundcloud_url = 'https://soundcloud.com/red-cardinal-ghost';
+  	   $artist->bandcamp_url = '';
+  	   $artist->created_by = '2';
+  	   $artist->image = 'Red Cardinal.jpg';
+  	   $artist->save();
+
 	   $artist = new Post();
  	   $artist->artist_name = 'TAYLOR';
  	   $artist->email = 'smithtalent.mgmt@gmail.com';
