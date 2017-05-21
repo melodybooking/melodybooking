@@ -150,12 +150,17 @@ class PostsController extends Controller
     public function destroy(Request $request, $id)
     {
         $artist = Post::find($id);
+        $user = User::find(Auth::id());
+
         if (!$artist) {
             $request->session()->flash('errorMessage', 'Artist cannot be found');
             return redirect()->action('PostsController@index');
         }
+
         $artist->delete();
-        return view('artists.index');
+        $request->session()->flash('successMessage', 'Artist Deleted');
+        
+        return redirect()->action('PostsController@index', [$user->id]);
     }
 
 	public function sendMail(Request $request) {
