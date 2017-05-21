@@ -535,7 +535,7 @@ div#signUpModal {
 #userShowContainer {
 
 	color: #F4E87C;
-	font-size: 14px;
+	font-size: 20px;
 	padding-top: 30px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
@@ -551,6 +551,7 @@ div#signUpModal {
 #userEditContainer {
 
 	font-family: 'Work Sans', sans-serif;
+	font-size:20px;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
 	opacity: .9;
@@ -562,7 +563,8 @@ div#signUpModal {
 /*edit user password form*/
 
 #editPasswordContainer {
-
+	
+	font-size:20px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -586,6 +588,7 @@ div#signUpModal {
 }
 
 #createArtist > div:nth-child(10) {
+	
 
 	padding-top: 5px;
 	margin:auto;
@@ -598,6 +601,7 @@ div#signUpModal {
 
 #editForm {
 	
+	font-size:20px;
 	width: 600px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);

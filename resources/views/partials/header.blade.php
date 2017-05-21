@@ -28,8 +28,6 @@
 
 		        <ul class="col-sm-12 col-xs-12 col-md-12 col-lg-12 center-align container-fluid" role="menu">
 
-						<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="/">Home</a></li>
-
             <li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">Artist Directory</a></li>
 
 		        	@if ( Auth::check() && Auth::user()->artist == 1 )
