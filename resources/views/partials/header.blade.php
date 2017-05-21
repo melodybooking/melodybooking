@@ -1,82 +1,80 @@
-<nav id="header" class="img-responsive navbar navbar-default navbar-fixed-top navbar-static">
+<nav id="header" class="img-responsive col-sm-12 col-xs-12 col-md-12 col-lg-12 navbar navbar-default navbar-fixed-top navbar-static">
 
-    <div class="container-fluid">
+    <div id="headerContainer" class="row container-fluid">
 
-      	<div id="navbarBrand" class="img-responsive text-center navbar-header">
+      	<div id="navbarBrand" class="pull-right col-sm-12 col-xs-12 col-md-12 col-lg-12 img-responsive text-center navbar-header">
 
-      		<h3 class="img-responsive"><a href="/">Melody Booking </a></h3>
+      		<h3 class="pull-left container offset-sm-1 offset-md-1 offset-lg-1 offset-xs-1 col-md-9 col-sm-9 col-lg-9 col-xs-9"><a href="/">Melody Booking </a></h3>
 
-	        <button type="button" class="navbar-right navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	        <button style="margin-top:25px;" type="button" class="col-sm-1 col-md-1 col-xs-1 col-lg-1 navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
-	          	<span class="sr-only">Toggle navigation</span>
+	          	<span class="col-sm-1 col-md-1 col-xs-1 col-lg-1 pull-right sr-only">Toggle navigation</span>
 
-	          	<span class="icon-bar"></span>
+	          	<span id="iconBar" class="icon-bar"></span>
 
-	          	<span class="icon-bar"></span>
+	          	<span id="iconBar" class="icon-bar"></span>
 
-	          	<span class="icon-bar"></span>
+	          	<span id="iconBar" class="icon-bar"></span>
 
 	        </button>
 
     	</div>
 
-      	<div id="navbar" class="navbar-collapse center-align container-fluid collapse">
+      	<div id="navbar" class="col-xs-12 col-lg-12 col-sm-12 col-md-12 navbar-collapse center-align container-fluid collapse">
 
-	        <ul class="nav navbar-nav navbar-right">
+	        <ul class="col-xs-12 col-lg-12 col-sm-12 col-md-12 nav navbar-nav navbar-right">
 
-	          	<li class="dropdown center-align row col-xs-12 col-lg-12 col-sm-12 col-md-12">
+	          	<li class="col-sm-12 col-md-12 col-xs-12 col-lg-12 dropdown center-align">
 
-	            <!-- <a href="#" id="navigationDropDown" class=" navbar-right dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation</span></a> -->
+		        <ul class="col-sm-12 col-xs-12 col-md-12 col-lg-12 center-align container-fluid" role="menu">
 
-		        <ul class="container-fluid" role="menu">
+						<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="/">Home</a></li>
 
-						<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="/">Home</a></li>
-
-            <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">All Artists</a></li>
+            <li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">Artist Directory</a></li>
 
 		        	@if ( Auth::check() && Auth::user()->artist == 1 )
 
-		    			<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
+		    			<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
-							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 		        		@elseif ( Auth::check() && Auth::user()->artist == 0)
 
-							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li class="col-xs-3 col-sm-2 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 						@else
 
             <!-- Button trigger modal -->
 
-              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a data-toggle="modal" href="#loginModal">Log In</a></li>
+              <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-              <li class="col-xs-6 col-sm-4 col-md-2 col-lg-2"><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+              <li class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
             @endif
 
-              </ul>
-
-
-                <form id="searchBar" method="GET" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 container-fluid" action="{{action('PostsController@index')}}">
+            <li>
+                <form id="searchBar" method="GET" class="align-center col-xs-12 col-sm-4 col-md-4 col-lg-4" action="{{action('PostsController@index')}}">
 
                     {!! csrf_field() !!}
 
-                    <div class="img-responsive form-group">
+                    <div class="input-group-btn img-responsive form-group">
 
-                        Search: <input class="form-control text-left" type="text" name="search" id="search" placeholder="artist or genre">
+                        <input  class="col-xs-12 col-sm-12 col-md-4 col-lg-4 form-control text-left" type="text" name="search" id="search" placeholder="Artist, Genre, or Location">
+
+                        <button  class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+        
 
                     </div>
 
-                    <input class=" btn btn-primary" type="submit" value="submit">
-
                 </form>
+            </li>
 
-
-                </li>
+            </ul>
+            </li>
             </ul>
 
       	</div>

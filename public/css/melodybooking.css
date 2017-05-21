@@ -16,17 +16,11 @@ html {
 
 body {
 
+	background-color: #E8E8E8;
 	font-family: 'Work Sans', sans-serif;
+	font-size: 14px;
 	padding:20px;
-
-
-	background: url('/img/IMG_6701_c2.jpg') repeat center center fixed;
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-	background-size: 100%;
-	padding-bottom: 120px;
+  	padding-bottom: 120px;
 
 }
 
@@ -34,24 +28,12 @@ body {
 
 #navbarBrand > h3 > a {
 
+	height: auto;
 	text-align: center;
-	padding-top: 38px;
 
 }
 
-#navbar > ul > li > a {
-
-
-}
-
-@media (min-width: 766px) {
-
-	#navbarBrand > button{
-		margin-right: 30px;
-	}
-}
-
-@media (max-width: 2000px) {
+@media (max-width: 9000px) {
 
 	#navbar > ul > li > a {
 
@@ -65,6 +47,7 @@ body {
     }
     .navbar-toggle {
         display: block;
+
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -100,9 +83,8 @@ body {
 
 /*search bar*/
 #searchBar {
-
-	padding-left:30px;
-	padding-top:3px;
+	
+	padding-top:2px;
 
 }
 
@@ -111,30 +93,30 @@ body {
 	width: auto;
 
 }
-/*navbar logo image*/
-
-#navbarBrand {
-
-	height: auto;
-	background: url("/img/melodybookinglogo2.png") left center / contain no-repeat;
-
-}
 
 /*navbar title*/
 
+#navbar {
+	text-align: right;
+}
+
+
 #navbarBrand > h3 > a {
 
-
+	padding-bottom: 20px;
+	text-align: left;
+	height: 100%;
+	width: 100%;
 	text-shadow: rgb(0, 0, 0) 4px 4px 4px;
 	font-size: 44px;
 	font-family: 'Lobster', normal;
-	color: #F4E87C;
+	color: #BAD3A9;
 
 }
 
 #navbarBrand > h3 > a:hover {
 
-	color: #B8D3D1 ;
+	color: #B8D3D1;
 
 }
 
@@ -164,11 +146,41 @@ body {
 
 #header {
 
+	height:auto;
 	margin-bottom: 100px;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 14px;
 	color: #EAF4F4;
-	background: linear-gradient(to bottom left, #00100B, #4D6A6D);
+	background-color: #222222;
+
+}
+
+#navbar {
+
+	width: 100%;
+	text-align: center;
+
+}
+
+/*nav bar navigation collapsible button*/
+#navbarBrand {
+
+	text-align: left;
+	padding-bottom: 15px;
+
+}
+
+
+#iconBar {
+
+	text-align: right;
+
+}
+
+#navbarBrand > button {
+	
+	margin-top: 55px; 
+	width: 45px;
 
 }
 
@@ -176,40 +188,32 @@ body {
 
 #navbar > ul > li > ul {
 
+	height: auto;
 	list-style-type: none;
 	font-family: 'Work Sans', sans-serif;
 
 }
 
 #navbar > ul > li > ul > li > a {
-
+	margin-top: 20px;
 	font-family: 'Work Sans', sans-serif;
-	color:#EAF4F4;
+	color:#A9D38B;
 }
 
 #navbar > ul > li > ul > li > a:hover {
 	font-family: 'Work Sans', sans-serif;
-	color:#0599c2;
+	color:#92D3CF;
 }
 
-#navbar > ul > li > a {
-
+#navbar > ul > li > ul > li > a:active {
 	font-family: 'Work Sans', sans-serif;
-	color: #EAF4F4;
-
-}
-
-#navbar > ul > li > a:hover {
-
-	font-family: 'Work Sans', sans-serif;
-	color: #0599c2;
-
+	color:#478C8E;
 }
 
 /*footer*/
 
 footer {
-
+	color:#A9D38B;
 	right: 0;
 	left: 0;
 	margin:0px;
@@ -221,16 +225,26 @@ footer {
 	position: absolute;
 	bottom: 0;
 	height: 120px;
-	background: linear-gradient(to bottom right, #CFDBD5, #00100B);
+	background-color: #222222;
 
 }
 
 footer a {
 
-	color: #EAF4F4;
+	color: #A9D38B;
 
 }
 
+footer a:hover {
+
+	color:#92D3CF;
+}
+
+footer a:active {
+
+	color:#478C8E;
+
+}
 /*welcome blade images*/
 
 #slideShow {
@@ -240,13 +254,11 @@ footer a {
 	text-align: center;
 }
 
-
 .rslides {
 
 	position: relative;
 	list-style: none;
 	overflow: hidden;
-	width: auto;
 	padding: 0;
 	margin:0;
 	margin-left: 0px;
@@ -260,7 +272,8 @@ footer a {
 	position: absolute;
 	display: none;
 	width: 100%;
-	height: 55vw;
+	height: 100%;
+	min-height: 100%;
 	left: 0;
 	top: 0;
 	text-align: center;
@@ -278,13 +291,12 @@ footer a {
 .rslides img {
 
 	background-color: black;
-	object-fit:cover;
-	border-radius: 15px;
 	text-align: center;
 	display: block;
-	height: 50vw;
+	height: fill;
 	float: left;
-	width: 100%;
+	min-width: 100%;
+    min-height: 100%;
 
 }
 
@@ -292,18 +304,20 @@ footer a {
 
 a {
 
-  color: #EAF4F4;
-  -webkit-transition: all 0.25s ease-out;
-  -moz-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
-  text-decoration: none;
+	color: #BAD3A9;
+	-webkit-transition: all 0.25s ease-out;
+	-moz-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+	text-decoration: none;
+
 }
 
 a:visited {
-    color: #D6D5C9;
+    color: #C1D6B3;
 }
 
 a:hover, a:focus {
+
     color: #0599c2;
     text-decoration: none;
 }
@@ -341,7 +355,6 @@ div#myModal {
 	opacity: .95;
 
 }
-
 
 div#loginModal {
 
@@ -437,7 +450,6 @@ div#signUpModal {
 
 }
 
-
 .modal.fade.in .modal-dialog {
 
     -webkit-transform: scale(1);
@@ -516,7 +528,6 @@ div#signUpModal {
 #userArtistImage {
 
 	text-align: center;
-	border-radius: 15px;
 	box-shadow: 0px 2px 4px #0A100D;
 
 }
@@ -526,7 +537,6 @@ div#signUpModal {
 	color: #F4E87C;
 	font-size: 14px;
 	padding-top: 30px;
-	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -540,7 +550,6 @@ div#signUpModal {
 
 #userEditContainer {
 
-	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -554,7 +563,6 @@ div#signUpModal {
 
 #editPasswordContainer {
 
-	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -566,16 +574,16 @@ div#signUpModal {
 /*create artist form*/
 
 #createArtist {
-
+	
+	width: 600px;
 	padding-top: 20px;
-	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
+	font-size: 20px;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
 	opacity: .9;
 
 }
-
 
 #createArtist > div:nth-child(10) {
 
@@ -586,12 +594,11 @@ div#signUpModal {
 
 }
 
-
 /*edit artist form*/
 
 #editForm {
-
-	border-radius: 15px;
+	
+	width: 600px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -599,9 +606,7 @@ div#signUpModal {
 
 }
 
-#editForm > div:nth-child(10)
-
-{
+#editForm > div:nth-child(10) {
 
 	padding-top: 5px;
 	margin:auto;
@@ -616,30 +621,15 @@ body > main > h1 {
 
 	font-size: 56px;
 	font-family: 'Lobster', normal;
-	text-shadow: rgb(242, 242, 89) 1px 1px 2px;
-	color: #4A6E6F;
-
-}
-
-div#artistIndexContainer {
-
-	border-radius: 15px;
-	padding: 20px;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
+	text-shadow: rgb(0, 0, 58) 0px 2px 2px;
+	color: #5C826D;
 
 }
 
 #indexItemsPage {
-
 	padding:5px;
 	text-align: center;
 	font-family: 'Lobster', normal;
-
-}
-
-#indexItemsPage a {
-
-	color: #283044;
 
 }
 
@@ -650,21 +640,18 @@ div#artistIndexContainer {
 }
 
 #artistIndexSquare img {
-
+	
 	background-color: black;
 	height:400px;
 	width:400px;
 	object-fit:cover;
-	background-color: black;
 	box-shadow: 0px 2px 2px #283044;
-	border-radius: 15px;
 	margin: 0 auto;
 
 }
 
-
 #indexItemsPage > p {
-
+	padding-bottom: 30px;
 	color: #F4E87C;
 	text-shadow: rgb(250, 20, 0) 2px 2px 4px;
 	font-size: 34px;
@@ -673,9 +660,63 @@ div#artistIndexContainer {
 }
 
 #artistIndexSquare a {
+	
+	color: #32443B;
+	font-size: 28px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
 
-	color:#EAF4F4;
-	font-size: 26px;
+}
+
+#artistIndexSquare a:hover {
+	
+	color: #82AF97;
+	font-size: 28px;
+
+}
+
+#artistIndexSquare a:active {
+
+	color: #378D8E;
+
+} 
+
+img#showArtistImage {
+	margin-top:10px;
+	margin-bottom: 45px;
+}
+
+/* Pagination styling */ 
+
+#navigation ul.pagination li span {
+	
+	color: #009E49;
+	background-color:transparent;
+	border-color:transparent;
+
+}
+
+#navigation ul.pagination li a {
+	
+	color: black;
+	background-color: transparent;
+	border-color: transparent;
+
+}
+
+#navigation ul.pagination li a:hover {
+
+	color: #94A187;
+	background-color: transparent;
+	border-color: transparent;
+
+}
+
+#navigation ul.pagination li a:active {
+
+	color: #D8F1A0;
+	background-color: transparent;
+	border-color: transparent;
 
 }
 
@@ -843,7 +884,6 @@ font-weight: bold;
 
 	padding: 10px;
 	padding-bottom: 25px;
-	border-radius: 15px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
@@ -859,11 +899,7 @@ font-weight: bold;
 
 }
 
-#artistShow img {
 
-	border-radius: 10px;
-
-}
 
 /*about us page*/
 
@@ -871,7 +907,6 @@ font-weight: bold;
 
 	font-color: #181D27;
 	padding: 25px;
-	border-radius: 15px;
 	background-color: #63A088;
 
 }

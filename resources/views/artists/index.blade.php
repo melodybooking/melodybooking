@@ -12,7 +12,7 @@
 
 				<article id="artistIndexSquare" class= "col-xs-12 col-sm-12 col-md-6 col-lg-6">
 
-					<a href="{{ action('PostsController@show', $artist->id) }}">{{ $artist->artist_name }}</a>
+					<a id="artistName" href="{{ action('PostsController@show', $artist->id) }}">{{ $artist->artist_name }}</a>
 
 					<p><img src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showArtistImage" alt="Image"></p>
 
@@ -20,7 +20,7 @@
 
 				@endforeach
 
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{!! $artists->render() !!}</div>
+				<div id="navigation" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">{!! $artists->render() !!}</div>
 
 		</div>
 
