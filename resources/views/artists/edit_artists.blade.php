@@ -66,7 +66,7 @@
 
             <label for="bio">Artist's Biography</label>
 
-            <input type="text" name="bio" id="bio" cols="30" rows="10" class="form-control"
+            <input type="text" name="bio" id="bio" class="form-control"
 
              @if(isset($artist->bio))
 
@@ -88,7 +88,7 @@
 
         </div>
 
-		</div>
+		<div>
 			<div class="form-group">
 
 			<label for="location">Location</label>
@@ -314,8 +314,6 @@
 							<span class="fileupload-new"></span>
 
 							<input type="hidden" name="MAX_FILE_SIZE" value="1024000000" required/>
-
-
 
 						</span>
 

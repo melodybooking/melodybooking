@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form id="createArtist" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data"  >
+    <form id="createArtist" style="margin-top:200px;" class="img-responsive container-fluid" method="POST" action="{{ action('PostsController@store') }}" enctype="multipart/form-data"  >
 
         {!! csrf_field() !!}
 

@@ -55,7 +55,6 @@ Route::post('/users/{id}/edit', 'UserController@edit');
 Route::get('/users/{id}/password', 'UserController@password');
 Route::post('/users/{id}/password','UserController@updatePassword');
 
-
 // Image upload routes
 
 Route::get('image-upload',function(){
@@ -67,7 +66,6 @@ Route::get('image-upload',function(){
    return view('upload.index');
 });
 Route::post('image-upload','PostsController@imageUploadPost');
-
 
 // Mail route
 

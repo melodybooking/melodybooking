@@ -2,26 +2,25 @@
 
 @section('content')
 
-<div id="slideShowContainer" class="center-align img-responsive">
 
-    <div id="slideshow" class="center-align">
+<div id="slideShow"class="carousel slide carousel-fade" data-ride="carousel">
 
-        <ul class="center-align rslides">
-
-            <li><img alt="" src="\img\g.jpg"></li>
-
-            <li><img alt="" src="\img\rc.jpg"></li>
-
-            <li><img alt="" src="\img\ml.jpg"></li>
-
-            <li><img alt="" src="\img\kk.jpg"></li>
-
-            <li><img alt="" src="\img\gradient.jpg"></li>
-
-        </ul>
-
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
+        <div class="item">
+        </div>
     </div>
-
 </div>
+
+<!-- Remeber to put all the content you want on top of the slider below the slider code -->
+
 
 @stop
