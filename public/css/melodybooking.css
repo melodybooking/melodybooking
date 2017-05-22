@@ -134,6 +134,8 @@ body {
 
 }
 
+
+
 @media (max-width: 9999px) {
 
 
@@ -576,50 +578,78 @@ div#signUpModal {
 	padding-top: 30px;
 	font-family: 'Work Sans', sans-serif;
 	opacity: .95;
-	width:auto;
-	height:auto;
+	width:100%;
+	height:100%;
+
 
 }
-#userItemsPage > article:nth-child(3) {
+
+#userItemsPage > p {
 	text-align: center;
+	color:#65876F;
 }
-
 
 #userItemsPage > article h3 a {
-	color: #5C826D ;
+	color: #647C5B ;
 	text-align: center;
 
 } 
 
-#userArtistImage img {
+#userArtistName > p{
+	text-align: center;
+
+}
+#userShowContainer img {
+	text-align: center;
+}
+
+#userArtistName {
+	text-align: center;
+}
+
+article p #userArtistImage {
+
 	object-fit:cover;
 	height:400px;
 	width: 400px;
 }
+
+@media (min-width:550px) {
+
+	#userArtistName > p {
+
+	text-align: center;
+	margin-left: 10%;
+}
+
+
 /*edit user form*/
 
 #userEditContainer {
-
+	width:600px;
 	font-family: 'Work Sans', sans-serif;
 	font-size:20px;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
 	opacity: .9;
-	width:auto;
-	height:auto;
+	
+	
 
 }
+
+
 
 /*edit user password form*/
 
 #editPasswordContainer {
-	
+
+	width:400px;
 	font-size:20px;
 	font-family: 'Work Sans', sans-serif;
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
 	opacity: .9;
-	width:auto;
+	
 
 }
 

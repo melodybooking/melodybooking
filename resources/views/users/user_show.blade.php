@@ -27,9 +27,9 @@
 
 				@foreach($artist as $artist)
 
-				<article class= "center-align col-xs-12 col-md-12 col-sm-6 col-lg-6">
+				<article id="userArtistName" class= "col-xs-12 col-md-6 col-sm-6 col-lg-6">
 
-					<h3 class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 "><a href="{{ action('PostsController@show', $artist->id) }}">{{ $artist->artist_name }}</a></h3>
+					<h3  class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "><a href="{{ action('PostsController@show', $artist->id) }}">{{ $artist->artist_name }}</a></h3>
 
 					<p><img id="userArtistImage" src = "/uploads/images/{{ $artist->image }}" class="img-responsive" id="showArtistImage" alt="Image"></p>
 
