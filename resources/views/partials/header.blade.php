@@ -6,7 +6,7 @@
 
       		<h3 class="pull-left container offset-sm-1 offset-md-1 offset-lg-1 offset-xs-1 col-md-9 col-sm-9 col-lg-9 col-xs-9"><a href="/">Melody Booking </a></h3>
 
-	        <button style="margin-top:25px;" type="button" class="col-sm-1 col-md-1 col-xs-1 col-lg-1 navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+	        <button style="margin-top:30px;" type="button" class="col-sm-1 col-md-1 col-xs-1 col-lg-1 navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
 
 	          	<span class="col-sm-1 col-md-1 col-xs-1 col-lg-1 pull-right sr-only">Toggle navigation</span>
 
@@ -28,29 +28,29 @@
 
 		        <ul class="col-sm-12 col-xs-12 col-md-12 col-lg-12 center-align container-fluid" role="menu">
 
-            <li class="col-xs-4 col-sm-3 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">Artist Directory</a></li>
+            <li style="margin-top:6px;" class="col-xs-4 col-sm-3 col-md-2 col-lg-2"><a href="{{action('PostsController@index')}}">Artist Directory</a></li>
 
 		        	@if ( Auth::check() && Auth::user()->artist == 1 )
 
-		    			<li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
+		    			<li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('PostsController@create')}}">Create Artist Profile</a></li>
 
-							<li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 		        		@elseif ( Auth::check() && Auth::user()->artist == 0)
 
-							<li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
+							<li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href=" {{action('UserController@show', \Auth::id() ) }} ">User Account</a></li>
 
-							<li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
+							<li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a href="{{action('Auth\AuthController@getLogout')}}">Log Out</a></li>
 
 						@else
 
             <!-- Button trigger modal -->
 
-              <li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a data-toggle="modal" href="#loginModal">Log In</a></li>
+              <li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a data-toggle="modal" href="#loginModal">Log In</a></li>
 
-              <li class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
+              <li style="margin-top:6px;" class="col-xs-3 col-sm-3 col-md-2 col-lg-2"><a data-toggle="modal" href="#signUpModal">Sign Up</a></li>
 
             @endif
 
