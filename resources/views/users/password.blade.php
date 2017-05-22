@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="container" id="editPasswordContainer">
+	<div style="margin-top:200px;" class="container" id="editPasswordContainer">
 
 		<form class="form-group" action="{{ action('UserController@updatePassword', [Auth::id()] ) }}" method="POST">
 

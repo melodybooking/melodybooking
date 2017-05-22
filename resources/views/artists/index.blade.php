@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1 style="text-align: center; margin-bottom: 5%;">Artists</h1>
+	<h1 style="text-align: center; margin-top:175px; margin-bottom: 5%;">Artists</h1>
 
 		<div id="artistIndexContainer" class="align-center container">
 			

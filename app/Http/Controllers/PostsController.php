@@ -164,6 +164,7 @@ class PostsController extends Controller
     }
 
 	public function sendMail(Request $request) {
+        
 		$id = $request->id;
 		$user = User::find(Auth::id());
 

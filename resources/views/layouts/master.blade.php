@@ -15,8 +15,8 @@
 	    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	    <link href="/css/styles.css" rel="stylesheet" type="text/css">
 	   	<link rel="stylesheet" type="text/css" href="/css/melodybooking.css">
-	   	<link rel="shortcut icon" href="/" type="image/x-icon">
-	   	<link rel="icon" href="/" type="image/x-icon">
+	   	<link rel="shortcut icon" href="/img/melodybookinglogo2.png" type="image/x-icon">
+	   	<link rel="icon" href="/img/melodybookinglogo2.png" type="image/x-icon">
 
 		<script rel="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script rel="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

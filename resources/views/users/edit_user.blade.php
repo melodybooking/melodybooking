@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="userEditContainer" class="container text-left">
+<div style="margin-top:150px;" id="userEditContainer" class="container text-left">
 
     <section id="login">
 

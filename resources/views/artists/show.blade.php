@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container-fluid" id="artistShow">
+<div style="margin-top:150px;" class="container-fluid" id="artistShow">
 
-	<article class= "col-md-12">
+	<article class= "col-lg-12 col-sm-12 col-xs-12 col-md-12">
 
 		<h3>{{ $artist->artist_name }}</h3>
 
