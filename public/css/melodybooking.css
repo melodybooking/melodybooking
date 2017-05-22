@@ -570,19 +570,32 @@ div#signUpModal {
 }
 
 #userShowContainer {
-
-	color: #F4E87C;
+	
+	color: black;
 	font-size: 20px;
 	padding-top: 30px;
 	font-family: 'Work Sans', sans-serif;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
-	color: #EAF4F4;
 	opacity: .95;
 	width:auto;
 	height:auto;
 
 }
+#userItemsPage > article:nth-child(3) {
+	text-align: center;
+}
 
+
+#userItemsPage > article h3 a {
+	color: #5C826D ;
+	text-align: center;
+
+} 
+
+#userArtistImage img {
+	object-fit:cover;
+	height:400px;
+	width: 400px;
+}
 /*edit user form*/
 
 #userEditContainer {
