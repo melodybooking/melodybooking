@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div style="margin-top:150px;" id="userShowContainer" class="container-fluid center-align">
+	<div style="margin-top:150px;" id="userShowContainer" class="img-responsive container-fluid center-align">
 
 			<p>Username: {{ $user->name }}</p>
 

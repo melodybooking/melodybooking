@@ -8,9 +8,9 @@
 
         <div class="row">
 
-            <h1 class="section-title container ">Edit User Account</h1>
+            <h1 class=" section-title container ">Edit User Account</h1>
 
-            <div class="col-md-6 col-md-offset-3">
+            <div class="container">
 
                 <p>Please fill out the information below so we can update your account.</p>
 
@@ -38,7 +38,7 @@
 
                 <?php endif; ?>
 
-                <form class ="form-group" method="POST" action="{{ action('UserController@update', [ Auth::id() ]) }}" data-validation required-message="This field is required">
+                <form class ="form-group col-xs-7 col-sm-7 col-md-7 col-lg-7" method="POST" action="{{ action('UserController@update', [ Auth::id() ]) }}" data-validation required-message="This field is required">
 
                     {{ csrf_field() }}
 
@@ -66,7 +66,7 @@
 
                 </form>
 
-                <form action="{{ action('UserController@password', [ Auth::id() ] ) }}" method="GET">
+                <form class="col-xs-12 col-sm-12 col-md-12 col-lg-12" action="{{ action('UserController@password', [ Auth::id() ] ) }}" method="GET">
 
                     {!!csrf_field()!!}
             
@@ -74,7 +74,7 @@
 
                 </form>
 
-                <form class="form-group" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
+                <form class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" action="{{ action('UserController@destroy', [Auth::id()]  ) }}" method="POST">
 
                     {{ csrf_field() }}
 

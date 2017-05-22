@@ -11,7 +11,12 @@ $(document).ready(function() {
     });
 
     // slideshow function call
-    $('.carousel').carousel();
+
+     $('#myCarousel').carousel({
+
+		pause: 'none'
+		
+	})
 
 });
 

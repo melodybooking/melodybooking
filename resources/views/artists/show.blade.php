@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div style="margin-top:150px;" class="container-fluid" id="artistShow">
+<div style="margin-top:150px;" class="container-fluid img-responsive" id="artistShow">
 
 		@if (Session::has('successMessage'))
 				<div class="alert alert-success">{{ session('successMessage') }}</div>

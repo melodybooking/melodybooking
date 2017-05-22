@@ -7,18 +7,17 @@
 }
 
 html {
-
+	
   	position: relative;
  	min-height: 100%;
-  	font-family: 'Work Sans', sans-serif;
+ 
 
 }
 
 body {
+	
 
 	background-color: #E8E8E8;
-	font-family: 'Work Sans', sans-serif;
-	font-size: 14px;
 	padding:20px;
   	padding-bottom: 120px;
 
@@ -100,7 +99,6 @@ body {
 	text-align: right;
 }
 
-
 #navbarBrand > h3 > a {
 
 	padding-bottom: 20px;
@@ -120,19 +118,6 @@ body {
 
 }
 
-@media (min-width: 100px) {
-	
-
-	#artistShow {
-		padding-top: 300px;
-	}
-
-	#artistIndexContainer {
-
-		margin-top:25px;
-	}
-
-}
 
 
 
@@ -144,7 +129,7 @@ body {
 	height:auto;
 	margin-bottom: 100px;
 	font-family: 'Work Sans', sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	color: #EAF4F4;
 	background-color: #222222;
 
@@ -244,99 +229,38 @@ footer a:active {
 
 /*welcome blade images*/
 
-.carousel-fade .carousel-inner .item {
-    opacity: 0;
-    transition-property: opacity;
-}
-.carousel-fade .carousel-inner .active {
-    opacity: 1;
-}
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-}
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-    opacity: 1;
-}
-.carousel-fade .carousel-control {
-    z-index: 2;
-}
-@media all and (transform-3d),
-(-webkit-transform-3d) {
-    .carousel-fade .carousel-inner > .item.next,
-    .carousel-fade .carousel-inner > .item.active.right {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    .carousel-fade .carousel-inner > .item.prev,
-    .carousel-fade .carousel-inner > .item.active.left {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    .carousel-fade .carousel-inner > .item.next.left,
-    .carousel-fade .carousel-inner > .item.prev.right,
-    .carousel-fade .carousel-inner > .item.active {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-}
-.item:nth-child(1) {
-    background: url(/img/welcome1.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.item:nth-child(2) {
-    background: url(/img/welcome2.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.item:nth-child(3) {
-    background: url(/img/welcome3.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+#background-carousel {
+	left: 0;
+	position:fixed;
+	width:100%;
+	height:100%;
+	z-index:0;
 }
 
-.item:nth-child(4) {
-    background: url(/img/welcome4.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.carousel,
+.carousel-inner {
+	
+	width:100%;
+	height:100%;
+	z-index:0;
+	overflow:hidden;
 }
-.item:nth-child(5) {
-    background: url(/img/welcome5.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.item {
+	width:100%;
+	height:100%;
+	background-position:center center;
+	background-size:cover;
+	z-index:0;
 }
-
-.carousel {
-    z-index: -99;
+ 
+#content-wrapper {
+	position:absolute;
+	z-index:1 !important;
+	min-width:100%;
+	min-height:100%;
 }
-.carousel .item {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-.title {
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  text-shadow: 2px 2px #000;
-  color: #FFF;
+.well {
+    opacity:0.85
 }
 
 
@@ -543,7 +467,6 @@ div#signUpModal {
 
 #userItemsPage > p {
 
-
 	font-size: 34px;
 	color: #C4E08D;
 	font-family: 'Lobster', normal;
@@ -585,26 +508,34 @@ div#signUpModal {
 }
 
 #userItemsPage > p {
+
 	text-align: center;
 	color:#65876F;
 }
 
 #userItemsPage > article h3 a {
+
 	color: #647C5B ;
 	text-align: center;
 
 } 
 
-#userArtistName > p{
+#userArtistName > p {
+
 	text-align: center;
 
 }
+
 #userShowContainer img {
+
 	text-align: center;
+
 }
 
 #userArtistName {
+
 	text-align: center;
+
 }
 
 article p #userArtistImage {
@@ -612,48 +543,36 @@ article p #userArtistImage {
 	object-fit:cover;
 	height:400px;
 	width: 400px;
+
 }
 
-@media (min-width:550px) {
-
-	#userArtistName > p {
+#userArtistName > p {
 
 	text-align: center;
 	margin-left: 10%;
-}
 
+}
 
 /*edit user form*/
 
 #userEditContainer {
-	width:600px;
+
+	
 	font-family: 'Work Sans', sans-serif;
 	font-size:20px;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
-	color: #EAF4F4;
-	opacity: .9;
+	color: black;
 
-	
 
 }
-
-#login > div > h1 {
-	
-}
-
 
 /*edit user password form*/
 
 #editPasswordContainer {
 
-	width:400px;
 	font-size:20px;
 	font-family: 'Work Sans', sans-serif;
-	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
-	color: #EAF4F4;
-	opacity: .9;
+	color: black;
 	
-
 }
 
 /*create artist form*/
@@ -715,6 +634,31 @@ body > main > h1 {
 
 }
 
+#artistIndexTitle {
+	
+	font-size: 56px;
+	font-family: 'Lobster', normal;
+	text-shadow: rgb(0, 0, 58) 0px 2px 2px;
+	color: #5C826D;
+
+}
+
+#artistName {
+	
+	color:#32443B
+}
+
+#artistIndexContainer {
+
+	text-align: center;
+	font-size: 28px;
+	color: black;
+	font-family: 'Lobster', normal;
+	margin-top:25px;
+	color:#32443B;
+
+}
+
 #indexItemsPage {
 	padding:5px;
 	text-align: center;
@@ -740,6 +684,7 @@ body > main > h1 {
 }
 
 #indexItemsPage > p {
+
 	padding-bottom: 30px;
 	color: #F4E87C;
 	text-shadow: rgb(250, 20, 0) 2px 2px 4px;
@@ -749,7 +694,7 @@ body > main > h1 {
 }
 
 #artistIndexSquare a {
-	
+	font-family: 'Lobster', normal;
 	color: #32443B;
 	font-size: 28px;
 	margin-bottom: 20px;
@@ -758,14 +703,14 @@ body > main > h1 {
 }
 
 #artistIndexSquare a:hover {
-	
+	font-family: 'Lobster', normal;
 	color: #82AF97;
 	font-size: 28px;
 
 }
 
 #artistIndexSquare a:active {
-
+	font-family: 'Lobster', normal;
 	color: #378D8E;
 
 } 
@@ -778,7 +723,8 @@ img#showArtistImage {
 /* Pagination styling */ 
 
 #navigation ul.pagination li span {
-	
+	font-size: 20px;
+	font-family: 'Lobster', normal;
 	color: #009E49;
 	background-color:transparent;
 	border-color:transparent;
@@ -786,7 +732,7 @@ img#showArtistImage {
 }
 
 #navigation ul.pagination li a {
-	
+	font-size:20px;
 	color: black;
 	background-color: transparent;
 	border-color: transparent;
@@ -970,7 +916,7 @@ font-weight: bold;
 }
 
 #artistShow {
-
+	
 	padding: 10px;
 	padding-bottom: 25px;
 	font-family: 'Work Sans', sans-serif;

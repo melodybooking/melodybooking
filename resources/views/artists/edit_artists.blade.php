@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="editForm" class="container">
+<div id="editForm" class="col-sm-12 col-md-12 col-lg-12 col-xs-12 img-responsive container">
 
 	<h1>Edit Account Information</h1>
 
