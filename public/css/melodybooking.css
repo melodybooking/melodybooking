@@ -632,11 +632,14 @@ article p #userArtistImage {
 	background: linear-gradient(to bottom right, #00100B, #4D6A6D);
 	color: #EAF4F4;
 	opacity: .9;
-	
+
 	
 
 }
 
+#login > div > h1 {
+	
+}
 
 
 /*edit user password form*/

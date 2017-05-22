@@ -4,6 +4,14 @@
 
 <div style="margin-top:150px;" class="container-fluid" id="artistShow">
 
+		@if (Session::has('successMessage'))
+				<div class="alert alert-success">{{ session('successMessage') }}</div>
+		@endif
+
+		@if (Session::has('errorMessage'))
+				<div class="alert alert-danger">{{ session('errorMessage') }}</div>
+		@endif
+
 	<article class= "col-lg-12 col-sm-12 col-xs-12 col-md-12">
 
 		<h3>{{ $artist->artist_name }}</h3>
