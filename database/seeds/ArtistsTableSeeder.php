@@ -17,7 +17,10 @@ class ArtistsTableSeeder extends DatabaseSeeder
 	$artist = new Post();
   	   $artist->artist_name = 'Red Cardinal';
   	   $artist->email = 'joshuamw322@gmail.com';
-  	   $artist->bio = '';
+  	   $artist->bio = 'Red Cardinal is a psychedelic rock band based out of San Antonio, TX.
+	   They have been part of the San Antonio scene since 2012, and was formed by Caleb Barber of Collective Dreams.
+	   The style of music is somewhere between Pink Floyd and Explosions In The Sky as all of the music is primarily instrumental shoe-gaze.
+	   Focused on the esoteric and the mundane, Red Cardinal is exploring what it means to be alive and how it feels to live life through their sonic exploration in 432hz.';
  	   $artist->location = 'San Antonio, TX';
   	   $artist->genre = 'Rock';
   	   $artist->facebook_url = 'https://www.facebook.com/redcardinalsatx';
@@ -162,7 +165,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
  	   $artist->soundcloud_url = 'https://soundcloud.com/bankreaux';
  	   $artist->bandcamp_url = '';
  	   $artist->created_by = '2';
- 	   $artist->image = 'bankreaux.jpg';
+ 	   $artist->image = 'bankreaux2.jpg';
  	   $artist->save();
 
  	   $artist = new Post();
