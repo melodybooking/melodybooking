@@ -28,7 +28,7 @@ class ArtistsTableSeeder extends DatabaseSeeder
   	   $artist->twitter_url = '';
   	   $artist->soundcloud_url = 'https://soundcloud.com/red-cardinal-ghost';
   	   $artist->bandcamp_url = '';
-  	   $artist->created_by = '2';
+  	   $artist->created_by = '3';
   	   $artist->image = 'Red Cardinal.jpg';
   	   $artist->save();
 
